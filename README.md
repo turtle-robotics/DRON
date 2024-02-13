@@ -31,10 +31,25 @@ Welcome to the Project OLSN repository! This project is dedicated to the develop
   - Role: Mechanical/Electrical Team
   - Year: Sophomore
 
-- **[Jacob Adamson](www.linkedin.com/in/fpchristuscreer)**
+- **[Jacob Adamson](https://www.linkedin.com/in/jacob-adamson/)**
   - Major: Electrical Engineering
   - Role: Electrical Team
   - Year: Senior
+
+- **[Elizabeth Hannsz](https://www.linkedin.com/in/elizabeth-hannsz-2932a51ba/)**
+  - Major: Aerospace Engineering
+  - Role: Mechanical Team
+  - Year: Junior
+
+- **[Alan Alvarado](www.linkedin.com/in/alan-alvarado-1797102ab)**
+  - Major: Mechanical Engineering
+  - Role: Mechanical Team
+  - Year: Senior*
+
+- **[Malcolm Ferguson](https://www.linkedin.com/in/malcolmkferguson)**
+  - Major: Aerospace Engineering
+  - Role: Mechanical Team
+  - Year: Sophomore
 
 
 %%need to get everyone & linkedin links (see subteam roster)
