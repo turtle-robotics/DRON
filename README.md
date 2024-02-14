@@ -1,9 +1,11 @@
 # DRON: Disaster Response Observation Network
 
 <!--
-# Project OLSN - EMG Hand for Kaeden Olson
+# Project DRON - The Detection & Response Observation Network
 
 Welcome to the Project OLSN repository! This project is dedicated to the development of an Electromyography (EMG) hand designed specifically for Kaeden Olson, a young boy born without his right hand. In this README, we will provide you with an overview of the project, its goals, features, and how to get started with it.
+
+The DRON Project is a tool designed to aid first responders in their response to structural fires by collecting and providing key data on the hotspots within the structure. The goal of the project is to create a swarm of drones equipped with lidar and infared cameras, capable of autnomously navigating and 
 
 ## Table of Contents
 
@@ -50,10 +52,6 @@ Welcome to the Project OLSN repository! This project is dedicated to the develop
   - Major: Aerospace Engineering
   - Role: Mechanical Team
   - Year: Sophomore
-
-
-%%need to get everyone & linkedin links (see subteam roster)
-
 
 
 ## Key Features
