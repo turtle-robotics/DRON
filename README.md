@@ -1,24 +1,61 @@
 # DRON: Disaster Response Observation Network
 
-<!--
-# Project DRON - The Detection & Response Observation Network
-
 Welcome to the Project OLSN repository! This project is dedicated to the development of an Electromyography (EMG) hand designed specifically for Kaeden Olson, a young boy born without his right hand. In this README, we will provide you with an overview of the project, its goals, features, and how to get started with it.
 
-The DRON Project is a tool designed to aid first responders in their response to structural fires by collecting and providing key data on the hotspots within the structure. The goal of the project is to create a swarm of drones equipped with lidar and infared cameras, capable of autnomously navigating and 
+The DRON Project is a tool designed to aid first responders in their response to structural fires by collecting and providing key data on the hotspots within the structure. The goal of the project is to create a swarm of drones equipped with lidar and infared cameras, capable of autnomously navigating a complex enviornment and reporting on the active development of the fire.
 
 ## Table of Contents
 
 - [Project Overview](#project-overview)
 - [Team Members](#team-members)
-- [Key Features](#key-features)
+<!--- [Key Features](#key-features)-->
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [License](#license)
   
+<!--
+## Key Features
+
+- **EMG Control**: The EMG hand allows Kaeden to control its movements and grip through muscle signals, providing a natural and intuitive user experience.
+
+- **Customization**: The hand is personalized to Kaeden's specific needs, ensuring a comfortable fit and optimal functionality.
+
+- **User-Friendly Interface**: The interface is designed to be easy to use and configure, making it accessible for Kaeden and their caregivers.
+
+- **Continuous Improvement**: We are committed to ongoing development, incorporating feedback and advancements in EMG technology to enhance the hand's performance and capabilities.
+
+
+-->
+
+## Getting Started
+
+To get started with Project OLSN, follow these steps:
+
+1. **Clone the Repository**:
+   ```
+   git clone https://github.com/yourusername/Project-OLSN.git
+   ```
+
+2. **Install Dependencies**: Depending on the software and hardware components used, install the required dependencies and libraries as outlined in the project documentation.
+
+3. **Build the EMG Hand**: Follow the instructions in the project's documentation to assemble and configure the EMG hand for Kaeden's specific needs.
+
+4. **Calibration and Testing**: Perform the necessary calibration and testing to ensure the EMG hand functions correctly and comfortably for Kaeden.
+
+5. **Contribute**: If you have ideas or improvements to contribute, please refer to the [Contributing](#contributing) section below.
+
+## Project Overview
+
+The Disaster Response Observation Network, more commonly known as DRON, is the student led project with the goal of aiding firefighters and first responders during large structural fires. The detailed information about the location, intensity and growth of fires is crucial to the proper response, and by improving the ability of first responders to actively respond to events, we intend to save lives. 
+
+The primary objectives of this project are as follows:
+- Design and implement a drone with all sensors for autonomous flight and data aquisition.
+- Collaberate between drones for decision making and obstacle detection.
+- Communicate live data to the first responders in an easy to understand format.
+
 ## Team Members
 
-- **[Abel Ayala](https://www.youtube.com/watch?v=o-YBDTqX_ZU)**
+- **[Abel Ayala](https://www.linkedin.com/in/ug-abel-ayala-co2024/)**
   - Major: Multidiciplinary Engineering
   - Role: Project Lead, Electronics Team
   - Year: Senior
@@ -53,47 +90,10 @@ The DRON Project is a tool designed to aid first responders in their response to
   - Role: Mechanical Team
   - Year: Sophomore
 
-
-## Key Features
-
-- **EMG Control**: The EMG hand allows Kaeden to control its movements and grip through muscle signals, providing a natural and intuitive user experience.
-
-- **Customization**: The hand is personalized to Kaeden's specific needs, ensuring a comfortable fit and optimal functionality.
-
-- **User-Friendly Interface**: The interface is designed to be easy to use and configure, making it accessible for Kaeden and their caregivers.
-
-- **Continuous Improvement**: We are committed to ongoing development, incorporating feedback and advancements in EMG technology to enhance the hand's performance and capabilities.
-
-## Getting Started
-
-To get started with Project OLSN, follow these steps:
-
-1. **Clone the Repository**:
-   ```
-   git clone https://github.com/yourusername/Project-OLSN.git
-   ```
-
-2. **Install Dependencies**: Depending on the software and hardware components used, install the required dependencies and libraries as outlined in the project documentation.
-
-3. **Build the EMG Hand**: Follow the instructions in the project's documentation to assemble and configure the EMG hand for Kaeden's specific needs.
-
-4. **Calibration and Testing**: Perform the necessary calibration and testing to ensure the EMG hand functions correctly and comfortably for Kaeden.
-
-5. **Contribute**: If you have ideas or improvements to contribute, please refer to the [Contributing](#contributing) section below.
-
-
-Thank you for your interest in Project OLSN, and we look forward to your contributions and support in helping Kaeden regain their independence with the specialized EMG hand. If you have any questions or need assistance, please don't hesitate to reach out.
-
--->
-
-## Project Overview
-
-The Disaster Response Observation Network, more commonly known as DRON, is the student led project with the goal of aiding firefighters and first responders during large structural fires. The detailed information about the location, intensity and growth of fires is crucial to the proper response, and by improving the ability of first responders to actively respond to events, we intend to save lives. 
-
-The primary objectives of this project are as follows:
-- Design and implement a drone with all sensors for autonomous flight and data aquisition.
-- Collaberate between drones for decision making and obstacle detection.
-- Communicate live data to the first responders in an easy to understand format.
+- **[Aaron Velez](www.linkedin.com/in/aaron-velez-1083bb2b4)**
+  - Major: Manufacturing and Mechanical Technology
+  - Role: Mechanical Team
+  - Year: Junior
 
 ## Contributing
 
