@@ -50,7 +50,7 @@ To get started with DRON, follow these steps:
 
 1. **Clone the Repository**:
    ```
-   git clone https://github.com/yourusername/DRON
+   git clone https://github.com/yourusername/DRON.git
    ```
 
 2. **Install Dependencies**: Depending on the software and hardware components used, install the required dependencies and libraries as outlined in the project documentation.
@@ -63,7 +63,7 @@ To get started with DRON, follow these steps:
 
 ## Project Overview
 
-The Disaster Response Observation Network, more commonly known as DRON, is the student led project with the goal of aiding firefighters and first responders during large structural fires. The detailed information about the location, intensity and growth of fires is crucial to the proper response, and by improving the ability of first responders to actively respond to events, we intend to save lives. 
+The Disaster Response Observation Network, more commonly known as DRON, is the student led project with the goal of aiding firefighters and first responders during large structural fires by providing the detailed information about the location, intensity and growth of fires is crucial to the proper response, and by improving the ability of first responders to actively respond to events, we intend to save lives. 
 
 The primary objectives of this project are as follows:
 - Design and implement a drone with all sensors for autonomous flight and data aquisition.
