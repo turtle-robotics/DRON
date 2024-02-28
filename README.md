@@ -43,7 +43,7 @@ The DRON Project is a tool designed to aid first responders in their response to
 
 -->
 
-## Getting Started
+## Getting Started {#getting-started}
 
 To get started with Project OLSN, follow these steps:
 
@@ -60,7 +60,7 @@ To get started with Project OLSN, follow these steps:
 
 5. **Contribute**: If you have ideas or improvements to contribute, please refer to the [Contributing](#contributing) section below.
 
-## Project Overview
+## Project Overview {#project-overview}
 
 The Disaster Response Observation Network, more commonly known as DRON, is the student led project with the goal of aiding firefighters and first responders during large structural fires. The detailed information about the location, intensity and growth of fires is crucial to the proper response, and by improving the ability of first responders to actively respond to events, we intend to save lives. 
 
@@ -69,7 +69,7 @@ The primary objectives of this project are as follows:
 - Collaberate between drones for decision making and obstacle detection.
 - Communicate live data to the first responders in an easy to understand format.
 
-## Team Members
+## Team Members {#team-members}
 
 - **[Abel Ayala](https://www.linkedin.com/in/ug-abel-ayala-co2024/)**
   - Major: Multidiciplinary Engineering
@@ -116,7 +116,7 @@ The primary objectives of this project are as follows:
   - Role: Electrial Team
   - Year: Sophomore
 
-## Contributing
+## Contributing {#contributing}
 
 We welcome contributions from the open-source community and anyone interested in enhancing this project. To contribute:
 
@@ -144,6 +144,6 @@ We welcome contributions from the open-source community and anyone interested in
 
 We appreciate any contributions, whether it's in the form of code, documentation, or suggestions.
 
-## License
+## License {#license}
 
 This project is licensed under the [MIT License](LICENSE), which means that you are free to use, modify, and distribute the code as long as you provide proper attribution and include the original license in your distribution. Please review the full license for more details.
