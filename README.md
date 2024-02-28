@@ -8,7 +8,10 @@ The DRON Project is a tool designed to aid first responders in their response to
 
 - [Project Overview](#project-overview)
 - [Team Members](#team-members)
-<!--- [Key Features](#key-features)-->
+<!--- 
+- [Key Features](#key-features)
+- [Hardware](#hardware)
+-->
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [License](#license)
@@ -16,7 +19,7 @@ The DRON Project is a tool designed to aid first responders in their response to
 <!--
 ## Key Features
 
-- **EMG Control**: The EMG hand allows Kaeden to control its movements and grip through muscle signals, providing a natural and intuitive user experience.
+- **IMU Data Gathering**: Each drone works to self balance and steer using a dynamic control system hosted on each individual PI, which relies on the input data from the IMU sensor.
 
 - **Customization**: The hand is personalized to Kaeden's specific needs, ensuring a comfortable fit and optimal functionality.
 
@@ -24,6 +27,19 @@ The DRON Project is a tool designed to aid first responders in their response to
 
 - **Continuous Improvement**: We are committed to ongoing development, incorporating feedback and advancements in EMG technology to enhance the hand's performance and capabilities.
 
+## Hardware
+
+- **Raspberry Pi Model 5**: The Pi acts as the host node for the on board ROS network, and handles the OpenCV image processing from the thermal and RGB cameras, as well as the IR and lidar interactions to generate usable data.
+  - *RBG Camera*: The first camera that attaches to the PI is the RBG camera, mainly for testing and for potential manual control.
+  - *Infared (IR) Camera*: The second camera that attaches to the PI is the IR camera, which is responsible for gathering the heat image for the
+  - *Lidar Camera*: The lidar camera is responsible for gathering a point cloud for which the IR feed can be overlaid to generate a heat-point-cloud. 
+  
+- **Teensy Microcontroller (1/2)**: The first teensy serves as an interface to the IMU, and as the interface to the motor drivers. It works to bring only necessary data to the pi for processing, and to handle the brute of the PID-based dynamic control system work.
+  - *IMU*: 
+  - *Motor Driver(s)*: 
+
+- **Teensy Microcontroller (2/2)**: The second teensy runs the communications, namely to the wifi node to communicate with other drones and to the final destination of the discovered data.
+  - *Wifi module*: 
 
 -->
 
@@ -65,7 +81,7 @@ The primary objectives of this project are as follows:
   - Role: Software Team
   - Year: Sophomore
 
-- **[Christus Creer](www.linkedin.com/in/fpchristuscreer)**
+- **[Christus Creer](https://www.linkedin.com/in/fpchristuscreer)**
   - Major: Industrial Systems Engineering
   - Role: Mechanical/Electrical Team
   - Year: Sophomore
@@ -80,7 +96,7 @@ The primary objectives of this project are as follows:
   - Role: Mechanical Team
   - Year: Junior
 
-- **[Alan Alvarado](www.linkedin.com/in/alan-alvarado-1797102ab)**
+- **[Alan Alvarado](https://www.linkedin.com/in/alan-alvarado-1797102ab)**
   - Major: Mechanical Engineering
   - Role: Mechanical Team
   - Year: Senior*
@@ -90,10 +106,15 @@ The primary objectives of this project are as follows:
   - Role: Mechanical Team
   - Year: Sophomore
 
-- **[Aaron Velez](www.linkedin.com/in/aaron-velez-1083bb2b4)**
+- **[Aaron Velez](https://www.linkedin.com/in/aaron-velez-1083bb2b4)**
   - Major: Manufacturing and Mechanical Technology
   - Role: Mechanical Team
   - Year: Junior
+
+- **[Lucas Ybarra](https://www.linkedin.com/in/lucas-ybarra-847ba72b6/)**
+  - Major: Electrical Engineering
+  - Role: Electrial Team
+  - Year: Sophomore
 
 ## Contributing
 
