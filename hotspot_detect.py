@@ -7,7 +7,7 @@ def returnCameraIndexes():
     arr = []
     i = 10
     while i > 0:
-        cap = cv2.VideoCapture(index)
+        cap = cv.VideoCapture(index)
         if cap.read()[0]:
             arr.append(index)
             cap.release()
