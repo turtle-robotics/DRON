@@ -33,10 +33,11 @@ while True:
     centroid = (cx, cy)
     cv.line(frame, center, centroid, (0, 0, 255), 3)
     
+    direction_vector = (centroid[0] - center[0], centroid[1] - center[1])
     
-    cv.imshow("blob", frame)
+    cv.imshow("feed", frame)
     #cv.imshow("gray", gray)
-    cv.imshow("thresh", mask)
+    #cv.imshow("thresh", mask)
 
     if cv.waitKey(1) & 0xFF == ord('q'): 
         break
