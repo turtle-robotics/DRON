@@ -1,21 +1,37 @@
 import cv2 as cv
 import argparse
-from vidgear.gears import VideoGear
+
+def returnCameraIndexes():
+    # checks the first 10 indexes.
+    index = 0
+    arr = []
+    i = 10
+    while i > 0:
+        cap = cv2.VideoCapture(index)
+        if cap.read()[0]:
+            arr.append(index)
+            cap.release()
+        index += 1
+        i -= 1
+    return arr
 
 def to_angle(cx, cy, frame, camera_fov):
     """convert frame coordinate to angle"""
-    center_x = frame.shape[1]//2
-    center_y = frame.shape[0]//2
-    ax = (cx - center_x)*camera_fov/center[0]
-    ay = (cy - center_y)*camera_fov/center[0]
+    center_x = frame.shape[1] // 2
+    center_y = frame.shape[0] // 2
+    ax = (cx - center_x) * camera_fov / center_x
+    ay = (cy - center_y) * camera_fov / center_y
     
     return (ax, ay)
 
 parser=argparse.ArgumentParser()
 parser.add_argument('--image')
 
+#finds working camera
+
 args=parser.parse_args()
-video=cv.VideoCapture(0) # "0" is default camera, "1" for secondary camera -- if using usb on laptop change to "1"
+for cam in returnCameraIndexes():
+    video=cv.VideoCapture(cam) 
 
 while True:
     hasFrame,frame=video.read()
