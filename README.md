@@ -115,6 +115,11 @@ The primary objectives of this project are as follows:
   - Role: Electrial Team
   - Year: Sophomore
 
+- **[Aidan Briggs](https://www.linkedin.com/in/aidan-briggs-108297250/)**
+  - Major: Computer Science
+  - Role: Software Team
+  - Year: Sophomore
+
 ## Contributing 
 
 We welcome contributions from the open-source community and anyone interested in enhancing this project. To contribute:
