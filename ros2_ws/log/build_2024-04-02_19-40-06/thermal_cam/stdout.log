@@ -1,0 +1,23 @@
+running egg_info
+writing ../../build/thermal_cam/thermal_cam.egg-info/PKG-INFO
+writing dependency_links to ../../build/thermal_cam/thermal_cam.egg-info/dependency_links.txt
+writing entry points to ../../build/thermal_cam/thermal_cam.egg-info/entry_points.txt
+writing requirements to ../../build/thermal_cam/thermal_cam.egg-info/requires.txt
+writing top-level names to ../../build/thermal_cam/thermal_cam.egg-info/top_level.txt
+reading manifest file '../../build/thermal_cam/thermal_cam.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/thermal_cam/thermal_cam.egg-info/SOURCES.txt'
+running build
+running build_py
+copying thermal_cam/thermal_cam_pub.py -> /home/jacob/Documents/DRON/ros2_ws/build/thermal_cam/build/lib/thermal_cam
+running install
+running install_lib
+copying /home/jacob/Documents/DRON/ros2_ws/build/thermal_cam/build/lib/thermal_cam/thermal_cam_pub.py -> /home/jacob/Documents/DRON/ros2_ws/install/thermal_cam/lib/python3.10/site-packages/thermal_cam
+byte-compiling /home/jacob/Documents/DRON/ros2_ws/install/thermal_cam/lib/python3.10/site-packages/thermal_cam/thermal_cam_pub.py to thermal_cam_pub.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/jacob/Documents/DRON/ros2_ws/install/thermal_cam/lib/python3.10/site-packages/thermal_cam-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/thermal_cam/thermal_cam.egg-info to /home/jacob/Documents/DRON/ros2_ws/install/thermal_cam/lib/python3.10/site-packages/thermal_cam-0.0.0-py3.10.egg-info
+running install_scripts
+Installing test_publisher script to /home/jacob/Documents/DRON/ros2_ws/install/thermal_cam/lib/thermal_cam
+writing list of installed files to '/home/jacob/Documents/DRON/ros2_ws/build/thermal_cam/install.log'
