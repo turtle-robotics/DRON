@@ -20,6 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+        "thermal_cam_pub = thermal_cam.thermal_cam_pub:main",
+        "thermal_cam_sub = thermal_cam.thermal_cam_sub:main"
         ],
     },
 )

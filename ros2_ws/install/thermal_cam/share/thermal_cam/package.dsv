@@ -1,0 +1,6 @@
+source;share/thermal_cam/hook/pythonpath.ps1
+source;share/thermal_cam/hook/pythonpath.dsv
+source;share/thermal_cam/hook/pythonpath.sh
+source;share/thermal_cam/hook/ament_prefix_path.ps1
+source;share/thermal_cam/hook/ament_prefix_path.dsv
+source;share/thermal_cam/hook/ament_prefix_path.sh
