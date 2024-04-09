@@ -62,6 +62,7 @@ except:
     try:
         ser = serial.Serial('/dev/ttyACM0')  # hard coded and we need a better system
     except OSError:
+        print("OSERROR")
         ser = serial.Serial('/dev/ttyS3')
 usb = USB_Interface(ser)
 logger.debug('Connected USB interface:')

@@ -17,3 +17,7 @@ thermal_cam/__init__.py
 thermal_cam/thermal_cam.py
 thermal_cam/thermal_cam_pub.py
 thermal_cam/thermal_cam_sub.py
+thermal_cam/senxor/__init__.py
+thermal_cam/senxor/interfaces.py
+thermal_cam/senxor/mi48.py
+thermal_cam/senxor/utils.py

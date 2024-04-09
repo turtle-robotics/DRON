@@ -8,6 +8,7 @@
   <license>MIT</license>
 
   <depend>rclpy</depend>
+  <depend>std_msgs</depend>
   <depend>cv2</depend>
   <depend>senxor</depend>
   <depend>pyserial</depend>
@@ -17,6 +18,10 @@
   <depend>crcmod</depend>
   <depend>matplotlib</depend>
   <depend>cmapy</depend>
+  <depend>logging</depend>
+  <depend>sys</depend>
+  <depend>signal</depend>
+  <depend>os</depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
