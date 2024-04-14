@@ -71,8 +71,8 @@ The primary objectives of this project are as follows:
 ## Team Members
 
 - **[Abel Ayala](https://www.linkedin.com/in/ug-abel-ayala-co2024/)**
-  - Major: Multidiciplinary Engineering
-  - Role: Project Lead, Electronics Team
+  - Major: Multidiciplinary Engineering Technology
+  - Role: Project Lead, Software & Mechanical
   - Year: Senior
 
 - **[Ian Wilhite](https://www.linkedin.com/in/ian-wilhite)**
@@ -80,44 +80,44 @@ The primary objectives of this project are as follows:
   - Role: Software Team
   - Year: Sophomore
 
-- **[Christus Creer](https://www.linkedin.com/in/fpchristuscreer)**
-  - Major: Industrial Systems Engineering
-  - Role: Mechanical/Electrical Team
-  - Year: Sophomore
-
-- **[Jacob Adamson](https://www.linkedin.com/in/jacob-adamson/)**
-  - Major: Electrical Engineering
-  - Role: Electrical Team
-  - Year: Senior
-
-- **[Elizabeth Hannsz](https://www.linkedin.com/in/elizabeth-hannsz-2932a51ba/)**
-  - Major: Aerospace Engineering
-  - Role: Mechanical Team
-  - Year: Junior
-
-- **[Alan Alvarado](https://www.linkedin.com/in/alan-alvarado-1797102ab)**
-  - Major: Mechanical Engineering
-  - Role: Mechanical Team
-  - Year: Senior*
-
-- **[Malcolm Ferguson](https://www.linkedin.com/in/malcolmkferguson)**
-  - Major: Aerospace Engineering
-  - Role: Mechanical Team
-  - Year: Sophomore
-
-- **[Aaron Velez](https://www.linkedin.com/in/aaron-velez-1083bb2b4)**
-  - Major: Manufacturing and Mechanical Technology
-  - Role: Mechanical Team
-  - Year: Junior
-
-- **[Lucas Ybarra](https://www.linkedin.com/in/lucas-ybarra-847ba72b6/)**
-  - Major: Electrical Engineering
-  - Role: Electrial Team
-  - Year: Sophomore
-
 - **[Aidan Briggs](https://www.linkedin.com/in/aidan-briggs-108297250/)**
   - Major: Computer Science
   - Role: Software Team
+  - Year: Sophomore
+
+- **[Elizabeth Hannsz](https://www.linkedin.com/in/elizabeth-hannsz-2932a51ba/)**
+  - Major: Aerospace Engineering
+  - Role: Mechanical Design Team
+  - Year: Junior
+    
+- **[Malcolm Ferguson](https://www.linkedin.com/in/malcolmkferguson)**
+  - Major: Aerospace Engineering
+  - Role: Mechanical Design Team
+  - Year: Sophomore
+    
+- **[Christus Creer](https://www.linkedin.com/in/fpchristuscreer)**
+  - Major: Industrial Systems Engineering
+  - Role: Mechanical Design Team
+  - Year: Sophomore
+
+- **[Alan Alvarado](https://www.linkedin.com/in/alan-alvarado-1797102ab)**
+  - Major: Mechanical Engineering
+  - Role: Mechanical Design Team
+  - Year: Senior*
+
+- **[Aaron Velez](https://www.linkedin.com/in/aaron-velez-1083bb2b4)**
+  - Major: Manufacturing and Mechanical Technology
+  - Role: Mechanical Design Team
+  - Year: Junior
+ 
+- **[Jacob Adamson](https://www.linkedin.com/in/jacob-adamson/)**
+  - Major: Electrical Engineering
+  - Role: Electrical Design Team
+  - Year: Senior
+  - 
+- **[Lucas Ybarra](https://www.linkedin.com/in/lucas-ybarra-847ba72b6/)**
+  - Major: Electrical Engineering
+  - Role: Electrial Design Team
   - Year: Sophomore
 
 ## Contributing 
