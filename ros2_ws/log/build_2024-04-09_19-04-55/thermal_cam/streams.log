@@ -1,0 +1,26 @@
+[0.558s] Invoking command in '/home/jacob/Documents/DRON/ros2_ws/src/thermal_cam': PYTHONPATH=/home/jacob/Documents/DRON/ros2_ws/build/thermal_cam/prefix_override:/home/jacob/Documents/DRON/ros2_ws/install/thermal_cam/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/thermal_cam build --build-base /home/jacob/Documents/DRON/ros2_ws/build/thermal_cam/build install --record /home/jacob/Documents/DRON/ros2_ws/build/thermal_cam/install.log --single-version-externally-managed install_data
+[0.716s] running egg_info
+[0.716s] writing ../../build/thermal_cam/thermal_cam.egg-info/PKG-INFO
+[0.717s] writing dependency_links to ../../build/thermal_cam/thermal_cam.egg-info/dependency_links.txt
+[0.717s] writing entry points to ../../build/thermal_cam/thermal_cam.egg-info/entry_points.txt
+[0.717s] writing requirements to ../../build/thermal_cam/thermal_cam.egg-info/requires.txt
+[0.717s] writing top-level names to ../../build/thermal_cam/thermal_cam.egg-info/top_level.txt
+[0.718s] reading manifest file '../../build/thermal_cam/thermal_cam.egg-info/SOURCES.txt'
+[0.718s] adding license file 'LICENSE'
+[0.719s] writing manifest file '../../build/thermal_cam/thermal_cam.egg-info/SOURCES.txt'
+[0.719s] running build
+[0.719s] running build_py
+[0.719s] copying thermal_cam/thermal_cam_pub.py -> /home/jacob/Documents/DRON/ros2_ws/build/thermal_cam/build/lib/thermal_cam
+[0.719s] running install
+[0.720s] running install_lib
+[0.720s] copying /home/jacob/Documents/DRON/ros2_ws/build/thermal_cam/build/lib/thermal_cam/thermal_cam_pub.py -> /home/jacob/Documents/DRON/ros2_ws/install/thermal_cam/lib/python3.10/site-packages/thermal_cam
+[0.721s] byte-compiling /home/jacob/Documents/DRON/ros2_ws/install/thermal_cam/lib/python3.10/site-packages/thermal_cam/thermal_cam_pub.py to thermal_cam_pub.cpython-310.pyc
+[0.721s] running install_data
+[0.721s] running install_egg_info
+[0.722s] removing '/home/jacob/Documents/DRON/ros2_ws/install/thermal_cam/lib/python3.10/site-packages/thermal_cam-0.0.0-py3.10.egg-info' (and everything under it)
+[0.723s] Copying ../../build/thermal_cam/thermal_cam.egg-info to /home/jacob/Documents/DRON/ros2_ws/install/thermal_cam/lib/python3.10/site-packages/thermal_cam-0.0.0-py3.10.egg-info
+[0.723s] running install_scripts
+[0.738s] Installing thermal_cam_pub script to /home/jacob/Documents/DRON/ros2_ws/install/thermal_cam/lib/thermal_cam
+[0.738s] Installing thermal_cam_sub script to /home/jacob/Documents/DRON/ros2_ws/install/thermal_cam/lib/thermal_cam
+[0.738s] writing list of installed files to '/home/jacob/Documents/DRON/ros2_ws/build/thermal_cam/install.log'
+[0.754s] Invoked command in '/home/jacob/Documents/DRON/ros2_ws/src/thermal_cam' returned '0': PYTHONPATH=/home/jacob/Documents/DRON/ros2_ws/build/thermal_cam/prefix_override:/home/jacob/Documents/DRON/ros2_ws/install/thermal_cam/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/thermal_cam build --build-base /home/jacob/Documents/DRON/ros2_ws/build/thermal_cam/build install --record /home/jacob/Documents/DRON/ros2_ws/build/thermal_cam/install.log --single-version-externally-managed install_data
