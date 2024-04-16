@@ -1,6 +1,8 @@
 import cv2 as cv
 import argparse
 
+import numpy as np
+
 
 def to_angle(cx, cy, frame, camera_fov):
     """convert frame coordinate to angle"""
@@ -121,15 +123,33 @@ while True:
     img8 = cv.normalize(frame.astype('uint8'), None, 255, 0,
                         norm_type=cv.NORM_MINMAX,
                         dtype=cv.CV_8U)
+    imrgb =cv.cvtColor(img8, cv.COLOR_GRAY2RGB)
+    r,g,b =cv.split(imrgb)
+    zeros_ch = np.zeros(imrgb.shape[0:2], dtype="uint8")
+    imrgb =cv.merge([255-r,zeros_ch,b])
+
+    bigimrgb = cv.resize(imrgb, (780, 540),
+                      interpolation=cv.INTER_LINEAR)
+
     # convert frame to grayscale
     # gray = cv.cvtColor(img8, cv.COLOR_BGR2GRAY)
     # gaussian blur to reduce the number of contours
-    blur = cv.medianBlur(img8, 25)
+    blur = cv.medianBlur(img8, 19)
+    bigblur = cv.resize(blur, (780, 540),
+                       interpolation=cv.INTER_LINEAR)
+
+    big =frame.max()
+    small=frame.min()
+    threshhold=28
+    hardthresh = (threshhold-small)/(big-small)*255 if threshhold < big else 255
     # binary mask
-    ret, mask = cv.threshold(blur, 100, 255, cv.THRESH_BINARY)
+    print(hardthresh)
+    ret, mask = cv.threshold(bigblur, hardthresh, 255, cv.THRESH_BINARY)
 
     # drawing vector from centerline to centroid of whitespace
     M = cv.moments(mask)
+    cx = 1
+    cy = 1
     if M["m00"] != 0:
         cx = int(M["m10"] / M["m00"])
         cy = int(M["m01"] / M["m00"])
@@ -143,6 +163,12 @@ while True:
     # drawing vectors from centerline to the centroid of each contour
     contours, _ = cv.findContours(mask, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
     cv.drawContours(frame, contours, -1, (0, 255, 0), 3)
+
+
+
+    for cnt in contours:
+        x,y,w,h =cv.boundingRect(cnt)
+        cv.rectangle(bigimrgb,(x,y),(x+w, y+h),(0,255,0), 2)
 
     for i in range(len(contours)):
         M2 = cv.moments(contours[i])
@@ -160,10 +186,8 @@ while True:
     print(f'{direction_vector_angles[0]:.4}, {direction_vector_angles[1]:.4}')
     cv.imshow("feed", frame)
     cv.imshow("img", img8)
-    # cv.imshow("gray", gray)
-    cv.imshow("blur", blur)
-    cv.imshow("thresh", mask)
+    cv.imshow("gray", bigimrgb)
+    cv.imshow("big", bigblur)
 
     if cv.waitKey(1) & 0xFF == ord('q'):
         break
-
