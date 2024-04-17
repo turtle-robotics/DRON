@@ -85,6 +85,11 @@ The primary objectives of this project are as follows:
   - Role: Software Team
   - Year: Sophomore
 
+- **[Jacob Fuerst](https://www.linkedin.com/in/jacob-fuerst)**
+  - Major: Mechanical Engineering
+  - Role: Software Team
+  - Year: Freshman
+ 
 - **[Elizabeth Hannsz](https://www.linkedin.com/in/elizabeth-hannsz-2932a51ba/)**
   - Major: Aerospace Engineering
   - Role: Mechanical Design Team
