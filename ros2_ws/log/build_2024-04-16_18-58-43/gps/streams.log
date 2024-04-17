@@ -1,0 +1,43 @@
+[1.399s] Invoking command in '/home/brussell03/DRON/ros2_ws/src/gps': PYTHONPATH=/home/brussell03/DRON/ros2_ws/build/gps/prefix_override:/home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/gps build --build-base /home/brussell03/DRON/ros2_ws/build/gps/build install --record /home/brussell03/DRON/ros2_ws/build/gps/install.log --single-version-externally-managed
+[1.855s] running egg_info
+[1.856s] creating ../../build/gps/gps.egg-info
+[1.856s] writing ../../build/gps/gps.egg-info/PKG-INFO
+[1.857s] writing dependency_links to ../../build/gps/gps.egg-info/dependency_links.txt
+[1.857s] writing entry points to ../../build/gps/gps.egg-info/entry_points.txt
+[1.857s] writing requirements to ../../build/gps/gps.egg-info/requires.txt
+[1.857s] writing top-level names to ../../build/gps/gps.egg-info/top_level.txt
+[1.858s] writing manifest file '../../build/gps/gps.egg-info/SOURCES.txt'
+[1.860s] reading manifest file '../../build/gps/gps.egg-info/SOURCES.txt'
+[1.861s] writing manifest file '../../build/gps/gps.egg-info/SOURCES.txt'
+[1.862s] running build
+[1.862s] running build_py
+[1.862s] creating /home/brussell03/DRON/ros2_ws/build/gps/build
+[1.862s] creating /home/brussell03/DRON/ros2_ws/build/gps/build/lib
+[1.862s] creating /home/brussell03/DRON/ros2_ws/build/gps/build/lib/gps
+[1.863s] copying gps/__init__.py -> /home/brussell03/DRON/ros2_ws/build/gps/build/lib/gps
+[1.863s] copying gps/gps_subscriber.py -> /home/brussell03/DRON/ros2_ws/build/gps/build/lib/gps
+[1.863s] copying gps/gps_publisher.py -> /home/brussell03/DRON/ros2_ws/build/gps/build/lib/gps
+[1.863s] running install
+[1.863s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[1.863s]   warnings.warn(
+[1.864s] running install_lib
+[1.865s] creating /home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps
+[1.865s] copying /home/brussell03/DRON/ros2_ws/build/gps/build/lib/gps/__init__.py -> /home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps
+[1.865s] copying /home/brussell03/DRON/ros2_ws/build/gps/build/lib/gps/gps_subscriber.py -> /home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps
+[1.865s] copying /home/brussell03/DRON/ros2_ws/build/gps/build/lib/gps/gps_publisher.py -> /home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps
+[1.866s] byte-compiling /home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps/__init__.py to __init__.cpython-310.pyc
+[1.866s] byte-compiling /home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps/gps_subscriber.py to gps_subscriber.cpython-310.pyc
+[1.867s] byte-compiling /home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps/gps_publisher.py to gps_publisher.cpython-310.pyc
+[1.868s] running install_data
+[1.869s] creating /home/brussell03/DRON/ros2_ws/install/gps/share/ament_index
+[1.869s] creating /home/brussell03/DRON/ros2_ws/install/gps/share/ament_index/resource_index
+[1.869s] creating /home/brussell03/DRON/ros2_ws/install/gps/share/ament_index/resource_index/packages
+[1.869s] copying resource/gps -> /home/brussell03/DRON/ros2_ws/install/gps/share/ament_index/resource_index/packages
+[1.870s] copying package.xml -> /home/brussell03/DRON/ros2_ws/install/gps/share/gps
+[1.870s] running install_egg_info
+[1.872s] Copying ../../build/gps/gps.egg-info to /home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps-0.0.0-py3.10.egg-info
+[1.873s] running install_scripts
+[1.913s] Installing gps_pub script to /home/brussell03/DRON/ros2_ws/install/gps/lib/gps
+[1.913s] Installing gps_sub script to /home/brussell03/DRON/ros2_ws/install/gps/lib/gps
+[1.913s] writing list of installed files to '/home/brussell03/DRON/ros2_ws/build/gps/install.log'
+[1.952s] Invoked command in '/home/brussell03/DRON/ros2_ws/src/gps' returned '0': PYTHONPATH=/home/brussell03/DRON/ros2_ws/build/gps/prefix_override:/home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/gps build --build-base /home/brussell03/DRON/ros2_ws/build/gps/build install --record /home/brussell03/DRON/ros2_ws/build/gps/install.log --single-version-externally-managed

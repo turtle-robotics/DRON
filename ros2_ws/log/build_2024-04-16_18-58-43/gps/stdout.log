@@ -1,0 +1,39 @@
+running egg_info
+creating ../../build/gps/gps.egg-info
+writing ../../build/gps/gps.egg-info/PKG-INFO
+writing dependency_links to ../../build/gps/gps.egg-info/dependency_links.txt
+writing entry points to ../../build/gps/gps.egg-info/entry_points.txt
+writing requirements to ../../build/gps/gps.egg-info/requires.txt
+writing top-level names to ../../build/gps/gps.egg-info/top_level.txt
+writing manifest file '../../build/gps/gps.egg-info/SOURCES.txt'
+reading manifest file '../../build/gps/gps.egg-info/SOURCES.txt'
+writing manifest file '../../build/gps/gps.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/brussell03/DRON/ros2_ws/build/gps/build
+creating /home/brussell03/DRON/ros2_ws/build/gps/build/lib
+creating /home/brussell03/DRON/ros2_ws/build/gps/build/lib/gps
+copying gps/__init__.py -> /home/brussell03/DRON/ros2_ws/build/gps/build/lib/gps
+copying gps/gps_subscriber.py -> /home/brussell03/DRON/ros2_ws/build/gps/build/lib/gps
+copying gps/gps_publisher.py -> /home/brussell03/DRON/ros2_ws/build/gps/build/lib/gps
+running install
+running install_lib
+creating /home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps
+copying /home/brussell03/DRON/ros2_ws/build/gps/build/lib/gps/__init__.py -> /home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps
+copying /home/brussell03/DRON/ros2_ws/build/gps/build/lib/gps/gps_subscriber.py -> /home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps
+copying /home/brussell03/DRON/ros2_ws/build/gps/build/lib/gps/gps_publisher.py -> /home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps
+byte-compiling /home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps/gps_subscriber.py to gps_subscriber.cpython-310.pyc
+byte-compiling /home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps/gps_publisher.py to gps_publisher.cpython-310.pyc
+running install_data
+creating /home/brussell03/DRON/ros2_ws/install/gps/share/ament_index
+creating /home/brussell03/DRON/ros2_ws/install/gps/share/ament_index/resource_index
+creating /home/brussell03/DRON/ros2_ws/install/gps/share/ament_index/resource_index/packages
+copying resource/gps -> /home/brussell03/DRON/ros2_ws/install/gps/share/ament_index/resource_index/packages
+copying package.xml -> /home/brussell03/DRON/ros2_ws/install/gps/share/gps
+running install_egg_info
+Copying ../../build/gps/gps.egg-info to /home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps-0.0.0-py3.10.egg-info
+running install_scripts
+Installing gps_pub script to /home/brussell03/DRON/ros2_ws/install/gps/lib/gps
+Installing gps_sub script to /home/brussell03/DRON/ros2_ws/install/gps/lib/gps
+writing list of installed files to '/home/brussell03/DRON/ros2_ws/build/gps/install.log'

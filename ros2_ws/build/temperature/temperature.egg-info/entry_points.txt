@@ -1,0 +1,4 @@
+[console_scripts]
+temperature_pub = temperature.temp_pub:main
+temperature_sub = temperature.temp_sub:main
+

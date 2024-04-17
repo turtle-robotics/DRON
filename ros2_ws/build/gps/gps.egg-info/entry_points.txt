@@ -1,0 +1,4 @@
+[console_scripts]
+gps_pub = gps.gps_publisher:main
+gps_sub = gps.gps_subscriber:main
+
