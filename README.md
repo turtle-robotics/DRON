@@ -114,7 +114,7 @@ The primary objectives of this project are as follows:
   - Major: Electrical Engineering
   - Role: Electrical Design Team
   - Year: Senior
-  - 
+  
 - **[Lucas Ybarra](https://www.linkedin.com/in/lucas-ybarra-847ba72b6/)**
   - Major: Electrical Engineering
   - Role: Electrial Design Team
