@@ -124,6 +124,21 @@ The primary objectives of this project are as follows:
   - Major: Electrical Engineering
   - Role: Electrial Design Team
   - Year: Sophomore
+ 
+- **[Felix Chim](https://www.linkedin.com/in/felix-chim-3066a6228)**
+  - Major: Aerospace Engineering 
+  - Role: Mechanical Team
+  - Year: Sophomore
+ 
+- **[Alonso Peralta](https://www.linkedin.com/in/alonso-peralta-espinoza-715419212/)**
+  - Major: Computer Engineer
+  - Role: Software Team
+  - Year: Sophomore
+ 
+- **[Brian Russell](www.linkedin.com/in/brian-russell-275a361a3)**
+  - Major: Aerospace Engineering
+  - Role: Software Team
+  - Year: Sophomore
 
 ## Contributing 
 
