@@ -85,6 +85,11 @@ The primary objectives of this project are as follows:
   - Role: Software Team
   - Year: Sophomore
 
+- **[Jacob Fuerst](https://www.linkedin.com/in/jacob-fuerst)**
+  - Major: Mechanical Engineering
+  - Role: Software Team
+  - Year: Freshman
+ 
 - **[Elizabeth Hannsz](https://www.linkedin.com/in/elizabeth-hannsz-2932a51ba/)**
   - Major: Aerospace Engineering
   - Role: Mechanical Design Team
@@ -114,10 +119,25 @@ The primary objectives of this project are as follows:
   - Major: Electrical Engineering
   - Role: Electrical Design Team
   - Year: Senior
-  - 
+  
 - **[Lucas Ybarra](https://www.linkedin.com/in/lucas-ybarra-847ba72b6/)**
   - Major: Electrical Engineering
   - Role: Electrial Design Team
+  - Year: Sophomore
+ 
+- **[Felix Chim](https://www.linkedin.com/in/felix-chim-3066a6228)**
+  - Major: Aerospace Engineering 
+  - Role: Mechanical Team
+  - Year: Sophomore
+ 
+- **[Alonso Peralta](https://www.linkedin.com/in/alonso-peralta-espinoza-715419212/)**
+  - Major: Computer Engineer
+  - Role: Software Team
+  - Year: Sophomore
+ 
+- **[Brian Russell](www.linkedin.com/in/brian-russell-275a361a3)**
+  - Major: Aerospace Engineering
+  - Role: Software Team
   - Year: Sophomore
 
 ## Contributing 
