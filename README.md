@@ -91,7 +91,7 @@ The primary objectives of this project are as follows:
   - Year: Freshman
 
 
-###Mechanical Design Subteam
+### Mechanical Design Subteam
 
 - **[Malcolm Ferguson](https://www.linkedin.com/in/malcolmkferguson)**
   - Major: Aerospace Engineering
@@ -113,7 +113,7 @@ The primary objectives of this project are as follows:
   - Role: Mechanical Design Team
   - Year: Junior
 
-###Software Subteam
+### Software Subteam
 
 - **[Alonso Peralta](https://www.linkedin.com/in/alonso-peralta-espinoza-715419212/)**
   - Major: Computer Engineering
@@ -125,7 +125,7 @@ The primary objectives of this project are as follows:
   - Role: Software Team
   - Year: Sophomore
 
-###Electrical Subteam
+### Electrical Subteam
  
 - **[Jacob Adamson](https://www.linkedin.com/in/jacob-adamson/)**
   - Major: Electrical Engineering
@@ -144,6 +144,8 @@ The primary objectives of this project are as follows:
 
 
 ### Alumni
+
+
 ## Contributing 
 
 We welcome contributions from the open-source community and anyone interested in enhancing this project. To contribute:
