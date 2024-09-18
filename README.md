@@ -70,31 +70,29 @@ The primary objectives of this project are as follows:
 
 ## Team Members
 
-- **[Abel Ayala](https://www.linkedin.com/in/ug-abel-ayala-co2024/)**
-  - Major: Multidiciplinary Engineering Technology
-  - Role: Project Lead, Software & Mechanical
-  - Year: Senior
-
 - **[Ian Wilhite](https://www.linkedin.com/in/ian-wilhite)**
-  - Major: Mechanical Engineering
-  - Role: Software Team
+  - Major: Robotics and Controls Engineering
+  - Role: Project Lead
   - Year: Sophomore
+ 
+- **[Elizabeth Hannsz](https://www.linkedin.com/in/elizabeth-hannsz-2932a51ba/)**
+  - Major: Aerospace Engineering
+  - Role: Mechanical Design Subteam Lead
+  - Year: Junior
 
 - **[Aidan Briggs](https://www.linkedin.com/in/aidan-briggs-108297250/)**
   - Major: Computer Science
-  - Role: Software Team
+  - Role: Software Subteam Lead
   - Year: Sophomore
 
 - **[Jacob Fuerst](https://www.linkedin.com/in/jacob-fuerst)**
   - Major: Mechanical Engineering
-  - Role: Software Team
+  - Role: Electrical Subteam Lead
   - Year: Freshman
- 
-- **[Elizabeth Hannsz](https://www.linkedin.com/in/elizabeth-hannsz-2932a51ba/)**
-  - Major: Aerospace Engineering
-  - Role: Mechanical Design Team
-  - Year: Junior
-    
+
+
+###Mechanical Design Subteam
+
 - **[Malcolm Ferguson](https://www.linkedin.com/in/malcolmkferguson)**
   - Major: Aerospace Engineering
   - Role: Mechanical Design Team
@@ -114,6 +112,20 @@ The primary objectives of this project are as follows:
   - Major: Manufacturing and Mechanical Technology
   - Role: Mechanical Design Team
   - Year: Junior
+
+###Software Subteam
+
+- **[Alonso Peralta](https://www.linkedin.com/in/alonso-peralta-espinoza-715419212/)**
+  - Major: Computer Engineering
+  - Role: Software Team
+  - Year: Sophomore
+ 
+- **[Brian Russell](www.linkedin.com/in/brian-russell-275a361a3)**
+  - Major: Aerospace Engineering
+  - Role: Software Team
+  - Year: Sophomore
+
+###Electrical Subteam
  
 - **[Jacob Adamson](https://www.linkedin.com/in/jacob-adamson/)**
   - Major: Electrical Engineering
@@ -129,17 +141,9 @@ The primary objectives of this project are as follows:
   - Major: Aerospace Engineering 
   - Role: Mechanical Team
   - Year: Sophomore
- 
-- **[Alonso Peralta](https://www.linkedin.com/in/alonso-peralta-espinoza-715419212/)**
-  - Major: Computer Engineer
-  - Role: Software Team
-  - Year: Sophomore
- 
-- **[Brian Russell](www.linkedin.com/in/brian-russell-275a361a3)**
-  - Major: Aerospace Engineering
-  - Role: Software Team
-  - Year: Sophomore
 
+
+### Alumni
 ## Contributing 
 
 We welcome contributions from the open-source community and anyone interested in enhancing this project. To contribute:
