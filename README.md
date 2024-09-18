@@ -90,7 +90,6 @@ The primary objectives of this project are as follows:
   - Role: Electrical Subteam Lead
   - Year: Freshman
 
-
 ### Mechanical Design Subteam
 
 - **[Malcolm Ferguson](https://www.linkedin.com/in/malcolmkferguson)**
@@ -145,6 +144,9 @@ The primary objectives of this project are as follows:
 
 ### Alumni
 
+- **[Abel Ayala](https://www.linkedin.com/in/ug-abel-ayala-co2024/)**
+  - Major: Multidiciplinary Engineering Technology
+  - Role: Project Lead, Software & Mechanical
 
 ## Contributing 
 
