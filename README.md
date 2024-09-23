@@ -64,7 +64,7 @@ To get started with DRON, follow these steps:
 The Disaster Response Observation Network, more commonly known as DRON, is the student led project with the goal of aiding firefighters and first responders during large structural fires by providing the detailed information about the location, intensity and growth of fires is crucial to the proper response, and by improving the ability of first responders to actively respond to events, we intend to save lives. 
 
 The primary objectives of this project are as follows:
-- Design and implement a drone with all sensors for autonomous flight and data aquisition.
+- and implement a drone with all sensors for autonomous flight and data aquisition.
 - Collaberate between drones for decision making and obstacle detection.
 - Communicate live data to the first responders in an easy to understand format.
 
@@ -73,43 +73,48 @@ The primary objectives of this project are as follows:
 - **[Ian Wilhite](https://www.linkedin.com/in/ian-wilhite)**
   - Major: Robotics and Controls Engineering
   - Role: Project Lead
-  - Year: Sophomore
+  - Year: Junior
  
 - **[Elizabeth Hannsz](https://www.linkedin.com/in/elizabeth-hannsz-2932a51ba/)**
   - Major: Aerospace Engineering
-  - Role: Mechanical Design Subteam Lead
-  - Year: Junior
+  - Role: Mechanical Subteam Lead
+  - Year: Senior
 
 - **[Aidan Briggs](https://www.linkedin.com/in/aidan-briggs-108297250/)**
   - Major: Computer Science
   - Role: Software Subteam Lead
-  - Year: Sophomore
+  - Year: Junior
 
 - **[Jacob Fuerst](https://www.linkedin.com/in/jacob-fuerst)**
   - Major: Mechanical Engineering
   - Role: Electrical Subteam Lead
-  - Year: Freshman
+  - Year: Sophomore
 
-### Mechanical Design Subteam
+### Mechanical Subteam
 
 - **[Malcolm Ferguson](https://www.linkedin.com/in/malcolmkferguson)**
-  - Major: Aerospace Engineering
-  - Role: Mechanical Design Team
+  - Major: Mechatronics Engineering
+  - Role: Mechanical Team
   - Year: Sophomore
     
 - **[Christus Creer](https://www.linkedin.com/in/fpchristuscreer)**
   - Major: Industrial Systems Engineering
-  - Role: Mechanical Design Team
-  - Year: Sophomore
+  - Role: Mechanical Team
+  - Year: Junior
 
 - **[Alan Alvarado](https://www.linkedin.com/in/alan-alvarado-1797102ab)**
   - Major: Mechanical Engineering
-  - Role: Mechanical Design Team
-  - Year: Senior*
+  - Role: Mechanical Team
+  - Year: Sophomore
+
+- **[Nahum Tadesse](https://www.linkedin.com/in/nahum-tadesse-51ba922b6/)**
+  - Major: Mechanical Engineering
+  - Role: Mechanical Team
+  - Year: Sophomore
 
 - **[Aaron Velez](https://www.linkedin.com/in/aaron-velez-1083bb2b4)**
   - Major: Manufacturing and Mechanical Technology
-  - Role: Mechanical Design Team
+  - Role: Mechanical Team
   - Year: Junior
 
 ### Software Subteam
@@ -124,23 +129,42 @@ The primary objectives of this project are as follows:
   - Role: Software Team
   - Year: Sophomore
 
+- **[Treasa Francis](https://www.linkedin.com/in/treasafrancis/)**
+  - Major: Computer Engineering
+  - Role: Software Team
+  - Year: Freshman
+
+- **[Nickolas Summa](https://www.linkedin.com/in/nicholas-summa-3905342b8/)**
+  - Major: Computer Engineering
+  - Role: Software Team
+  - Year: Sophomore
+
 ### Electrical Subteam
  
 - **[Jacob Adamson](https://www.linkedin.com/in/jacob-adamson/)**
   - Major: Electrical Engineering
-  - Role: Electrical Design Team
+  - Role: Electrical Team
   - Year: Senior
   
 - **[Lucas Ybarra](https://www.linkedin.com/in/lucas-ybarra-847ba72b6/)**
   - Major: Electrical Engineering
-  - Role: Electrial Design Team
+  - Role: Electrial Team
   - Year: Sophomore
  
 - **[Felix Chim](https://www.linkedin.com/in/felix-chim-3066a6228)**
   - Major: Aerospace Engineering 
-  - Role: Mechanical Team
+  - Role: Electrial Team
   - Year: Sophomore
-
+  
+- **[Aneek Roy](https://www.linkedin.com/in/aneekroy/)**
+  - Major: Electrical Engineering 
+  - Role: Electrial Team
+  - Year: Sophomore
+ 
+- **[Quinn Belmar](https://www.linkedin.com/in/quinnbelmar/)**
+  - Major: Mechanical Engineering 
+  - Role: Electrial Team
+  - Year: Sophomore
 
 ### Alumni
 
