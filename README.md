@@ -106,7 +106,12 @@ The primary objectives of this project are as follows:
   - Major: Mechanical Engineering
   - Role: Mechanical Team
   - Year: Sophomore
-
+ 
+- **[Felix Chim](https://www.linkedin.com/in/felix-chim-3066a6228)**
+  - Major: Aerospace Engineering 
+  - Role: Electrial Team
+  - Year: Junior
+    
 - **[Nahum Tadesse](https://www.linkedin.com/in/nahum-tadesse-51ba922b6/)**
   - Major: Mechanical Engineering
   - Role: Mechanical Team
@@ -117,6 +122,11 @@ The primary objectives of this project are as follows:
   - Role: Mechanical Team
   - Year: Junior
 
+- **[Elizabeth Person](https://www.linkedin.com/in/elizabeth-person-041a51252/)**
+  - Major: Aerospace Engineering
+  - Role: Mechanical Team
+  - Year: Freshman
+    
 ### Software Subteam
 
 - **[Alonso Peralta](https://www.linkedin.com/in/alonso-peralta-espinoza-715419212/)**
@@ -148,11 +158,6 @@ The primary objectives of this project are as follows:
   
 - **[Lucas Ybarra](https://www.linkedin.com/in/lucas-ybarra-847ba72b6/)**
   - Major: Electrical Engineering
-  - Role: Electrial Team
-  - Year: Sophomore
- 
-- **[Felix Chim](https://www.linkedin.com/in/felix-chim-3066a6228)**
-  - Major: Aerospace Engineering 
   - Role: Electrial Team
   - Year: Sophomore
   
