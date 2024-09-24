@@ -109,7 +109,7 @@ The primary objectives of this project are as follows:
  
 - **[Felix Chim](https://www.linkedin.com/in/felix-chim-3066a6228)**
   - Major: Aerospace Engineering 
-  - Role: Electrial Team
+  - Role: Mechanical Team
   - Year: Junior
     
 - **[Nahum Tadesse](https://www.linkedin.com/in/nahum-tadesse-51ba922b6/)**
