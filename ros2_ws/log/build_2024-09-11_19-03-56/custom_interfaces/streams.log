@@ -1,0 +1,153 @@
+[0.619s] Invoking command in '/home/brussell03/DRON/ros2_ws/build/custom_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brussell03/DRON/ros2_ws/install/thermal_cam:/home/brussell03/DRON/ros2_ws/install/temperature:/home/brussell03/DRON/ros2_ws/install/gps:/home/brussell03/ros2_ws/install/robot_controller:/home/brussell03/ros2_ws/install/launch_testing_examples:/home/brussell03/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_service:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_publisher:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_client:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_server:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_client:/home/brussell03/ros2_ws/install/examples_rclpy_guard_conditions:/home/brussell03/ros2_ws/install/examples_rclpy_executors:/home/brussell03/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/brussell03/ros2_ws/install/examples_rclcpp_minimal_action_client:/opt/ros/humble /usr/bin/cmake --build /home/brussell03/DRON/ros2_ws/build/custom_interfaces -- -j8 -l8
+[1.859s] [35m[1mConsolidate compiler generated dependencies of target custom_interfaces__rosidl_generator_c[0m
+[1.859s] [  3%] Built target custom_interfaces__cpp
+[1.859s] [ 12%] Built target custom_interfaces__rosidl_generator_c
+[1.859s] [ 12%] Built target ament_cmake_python_copy_custom_interfaces
+[1.859s] [35m[1mConsolidate compiler generated dependencies of target custom_interfaces__rosidl_typesupport_cpp[0m
+[1.859s] [35m[1mConsolidate compiler generated dependencies of target custom_interfaces__rosidl_typesupport_fastrtps_cpp[0m
+[1.860s] [35m[1mConsolidate compiler generated dependencies of target custom_interfaces__rosidl_typesupport_introspection_cpp[0m
+[1.860s] [35m[1mConsolidate compiler generated dependencies of target custom_interfaces__rosidl_typesupport_introspection_c[0m
+[1.860s] [35m[1mConsolidate compiler generated dependencies of target custom_interfaces__rosidl_typesupport_c[0m
+[1.860s] [35m[1mConsolidate compiler generated dependencies of target custom_interfaces__rosidl_typesupport_fastrtps_c[0m
+[1.861s] [ 22%] Built target custom_interfaces__rosidl_typesupport_cpp
+[1.861s] [ 32%] Built target custom_interfaces__rosidl_typesupport_introspection_c
+[1.861s] [ 41%] Built target custom_interfaces__rosidl_typesupport_fastrtps_cpp
+[1.861s] [ 51%] Built target custom_interfaces__rosidl_typesupport_introspection_cpp
+[1.861s] [ 61%] Built target custom_interfaces__rosidl_typesupport_c
+[1.861s] [ 70%] Built target custom_interfaces__rosidl_typesupport_fastrtps_c
+[1.861s] [ 70%] Built target custom_interfaces
+[1.861s] [ 74%] Built target custom_interfaces__py
+[1.861s] [35m[1mConsolidate compiler generated dependencies of target custom_interfaces__rosidl_generator_py[0m
+[1.862s] [ 80%] Built target custom_interfaces__rosidl_generator_py
+[1.862s] [35m[1mConsolidate compiler generated dependencies of target custom_interfaces__rosidl_typesupport_introspection_c__pyext[0m
+[1.862s] [35m[1mConsolidate compiler generated dependencies of target custom_interfaces__rosidl_typesupport_c__pyext[0m
+[1.862s] [35m[1mConsolidate compiler generated dependencies of target custom_interfaces__rosidl_typesupport_fastrtps_c__pyext[0m
+[1.862s] [ 87%] Built target custom_interfaces__rosidl_typesupport_introspection_c__pyext
+[1.862s] [ 93%] Built target custom_interfaces__rosidl_typesupport_c__pyext
+[1.862s] [100%] Built target custom_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[1.862s] running egg_info
+[1.862s] writing custom_interfaces.egg-info/PKG-INFO
+[1.863s] writing dependency_links to custom_interfaces.egg-info/dependency_links.txt
+[1.863s] writing top-level names to custom_interfaces.egg-info/top_level.txt
+[1.863s] reading manifest file 'custom_interfaces.egg-info/SOURCES.txt'
+[1.863s] writing manifest file 'custom_interfaces.egg-info/SOURCES.txt'
+[1.863s] [100%] Built target ament_cmake_python_build_custom_interfaces_egg
+[1.864s] Invoked command in '/home/brussell03/DRON/ros2_ws/build/custom_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brussell03/DRON/ros2_ws/install/thermal_cam:/home/brussell03/DRON/ros2_ws/install/temperature:/home/brussell03/DRON/ros2_ws/install/gps:/home/brussell03/ros2_ws/install/robot_controller:/home/brussell03/ros2_ws/install/launch_testing_examples:/home/brussell03/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_service:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_publisher:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_client:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_server:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_client:/home/brussell03/ros2_ws/install/examples_rclpy_guard_conditions:/home/brussell03/ros2_ws/install/examples_rclpy_executors:/home/brussell03/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/brussell03/ros2_ws/install/examples_rclcpp_minimal_action_client:/opt/ros/humble /usr/bin/cmake --build /home/brussell03/DRON/ros2_ws/build/custom_interfaces -- -j8 -l8
+[2.473s] Invoking command in '/home/brussell03/DRON/ros2_ws/build/custom_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brussell03/DRON/ros2_ws/install/thermal_cam:/home/brussell03/DRON/ros2_ws/install/temperature:/home/brussell03/DRON/ros2_ws/install/gps:/home/brussell03/ros2_ws/install/robot_controller:/home/brussell03/ros2_ws/install/launch_testing_examples:/home/brussell03/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_service:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_publisher:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_client:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_server:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_client:/home/brussell03/ros2_ws/install/examples_rclpy_guard_conditions:/home/brussell03/ros2_ws/install/examples_rclpy_executors:/home/brussell03/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/brussell03/ros2_ws/install/examples_rclcpp_minimal_action_client:/opt/ros/humble /usr/bin/cmake --install /home/brussell03/DRON/ros2_ws/build/custom_interfaces
+[2.489s] -- Install configuration: ""
+[2.495s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/ament_index/resource_index/rosidl_interfaces/custom_interfaces
+[2.495s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces
+[2.496s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg
+[2.496s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/latlong.h
+[2.496s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail
+[2.496s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail/latlong__functions.h
+[2.497s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail/latlong__struct.h
+[2.497s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail/latlong__functions.c
+[2.497s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail/latlong__type_support.h
+[2.497s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/rosidl_generator_c__visibility_control.h
+[2.497s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/environment/library_path.sh
+[2.497s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/environment/library_path.dsv
+[2.498s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/lib/libcustom_interfaces__rosidl_generator_c.so
+[2.499s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces
+[2.499s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg
+[2.499s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[2.499s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail
+[2.499s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail/latlong__rosidl_typesupport_fastrtps_c.h
+[2.500s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/lib/libcustom_interfaces__rosidl_typesupport_fastrtps_c.so
+[2.500s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces
+[2.500s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg
+[2.501s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[2.501s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail
+[2.501s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail/latlong__type_support.c
+[2.501s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail/latlong__rosidl_typesupport_introspection_c.h
+[2.502s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/lib/libcustom_interfaces__rosidl_typesupport_introspection_c.so
+[2.503s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/lib/libcustom_interfaces__rosidl_typesupport_c.so
+[2.503s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces
+[2.503s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg
+[2.504s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/latlong.hpp
+[2.504s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail
+[2.504s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail/latlong__builder.hpp
+[2.504s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail/latlong__struct.hpp
+[2.504s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail/latlong__traits.hpp
+[2.504s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces
+[2.504s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg
+[2.505s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail
+[2.505s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail/latlong__rosidl_typesupport_fastrtps_cpp.hpp
+[2.505s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail/dds_fastrtps
+[2.505s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[2.505s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/lib/libcustom_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[2.506s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces
+[2.506s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg
+[2.506s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail
+[2.506s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail/latlong__type_support.cpp
+[2.506s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/include/custom_interfaces/custom_interfaces/msg/detail/latlong__rosidl_typesupport_introspection_cpp.hpp
+[2.507s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/lib/libcustom_interfaces__rosidl_typesupport_introspection_cpp.so
+[2.508s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/lib/libcustom_interfaces__rosidl_typesupport_cpp.so
+[2.508s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/environment/pythonpath.sh
+[2.508s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/environment/pythonpath.dsv
+[2.509s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces-0.0.0-py3.10.egg-info
+[2.509s] -- Installing: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces-0.0.0-py3.10.egg-info/PKG-INFO
+[2.509s] -- Installing: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces-0.0.0-py3.10.egg-info/top_level.txt
+[2.509s] -- Installing: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt
+[2.509s] -- Installing: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt
+[2.510s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces
+[2.510s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces/_custom_interfaces_s.ep.rosidl_typesupport_c.c
+[2.510s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces/msg
+[2.510s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces/msg/__init__.py
+[2.511s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces/msg/_latlong_s.c
+[2.511s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces/msg/_latlong.py
+[2.511s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces/_custom_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[2.511s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces/__init__.py
+[2.511s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces/custom_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[2.511s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces/custom_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[2.512s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces/custom_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[2.512s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces/_custom_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[2.512s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces/libcustom_interfaces__rosidl_generator_py.so
+[2.584s] Listing '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces'...
+[2.585s] Listing '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces/msg'...
+[2.592s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces/custom_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[2.594s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces/custom_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[2.594s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/local/lib/python3.10/dist-packages/custom_interfaces/custom_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[2.595s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/lib/libcustom_interfaces__rosidl_generator_py.so
+[2.596s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/msg/Latlong.idl
+[2.596s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/msg/Latlong.msg
+[2.596s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/ament_index/resource_index/package_run_dependencies/custom_interfaces
+[2.596s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/ament_index/resource_index/parent_prefix_path/custom_interfaces
+[2.597s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/environment/ament_prefix_path.sh
+[2.597s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/environment/ament_prefix_path.dsv
+[2.597s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/environment/path.sh
+[2.597s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/environment/path.dsv
+[2.597s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/local_setup.bash
+[2.597s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/local_setup.sh
+[2.598s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/local_setup.zsh
+[2.598s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/local_setup.dsv
+[2.598s] -- Installing: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/package.dsv
+[2.598s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/ament_index/resource_index/packages/custom_interfaces
+[2.599s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/export_custom_interfaces__rosidl_generator_cExport.cmake
+[2.599s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/export_custom_interfaces__rosidl_generator_cExport-noconfig.cmake
+[2.599s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/export_custom_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[2.599s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/export_custom_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[2.599s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/custom_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[2.600s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/custom_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[2.600s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/custom_interfaces__rosidl_typesupport_cExport.cmake
+[2.600s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/custom_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[2.600s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/export_custom_interfaces__rosidl_generator_cppExport.cmake
+[2.601s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/export_custom_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[2.601s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/export_custom_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[2.601s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/custom_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[2.601s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/custom_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[2.602s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/custom_interfaces__rosidl_typesupport_cppExport.cmake
+[2.602s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/custom_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[2.602s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/export_custom_interfaces__rosidl_generator_pyExport.cmake
+[2.602s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/export_custom_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[2.603s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/rosidl_cmake-extras.cmake
+[2.603s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[2.603s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[2.603s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[2.603s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[2.604s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[2.604s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[2.604s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/custom_interfacesConfig.cmake
+[2.604s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/cmake/custom_interfacesConfig-version.cmake
+[2.604s] -- Up-to-date: /home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/package.xml
+[2.607s] Invoked command in '/home/brussell03/DRON/ros2_ws/build/custom_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brussell03/DRON/ros2_ws/install/thermal_cam:/home/brussell03/DRON/ros2_ws/install/temperature:/home/brussell03/DRON/ros2_ws/install/gps:/home/brussell03/ros2_ws/install/robot_controller:/home/brussell03/ros2_ws/install/launch_testing_examples:/home/brussell03/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_service:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_publisher:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_client:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_server:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_client:/home/brussell03/ros2_ws/install/examples_rclpy_guard_conditions:/home/brussell03/ros2_ws/install/examples_rclpy_executors:/home/brussell03/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/brussell03/ros2_ws/install/examples_rclcpp_minimal_action_client:/opt/ros/humble /usr/bin/cmake --install /home/brussell03/DRON/ros2_ws/build/custom_interfaces

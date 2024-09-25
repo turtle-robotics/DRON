@@ -1,0 +1,350 @@
+[1.986s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[1.987s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7fab4236be50>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fab42630550>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fab42630550>>)
+[2.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[2.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[2.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[2.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[2.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[2.109s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[2.110s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/brussell03/DRON/ros2_ws'
+[2.110s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[2.110s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[2.110s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[2.110s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[2.110s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[2.110s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[2.110s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[2.110s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[2.110s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[2.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[2.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[2.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[2.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[2.132s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[2.132s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[2.133s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[2.133s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[2.133s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[2.133s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[2.133s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[2.133s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[2.133s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[2.133s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[2.134s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[2.135s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[2.135s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[2.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/ROS-TCP-Endpoint-main-ros2) by extensions ['ignore', 'ignore_ament_install']
+[2.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/ROS-TCP-Endpoint-main-ros2) by extension 'ignore'
+[2.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/ROS-TCP-Endpoint-main-ros2) by extension 'ignore_ament_install'
+[2.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/ROS-TCP-Endpoint-main-ros2) by extensions ['colcon_pkg']
+[2.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/ROS-TCP-Endpoint-main-ros2) by extension 'colcon_pkg'
+[2.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/ROS-TCP-Endpoint-main-ros2) by extensions ['colcon_meta']
+[2.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/ROS-TCP-Endpoint-main-ros2) by extension 'colcon_meta'
+[2.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/ROS-TCP-Endpoint-main-ros2) by extensions ['ros']
+[2.135s] Level 1:colcon.colcon_core.package_identification:_identify(src/ROS-TCP-Endpoint-main-ros2) by extension 'ros'
+[2.140s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ROS-TCP-Endpoint-main-ros2' with type 'ros.ament_python' and name 'ros_tcp_endpoint'
+[2.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[2.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extension 'ignore'
+[2.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extension 'ignore_ament_install'
+[2.140s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extensions ['colcon_pkg']
+[2.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extension 'colcon_pkg'
+[2.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extensions ['colcon_meta']
+[2.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extension 'colcon_meta'
+[2.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extensions ['ros']
+[2.141s] Level 1:colcon.colcon_core.package_identification:_identify(src/custom_interfaces) by extension 'ros'
+[2.142s] DEBUG:colcon.colcon_core.package_identification:Package 'src/custom_interfaces' with type 'ros.ament_cmake' and name 'custom_interfaces'
+[2.142s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps) by extensions ['ignore', 'ignore_ament_install']
+[2.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps) by extension 'ignore'
+[2.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps) by extension 'ignore_ament_install'
+[2.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps) by extensions ['colcon_pkg']
+[2.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps) by extension 'colcon_pkg'
+[2.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps) by extensions ['colcon_meta']
+[2.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps) by extension 'colcon_meta'
+[2.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps) by extensions ['ros']
+[2.143s] Level 1:colcon.colcon_core.package_identification:_identify(src/gps) by extension 'ros'
+[2.144s] DEBUG:colcon.colcon_core.package_identification:Package 'src/gps' with type 'ros.ament_python' and name 'gps'
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/temperature) by extensions ['ignore', 'ignore_ament_install']
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/temperature) by extension 'ignore'
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/temperature) by extension 'ignore_ament_install'
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/temperature) by extensions ['colcon_pkg']
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/temperature) by extension 'colcon_pkg'
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/temperature) by extensions ['colcon_meta']
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/temperature) by extension 'colcon_meta'
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/temperature) by extensions ['ros']
+[2.145s] Level 1:colcon.colcon_core.package_identification:_identify(src/temperature) by extension 'ros'
+[2.147s] DEBUG:colcon.colcon_core.package_identification:Package 'src/temperature' with type 'ros.ament_python' and name 'temperature'
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/thermal_cam) by extensions ['ignore', 'ignore_ament_install']
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/thermal_cam) by extension 'ignore'
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/thermal_cam) by extension 'ignore_ament_install'
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/thermal_cam) by extensions ['colcon_pkg']
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/thermal_cam) by extension 'colcon_pkg'
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/thermal_cam) by extensions ['colcon_meta']
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/thermal_cam) by extension 'colcon_meta'
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/thermal_cam) by extensions ['ros']
+[2.147s] Level 1:colcon.colcon_core.package_identification:_identify(src/thermal_cam) by extension 'ros'
+[2.151s] DEBUG:colcon.colcon_core.package_identification:Package 'src/thermal_cam' with type 'ros.ament_python' and name 'thermal_cam'
+[2.151s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[2.151s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[2.151s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[2.151s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[2.151s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[2.334s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[2.334s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[2.387s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 4 installed packages in /home/brussell03/DRON/ros2_ws/install
+[2.412s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 26 installed packages in /home/brussell03/ros2_ws/install
+[2.437s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 270 installed packages in /opt/ros/humble
+[2.441s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[2.658s] Level 5:colcon.colcon_core.verb:set package 'custom_interfaces' build argument 'cmake_args' from command line to 'None'
+[2.659s] Level 5:colcon.colcon_core.verb:set package 'custom_interfaces' build argument 'cmake_target' from command line to 'None'
+[2.659s] Level 5:colcon.colcon_core.verb:set package 'custom_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.659s] Level 5:colcon.colcon_core.verb:set package 'custom_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[2.659s] Level 5:colcon.colcon_core.verb:set package 'custom_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[2.659s] Level 5:colcon.colcon_core.verb:set package 'custom_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[2.659s] Level 5:colcon.colcon_core.verb:set package 'custom_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[2.659s] Level 5:colcon.colcon_core.verb:set package 'custom_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[2.659s] Level 5:colcon.colcon_core.verb:set package 'custom_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.659s] DEBUG:colcon.colcon_core.verb:Building package 'custom_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/brussell03/DRON/ros2_ws/build/custom_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/brussell03/DRON/ros2_ws/install/custom_interfaces', 'merge_install': False, 'path': '/home/brussell03/DRON/ros2_ws/src/custom_interfaces', 'symlink_install': False, 'test_result_base': None}
+[2.684s] Level 5:colcon.colcon_core.verb:set package 'ros_tcp_endpoint' build argument 'cmake_args' from command line to 'None'
+[2.684s] Level 5:colcon.colcon_core.verb:set package 'ros_tcp_endpoint' build argument 'cmake_target' from command line to 'None'
+[2.684s] Level 5:colcon.colcon_core.verb:set package 'ros_tcp_endpoint' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.684s] Level 5:colcon.colcon_core.verb:set package 'ros_tcp_endpoint' build argument 'cmake_clean_cache' from command line to 'False'
+[2.684s] Level 5:colcon.colcon_core.verb:set package 'ros_tcp_endpoint' build argument 'cmake_clean_first' from command line to 'False'
+[2.684s] Level 5:colcon.colcon_core.verb:set package 'ros_tcp_endpoint' build argument 'cmake_force_configure' from command line to 'False'
+[2.684s] Level 5:colcon.colcon_core.verb:set package 'ros_tcp_endpoint' build argument 'ament_cmake_args' from command line to 'None'
+[2.684s] Level 5:colcon.colcon_core.verb:set package 'ros_tcp_endpoint' build argument 'catkin_cmake_args' from command line to 'None'
+[2.684s] Level 5:colcon.colcon_core.verb:set package 'ros_tcp_endpoint' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.684s] DEBUG:colcon.colcon_core.verb:Building package 'ros_tcp_endpoint' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint', 'merge_install': False, 'path': '/home/brussell03/DRON/ros2_ws/src/ROS-TCP-Endpoint-main-ros2', 'symlink_install': False, 'test_result_base': None}
+[2.709s] Level 5:colcon.colcon_core.verb:set package 'temperature' build argument 'cmake_args' from command line to 'None'
+[2.709s] Level 5:colcon.colcon_core.verb:set package 'temperature' build argument 'cmake_target' from command line to 'None'
+[2.709s] Level 5:colcon.colcon_core.verb:set package 'temperature' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.709s] Level 5:colcon.colcon_core.verb:set package 'temperature' build argument 'cmake_clean_cache' from command line to 'False'
+[2.709s] Level 5:colcon.colcon_core.verb:set package 'temperature' build argument 'cmake_clean_first' from command line to 'False'
+[2.709s] Level 5:colcon.colcon_core.verb:set package 'temperature' build argument 'cmake_force_configure' from command line to 'False'
+[2.709s] Level 5:colcon.colcon_core.verb:set package 'temperature' build argument 'ament_cmake_args' from command line to 'None'
+[2.709s] Level 5:colcon.colcon_core.verb:set package 'temperature' build argument 'catkin_cmake_args' from command line to 'None'
+[2.709s] Level 5:colcon.colcon_core.verb:set package 'temperature' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.709s] DEBUG:colcon.colcon_core.verb:Building package 'temperature' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/brussell03/DRON/ros2_ws/build/temperature', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/brussell03/DRON/ros2_ws/install/temperature', 'merge_install': False, 'path': '/home/brussell03/DRON/ros2_ws/src/temperature', 'symlink_install': False, 'test_result_base': None}
+[2.733s] Level 5:colcon.colcon_core.verb:set package 'thermal_cam' build argument 'cmake_args' from command line to 'None'
+[2.733s] Level 5:colcon.colcon_core.verb:set package 'thermal_cam' build argument 'cmake_target' from command line to 'None'
+[2.733s] Level 5:colcon.colcon_core.verb:set package 'thermal_cam' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.733s] Level 5:colcon.colcon_core.verb:set package 'thermal_cam' build argument 'cmake_clean_cache' from command line to 'False'
+[2.733s] Level 5:colcon.colcon_core.verb:set package 'thermal_cam' build argument 'cmake_clean_first' from command line to 'False'
+[2.733s] Level 5:colcon.colcon_core.verb:set package 'thermal_cam' build argument 'cmake_force_configure' from command line to 'False'
+[2.733s] Level 5:colcon.colcon_core.verb:set package 'thermal_cam' build argument 'ament_cmake_args' from command line to 'None'
+[2.734s] Level 5:colcon.colcon_core.verb:set package 'thermal_cam' build argument 'catkin_cmake_args' from command line to 'None'
+[2.734s] Level 5:colcon.colcon_core.verb:set package 'thermal_cam' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.734s] DEBUG:colcon.colcon_core.verb:Building package 'thermal_cam' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/brussell03/DRON/ros2_ws/build/thermal_cam', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/brussell03/DRON/ros2_ws/install/thermal_cam', 'merge_install': False, 'path': '/home/brussell03/DRON/ros2_ws/src/thermal_cam', 'symlink_install': False, 'test_result_base': None}
+[2.758s] Level 5:colcon.colcon_core.verb:set package 'gps' build argument 'cmake_args' from command line to 'None'
+[2.758s] Level 5:colcon.colcon_core.verb:set package 'gps' build argument 'cmake_target' from command line to 'None'
+[2.758s] Level 5:colcon.colcon_core.verb:set package 'gps' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.758s] Level 5:colcon.colcon_core.verb:set package 'gps' build argument 'cmake_clean_cache' from command line to 'False'
+[2.758s] Level 5:colcon.colcon_core.verb:set package 'gps' build argument 'cmake_clean_first' from command line to 'False'
+[2.758s] Level 5:colcon.colcon_core.verb:set package 'gps' build argument 'cmake_force_configure' from command line to 'False'
+[2.758s] Level 5:colcon.colcon_core.verb:set package 'gps' build argument 'ament_cmake_args' from command line to 'None'
+[2.758s] Level 5:colcon.colcon_core.verb:set package 'gps' build argument 'catkin_cmake_args' from command line to 'None'
+[2.758s] Level 5:colcon.colcon_core.verb:set package 'gps' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.758s] DEBUG:colcon.colcon_core.verb:Building package 'gps' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/brussell03/DRON/ros2_ws/build/gps', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/brussell03/DRON/ros2_ws/install/gps', 'merge_install': False, 'path': '/home/brussell03/DRON/ros2_ws/src/gps', 'symlink_install': False, 'test_result_base': None}
+[2.782s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[2.807s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[2.808s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/brussell03/DRON/ros2_ws/src/custom_interfaces' with build type 'ament_cmake'
+[2.808s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/brussell03/DRON/ros2_ws/src/custom_interfaces'
+[2.841s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[2.842s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.842s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.947s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/brussell03/DRON/ros2_ws/src/ROS-TCP-Endpoint-main-ros2' with build type 'ament_python'
+[2.947s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros_tcp_endpoint', 'ament_prefix_path')
+[2.973s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ros_tcp_endpoint/hook/ament_prefix_path.ps1'
+[2.975s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ros_tcp_endpoint/hook/ament_prefix_path.dsv'
+[2.975s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ros_tcp_endpoint/hook/ament_prefix_path.sh'
+[3.001s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.001s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.104s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/brussell03/DRON/ros2_ws/src/temperature' with build type 'ament_python'
+[3.105s] Level 1:colcon.colcon_core.shell:create_environment_hook('temperature', 'ament_prefix_path')
+[3.130s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/temperature/share/temperature/hook/ament_prefix_path.ps1'
+[3.131s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brussell03/DRON/ros2_ws/install/temperature/share/temperature/hook/ament_prefix_path.dsv'
+[3.131s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/temperature/share/temperature/hook/ament_prefix_path.sh'
+[3.156s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.156s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.260s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/brussell03/DRON/ros2_ws/src/thermal_cam' with build type 'ament_python'
+[3.261s] Level 1:colcon.colcon_core.shell:create_environment_hook('thermal_cam', 'ament_prefix_path')
+[3.285s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/thermal_cam/share/thermal_cam/hook/ament_prefix_path.ps1'
+[3.286s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brussell03/DRON/ros2_ws/install/thermal_cam/share/thermal_cam/hook/ament_prefix_path.dsv'
+[3.287s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/thermal_cam/share/thermal_cam/hook/ament_prefix_path.sh'
+[3.312s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.312s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.427s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/brussell03/DRON/ros2_ws/build/custom_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brussell03/DRON/ros2_ws/install/thermal_cam:/home/brussell03/DRON/ros2_ws/install/temperature:/home/brussell03/DRON/ros2_ws/install/gps:/home/brussell03/ros2_ws/install/robot_controller:/home/brussell03/ros2_ws/install/launch_testing_examples:/home/brussell03/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_service:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_publisher:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_client:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_server:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_client:/home/brussell03/ros2_ws/install/examples_rclpy_guard_conditions:/home/brussell03/ros2_ws/install/examples_rclpy_executors:/home/brussell03/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/brussell03/ros2_ws/install/examples_rclcpp_minimal_action_client:/opt/ros/humble /usr/bin/cmake --build /home/brussell03/DRON/ros2_ws/build/custom_interfaces -- -j8 -l8
+[3.937s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/brussell03/DRON/ros2_ws/src/ROS-TCP-Endpoint-main-ros2'
+[3.964s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.964s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.530s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/brussell03/DRON/ros2_ws/src/temperature'
+[4.558s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.558s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.673s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/brussell03/DRON/ros2_ws/build/custom_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brussell03/DRON/ros2_ws/install/thermal_cam:/home/brussell03/DRON/ros2_ws/install/temperature:/home/brussell03/DRON/ros2_ws/install/gps:/home/brussell03/ros2_ws/install/robot_controller:/home/brussell03/ros2_ws/install/launch_testing_examples:/home/brussell03/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_service:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_publisher:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_client:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_server:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_client:/home/brussell03/ros2_ws/install/examples_rclpy_guard_conditions:/home/brussell03/ros2_ws/install/examples_rclpy_executors:/home/brussell03/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/brussell03/ros2_ws/install/examples_rclcpp_minimal_action_client:/opt/ros/humble /usr/bin/cmake --build /home/brussell03/DRON/ros2_ws/build/custom_interfaces -- -j8 -l8
+[5.129s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/brussell03/DRON/ros2_ws/src/thermal_cam'
+[5.155s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.155s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.282s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/brussell03/DRON/ros2_ws/build/custom_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brussell03/DRON/ros2_ws/install/thermal_cam:/home/brussell03/DRON/ros2_ws/install/temperature:/home/brussell03/DRON/ros2_ws/install/gps:/home/brussell03/ros2_ws/install/robot_controller:/home/brussell03/ros2_ws/install/launch_testing_examples:/home/brussell03/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_service:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_publisher:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_client:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_server:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_client:/home/brussell03/ros2_ws/install/examples_rclpy_guard_conditions:/home/brussell03/ros2_ws/install/examples_rclpy_executors:/home/brussell03/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/brussell03/ros2_ws/install/examples_rclcpp_minimal_action_client:/opt/ros/humble /usr/bin/cmake --install /home/brussell03/DRON/ros2_ws/build/custom_interfaces
+[5.415s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(custom_interfaces)
+[5.416s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/brussell03/DRON/ros2_ws/build/custom_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/brussell03/DRON/ros2_ws/install/thermal_cam:/home/brussell03/DRON/ros2_ws/install/temperature:/home/brussell03/DRON/ros2_ws/install/gps:/home/brussell03/ros2_ws/install/robot_controller:/home/brussell03/ros2_ws/install/launch_testing_examples:/home/brussell03/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_service:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_publisher:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_client:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_server:/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_client:/home/brussell03/ros2_ws/install/examples_rclpy_guard_conditions:/home/brussell03/ros2_ws/install/examples_rclpy_executors:/home/brussell03/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/brussell03/ros2_ws/install/examples_rclcpp_minimal_action_client:/opt/ros/humble /usr/bin/cmake --install /home/brussell03/DRON/ros2_ws/build/custom_interfaces
+[5.463s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/custom_interfaces' for CMake module files
+[5.464s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/custom_interfaces' for CMake config files
+[5.464s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_interfaces', 'cmake_prefix_path')
+[5.489s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/hook/cmake_prefix_path.ps1'
+[5.490s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/hook/cmake_prefix_path.dsv'
+[5.491s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/hook/cmake_prefix_path.sh'
+[5.492s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/lib'
+[5.492s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_interfaces', 'ld_library_path_lib')
+[5.516s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/hook/ld_library_path_lib.ps1'
+[5.517s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/hook/ld_library_path_lib.dsv'
+[5.517s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/hook/ld_library_path_lib.sh'
+[5.518s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/bin'
+[5.518s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/lib/pkgconfig/custom_interfaces.pc'
+[5.519s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/lib/python3.10/site-packages'
+[5.519s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/bin'
+[5.545s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/package.ps1'
+[5.546s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/package.dsv'
+[5.548s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/package.sh'
+[5.549s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/package.bash'
+[5.551s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/package.zsh'
+[5.554s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/colcon-core/packages/custom_interfaces)
+[5.705s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(custom_interfaces)
+[5.734s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/custom_interfaces' for CMake module files
+[5.735s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/custom_interfaces' for CMake config files
+[5.736s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_interfaces', 'cmake_prefix_path')
+[5.761s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/hook/cmake_prefix_path.ps1'
+[5.762s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/hook/cmake_prefix_path.dsv'
+[5.763s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/hook/cmake_prefix_path.sh'
+[5.764s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/lib'
+[5.764s] Level 1:colcon.colcon_core.shell:create_environment_hook('custom_interfaces', 'ld_library_path_lib')
+[5.790s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/hook/ld_library_path_lib.ps1'
+[5.791s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/hook/ld_library_path_lib.dsv'
+[5.792s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/hook/ld_library_path_lib.sh'
+[5.792s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/bin'
+[5.792s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/lib/pkgconfig/custom_interfaces.pc'
+[5.793s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/lib/python3.10/site-packages'
+[5.793s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/bin'
+[5.819s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/package.ps1'
+[5.820s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/package.dsv'
+[5.820s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/package.sh'
+[5.821s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/package.bash'
+[5.822s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/custom_interfaces/package.zsh'
+[5.822s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/brussell03/DRON/ros2_ws/install/custom_interfaces/share/colcon-core/packages/custom_interfaces)
+[5.823s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/brussell03/DRON/ros2_ws/src/gps' with build type 'ament_python'
+[5.824s] Level 1:colcon.colcon_core.shell:create_environment_hook('gps', 'ament_prefix_path')
+[5.852s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/gps/share/gps/hook/ament_prefix_path.ps1'
+[5.853s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brussell03/DRON/ros2_ws/install/gps/share/gps/hook/ament_prefix_path.dsv'
+[5.854s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/gps/share/gps/hook/ament_prefix_path.sh'
+[5.882s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.882s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.004s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/brussell03/DRON/ros2_ws/src/ROS-TCP-Endpoint-main-ros2': PYTHONPATH=/home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/prefix_override:/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/ros_tcp_endpoint build --build-base /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build install --record /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/install.log --install-scripts $base/lib/ros_tcp_endpoint --single-version-externally-managed
+[6.009s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/brussell03/DRON/ros2_ws/src/thermal_cam': PYTHONPATH=/home/brussell03/DRON/ros2_ws/build/thermal_cam/prefix_override:/home/brussell03/DRON/ros2_ws/install/thermal_cam/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/thermal_cam build --build-base /home/brussell03/DRON/ros2_ws/build/thermal_cam/build install --record /home/brussell03/DRON/ros2_ws/build/thermal_cam/install.log --single-version-externally-managed
+[6.012s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/brussell03/DRON/ros2_ws/src/temperature': PYTHONPATH=/home/brussell03/DRON/ros2_ws/build/temperature/prefix_override:/home/brussell03/DRON/ros2_ws/install/temperature/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/temperature build --build-base /home/brussell03/DRON/ros2_ws/build/temperature/build install --record /home/brussell03/DRON/ros2_ws/build/temperature/install.log --single-version-externally-managed
+[6.471s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/brussell03/DRON/ros2_ws/src/gps'
+[6.520s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.520s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.657s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/brussell03/DRON/ros2_ws/src/ROS-TCP-Endpoint-main-ros2' returned '0': PYTHONPATH=/home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/prefix_override:/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/ros_tcp_endpoint build --build-base /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build install --record /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/install.log --install-scripts $base/lib/ros_tcp_endpoint --single-version-externally-managed
+[6.681s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint' for CMake module files
+[6.682s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint' for CMake config files
+[6.683s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib'
+[6.683s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/bin'
+[6.683s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/pkgconfig/ros_tcp_endpoint.pc'
+[6.684s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages'
+[6.684s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros_tcp_endpoint', 'pythonpath')
+[6.707s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ros_tcp_endpoint/hook/pythonpath.ps1'
+[6.708s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ros_tcp_endpoint/hook/pythonpath.dsv'
+[6.708s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ros_tcp_endpoint/hook/pythonpath.sh'
+[6.709s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/bin'
+[6.709s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ros_tcp_endpoint)
+[6.732s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ros_tcp_endpoint/package.ps1'
+[6.733s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ros_tcp_endpoint/package.dsv'
+[6.734s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ros_tcp_endpoint/package.sh'
+[6.734s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ros_tcp_endpoint/package.bash'
+[6.735s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ros_tcp_endpoint/package.zsh'
+[6.735s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/colcon-core/packages/ros_tcp_endpoint)
+[6.738s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/brussell03/DRON/ros2_ws/src/thermal_cam' returned '0': PYTHONPATH=/home/brussell03/DRON/ros2_ws/build/thermal_cam/prefix_override:/home/brussell03/DRON/ros2_ws/install/thermal_cam/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/thermal_cam build --build-base /home/brussell03/DRON/ros2_ws/build/thermal_cam/build install --record /home/brussell03/DRON/ros2_ws/build/thermal_cam/install.log --single-version-externally-managed
+[6.763s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/thermal_cam' for CMake module files
+[6.764s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/thermal_cam' for CMake config files
+[6.765s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/thermal_cam/lib'
+[6.765s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/thermal_cam/bin'
+[6.765s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/thermal_cam/lib/pkgconfig/thermal_cam.pc'
+[6.765s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/thermal_cam/lib/python3.10/site-packages'
+[6.765s] Level 1:colcon.colcon_core.shell:create_environment_hook('thermal_cam', 'pythonpath')
+[6.790s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/thermal_cam/share/thermal_cam/hook/pythonpath.ps1'
+[6.791s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brussell03/DRON/ros2_ws/install/thermal_cam/share/thermal_cam/hook/pythonpath.dsv'
+[6.791s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/thermal_cam/share/thermal_cam/hook/pythonpath.sh'
+[6.792s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/thermal_cam/bin'
+[6.792s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(thermal_cam)
+[6.815s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/thermal_cam/share/thermal_cam/package.ps1'
+[6.816s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/brussell03/DRON/ros2_ws/install/thermal_cam/share/thermal_cam/package.dsv'
+[6.817s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/thermal_cam/share/thermal_cam/package.sh'
+[6.817s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/thermal_cam/share/thermal_cam/package.bash'
+[6.817s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/thermal_cam/share/thermal_cam/package.zsh'
+[6.818s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/brussell03/DRON/ros2_ws/install/thermal_cam/share/colcon-core/packages/thermal_cam)
+[6.820s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/brussell03/DRON/ros2_ws/src/temperature' returned '0': PYTHONPATH=/home/brussell03/DRON/ros2_ws/build/temperature/prefix_override:/home/brussell03/DRON/ros2_ws/install/temperature/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/temperature build --build-base /home/brussell03/DRON/ros2_ws/build/temperature/build install --record /home/brussell03/DRON/ros2_ws/build/temperature/install.log --single-version-externally-managed
+[6.843s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/temperature' for CMake module files
+[6.844s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/temperature' for CMake config files
+[6.845s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/temperature/lib'
+[6.845s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/temperature/bin'
+[6.845s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/temperature/lib/pkgconfig/temperature.pc'
+[6.846s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/temperature/lib/python3.10/site-packages'
+[6.846s] Level 1:colcon.colcon_core.shell:create_environment_hook('temperature', 'pythonpath')
+[6.870s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/temperature/share/temperature/hook/pythonpath.ps1'
+[6.871s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brussell03/DRON/ros2_ws/install/temperature/share/temperature/hook/pythonpath.dsv'
+[6.872s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/temperature/share/temperature/hook/pythonpath.sh'
+[6.873s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/temperature/bin'
+[6.873s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(temperature)
+[6.898s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/temperature/share/temperature/package.ps1'
+[6.898s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/brussell03/DRON/ros2_ws/install/temperature/share/temperature/package.dsv'
+[6.899s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/temperature/share/temperature/package.sh'
+[6.900s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/temperature/share/temperature/package.bash'
+[6.900s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/temperature/share/temperature/package.zsh'
+[6.901s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/brussell03/DRON/ros2_ws/install/temperature/share/colcon-core/packages/temperature)
+[7.481s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/brussell03/DRON/ros2_ws/src/gps': PYTHONPATH=/home/brussell03/DRON/ros2_ws/build/gps/prefix_override:/home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/gps build --build-base /home/brussell03/DRON/ros2_ws/build/gps/build install --record /home/brussell03/DRON/ros2_ws/build/gps/install.log --single-version-externally-managed
+[8.002s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/brussell03/DRON/ros2_ws/src/gps' returned '0': PYTHONPATH=/home/brussell03/DRON/ros2_ws/build/gps/prefix_override:/home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/gps build --build-base /home/brussell03/DRON/ros2_ws/build/gps/build install --record /home/brussell03/DRON/ros2_ws/build/gps/install.log --single-version-externally-managed
+[8.028s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/gps' for CMake module files
+[8.029s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/gps' for CMake config files
+[8.030s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/gps/lib'
+[8.030s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/gps/bin'
+[8.030s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/gps/lib/pkgconfig/gps.pc'
+[8.030s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages'
+[8.030s] Level 1:colcon.colcon_core.shell:create_environment_hook('gps', 'pythonpath')
+[8.056s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/gps/share/gps/hook/pythonpath.ps1'
+[8.057s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/brussell03/DRON/ros2_ws/install/gps/share/gps/hook/pythonpath.dsv'
+[8.057s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/brussell03/DRON/ros2_ws/install/gps/share/gps/hook/pythonpath.sh'
+[8.059s] Level 1:colcon.colcon_core.environment:checking '/home/brussell03/DRON/ros2_ws/install/gps/bin'
+[8.059s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(gps)
+[8.083s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/gps/share/gps/package.ps1'
+[8.084s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/brussell03/DRON/ros2_ws/install/gps/share/gps/package.dsv'
+[8.085s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/gps/share/gps/package.sh'
+[8.085s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/gps/share/gps/package.bash'
+[8.086s] INFO:colcon.colcon_core.shell:Creating package script '/home/brussell03/DRON/ros2_ws/install/gps/share/gps/package.zsh'
+[8.086s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/brussell03/DRON/ros2_ws/install/gps/share/colcon-core/packages/gps)
+[8.087s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[8.087s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[8.088s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[8.088s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[8.127s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[8.127s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[8.127s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[8.154s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[8.181s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/brussell03/DRON/ros2_ws/install/local_setup.ps1'
+[8.183s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/brussell03/DRON/ros2_ws/install/_local_setup_util_ps1.py'
+[8.187s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/brussell03/DRON/ros2_ws/install/setup.ps1'
+[8.234s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/brussell03/DRON/ros2_ws/install/local_setup.sh'
+[8.235s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/brussell03/DRON/ros2_ws/install/_local_setup_util_sh.py'
+[8.236s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/brussell03/DRON/ros2_ws/install/setup.sh'
+[8.266s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/brussell03/DRON/ros2_ws/install/local_setup.bash'
+[8.267s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/brussell03/DRON/ros2_ws/install/setup.bash'
+[8.295s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/brussell03/DRON/ros2_ws/install/local_setup.zsh'
+[8.297s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/brussell03/DRON/ros2_ws/install/setup.zsh'
