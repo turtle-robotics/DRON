@@ -142,12 +142,18 @@ The primary objectives of this project are as follows:
 - **[Treasa Francis](https://www.linkedin.com/in/treasafrancis/)**
   - Major: Computer Engineering
   - Role: Software Team
-  - Year: Freshman
+  - Year: Sophomore
 
-- **[Nickolas Summa](https://www.linkedin.com/in/nicholas-summa-3905342b8/)**
+- **[Nicholas Summa](https://www.linkedin.com/in/nicholas-summa-3905342b8/)**
   - Major: Computer Engineering
   - Role: Software Team
   - Year: Sophomore
+ 
+- **[Jason Lev](https://www.linkedin.com/in/Jason-Lev-312492240/)**
+  - Major: Computer Science
+  - Role: Software Team
+  - Year: Sophomore
+ 
 
 ### Electrical Subteam
  
