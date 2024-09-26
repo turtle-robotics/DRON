@@ -137,7 +137,7 @@ The primary objectives of this project are as follows:
 - **[Brian Russell](www.linkedin.com/in/brian-russell-275a361a3)**
   - Major: Aerospace Engineering
   - Role: Software Team
-  - Year: Sophomore
+  - Year: Senior
 
 - **[Treasa Francis](https://www.linkedin.com/in/treasafrancis/)**
   - Major: Computer Engineering
