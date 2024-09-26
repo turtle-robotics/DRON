@@ -9,7 +9,7 @@ public class ROS2Manager : MonoBehaviour
     private ROS2Node ros2Node;
     private IPublisher<std_msgs.msg.String> chatter_pub;
     private ISubscription<std_msgs.msg.Float64> chatter_sub;
-    private ISubscription<std_msgs.Float32MultiArray> temp_sub;
+    //private ISubscription<std_msgs.Float32MultiArray> temp_sub;
 
     // Start is called before the first frame update
     void Start()
