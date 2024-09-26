@@ -64,74 +64,73 @@ To get started with DRON, follow these steps:
 The Disaster Response Observation Network, more commonly known as DRON, is the student led project with the goal of aiding firefighters and first responders during large structural fires by providing the detailed information about the location, intensity and growth of fires is crucial to the proper response, and by improving the ability of first responders to actively respond to events, we intend to save lives. 
 
 The primary objectives of this project are as follows:
-- Design and implement a drone with all sensors for autonomous flight and data aquisition.
+- and implement a drone with all sensors for autonomous flight and data aquisition.
 - Collaberate between drones for decision making and obstacle detection.
 - Communicate live data to the first responders in an easy to understand format.
 
 ## Team Members
 
-- **[Abel Ayala](https://www.linkedin.com/in/ug-abel-ayala-co2024/)**
-  - Major: Multidiciplinary Engineering Technology
-  - Role: Project Lead, Software & Mechanical
-  - Year: Senior
-
 - **[Ian Wilhite](https://www.linkedin.com/in/ian-wilhite)**
-  - Major: Mechanical Engineering
-  - Role: Software Team
-  - Year: Sophomore
-
-- **[Aidan Briggs](https://www.linkedin.com/in/aidan-briggs-108297250/)**
-  - Major: Computer Science
-  - Role: Software Team
-  - Year: Sophomore
-
-- **[Jacob Fuerst](https://www.linkedin.com/in/jacob-fuerst)**
-  - Major: Mechanical Engineering
-  - Role: Software Team
-  - Year: Freshman
+  - Major: Robotics and Controls Engineering
+  - Role: Project Lead
+  - Year: Junior
  
 - **[Elizabeth Hannsz](https://www.linkedin.com/in/elizabeth-hannsz-2932a51ba/)**
   - Major: Aerospace Engineering
-  - Role: Mechanical Design Team
+  - Role: Mechanical Subteam Lead
+  - Year: Senior
+
+- **[Aidan Briggs](https://www.linkedin.com/in/aidan-briggs-108297250/)**
+  - Major: Computer Science
+  - Role: Software Subteam Lead
   - Year: Junior
-    
+
+- **[Jacob Fuerst](https://www.linkedin.com/in/jacob-fuerst)**
+  - Major: Mechanical Engineering
+  - Role: Electrical Subteam Lead
+  - Year: Sophomore
+
+### Mechanical Subteam
+
 - **[Malcolm Ferguson](https://www.linkedin.com/in/malcolmkferguson)**
-  - Major: Aerospace Engineering
-  - Role: Mechanical Design Team
+  - Major: Mechatronics Engineering
+  - Role: Mechanical Team
   - Year: Sophomore
     
 - **[Christus Creer](https://www.linkedin.com/in/fpchristuscreer)**
   - Major: Industrial Systems Engineering
-  - Role: Mechanical Design Team
-  - Year: Sophomore
+  - Role: Mechanical Team
+  - Year: Junior
 
 - **[Alan Alvarado](https://www.linkedin.com/in/alan-alvarado-1797102ab)**
   - Major: Mechanical Engineering
-  - Role: Mechanical Design Team
-  - Year: Senior*
-
-- **[Aaron Velez](https://www.linkedin.com/in/aaron-velez-1083bb2b4)**
-  - Major: Manufacturing and Mechanical Technology
-  - Role: Mechanical Design Team
-  - Year: Junior
- 
-- **[Jacob Adamson](https://www.linkedin.com/in/jacob-adamson/)**
-  - Major: Electrical Engineering
-  - Role: Electrical Design Team
-  - Year: Senior
-  
-- **[Lucas Ybarra](https://www.linkedin.com/in/lucas-ybarra-847ba72b6/)**
-  - Major: Electrical Engineering
-  - Role: Electrial Design Team
+  - Role: Mechanical Team
   - Year: Sophomore
  
 - **[Felix Chim](https://www.linkedin.com/in/felix-chim-3066a6228)**
   - Major: Aerospace Engineering 
   - Role: Mechanical Team
+  - Year: Junior
+    
+- **[Nahum Tadesse](https://www.linkedin.com/in/nahum-tadesse-51ba922b6/)**
+  - Major: Mechanical Engineering
+  - Role: Mechanical Team
   - Year: Sophomore
- 
+
+- **[Aaron Velez](https://www.linkedin.com/in/aaron-velez-1083bb2b4)**
+  - Major: Manufacturing and Mechanical Technology
+  - Role: Mechanical Team
+  - Year: Junior
+
+- **[Elizabeth Person](https://www.linkedin.com/in/elizabeth-person-041a51252/)**
+  - Major: Aerospace Engineering
+  - Role: Mechanical Team
+  - Year: Freshman
+    
+### Software Subteam
+
 - **[Alonso Peralta](https://www.linkedin.com/in/alonso-peralta-espinoza-715419212/)**
-  - Major: Computer Engineer
+  - Major: Computer Engineering
   - Role: Software Team
   - Year: Sophomore
  
@@ -139,6 +138,44 @@ The primary objectives of this project are as follows:
   - Major: Aerospace Engineering
   - Role: Software Team
   - Year: Sophomore
+
+- **[Treasa Francis](https://www.linkedin.com/in/treasafrancis/)**
+  - Major: Computer Engineering
+  - Role: Software Team
+  - Year: Freshman
+
+- **[Nickolas Summa](https://www.linkedin.com/in/nicholas-summa-3905342b8/)**
+  - Major: Computer Engineering
+  - Role: Software Team
+  - Year: Sophomore
+
+### Electrical Subteam
+ 
+- **[Jacob Adamson](https://www.linkedin.com/in/jacob-adamson/)**
+  - Major: Electrical Engineering
+  - Role: Electrical Team
+  - Year: Senior
+  
+- **[Lucas Ybarra](https://www.linkedin.com/in/lucas-ybarra-847ba72b6/)**
+  - Major: Electrical Engineering
+  - Role: Electrial Team
+  - Year: Sophomore
+  
+- **[Aneek Roy](https://www.linkedin.com/in/aneekroy/)**
+  - Major: Electrical Engineering 
+  - Role: Electrial Team
+  - Year: Sophomore
+ 
+- **[Quinn Belmar](https://www.linkedin.com/in/quinnbelmar/)**
+  - Major: Mechanical Engineering 
+  - Role: Electrial Team
+  - Year: Sophomore
+
+### Alumni
+
+- **[Abel Ayala](https://www.linkedin.com/in/ug-abel-ayala-co2024/)**
+  - Major: Multidiciplinary Engineering Technology
+  - Role: Project Lead, Software & Mechanical
 
 ## Contributing 
 
