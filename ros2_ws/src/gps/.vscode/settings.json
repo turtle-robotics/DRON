@@ -1,0 +1,42 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/brussell03/DRON/ros2_ws/install/thermal_cam/lib/python3.10/site-packages",
+        "/home/brussell03/DRON/ros2_ws/install/IMU/lib/python3.10/site-packages",
+        "/home/brussell03/DRON/ros2_ws/install/GPS/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/tutorial_interfaces/local/lib/python3.10/dist-packages",
+        "/home/brussell03/ros2_ws/build/robot_controller",
+        "/home/brussell03/ros2_ws/install/robot_controller/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/launch_testing_examples/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_pointcloud_publisher/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_minimal_subscriber/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_minimal_service/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_minimal_publisher/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_minimal_client/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_server/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_client/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_guard_conditions/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_executors/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/brussell03/DRON/ros2_ws/install/thermal_cam/lib/python3.10/site-packages",
+        "/home/brussell03/DRON/ros2_ws/install/IMU/lib/python3.10/site-packages",
+        "/home/brussell03/DRON/ros2_ws/install/GPS/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/tutorial_interfaces/local/lib/python3.10/dist-packages",
+        "/home/brussell03/ros2_ws/build/robot_controller",
+        "/home/brussell03/ros2_ws/install/robot_controller/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/launch_testing_examples/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_pointcloud_publisher/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_minimal_subscriber/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_minimal_service/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_minimal_publisher/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_minimal_client/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_server/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_minimal_action_client/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_guard_conditions/lib/python3.10/site-packages",
+        "/home/brussell03/ros2_ws/install/examples_rclpy_executors/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

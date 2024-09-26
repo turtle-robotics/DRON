@@ -1,0 +1,24 @@
+[2.907s] Invoking command in '/home/brussell03/DRON/ros2_ws/src/temperature': PYTHONPATH=/home/brussell03/DRON/ros2_ws/build/temperature/prefix_override:/home/brussell03/DRON/ros2_ws/install/temperature/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/temperature build --build-base /home/brussell03/DRON/ros2_ws/build/temperature/build install --record /home/brussell03/DRON/ros2_ws/build/temperature/install.log --single-version-externally-managed
+[3.338s] running egg_info
+[3.340s] writing ../../build/temperature/temperature.egg-info/PKG-INFO
+[3.340s] writing dependency_links to ../../build/temperature/temperature.egg-info/dependency_links.txt
+[3.341s] writing entry points to ../../build/temperature/temperature.egg-info/entry_points.txt
+[3.341s] writing requirements to ../../build/temperature/temperature.egg-info/requires.txt
+[3.341s] writing top-level names to ../../build/temperature/temperature.egg-info/top_level.txt
+[3.345s] reading manifest file '../../build/temperature/temperature.egg-info/SOURCES.txt'
+[3.347s] writing manifest file '../../build/temperature/temperature.egg-info/SOURCES.txt'
+[3.347s] running build
+[3.347s] running build_py
+[3.348s] running install
+[3.349s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[3.349s]   warnings.warn(
+[3.350s] running install_lib
+[3.352s] running install_data
+[3.354s] running install_egg_info
+[3.357s] removing '/home/brussell03/DRON/ros2_ws/install/temperature/lib/python3.10/site-packages/temperature-0.0.0-py3.10.egg-info' (and everything under it)
+[3.357s] Copying ../../build/temperature/temperature.egg-info to /home/brussell03/DRON/ros2_ws/install/temperature/lib/python3.10/site-packages/temperature-0.0.0-py3.10.egg-info
+[3.359s] running install_scripts
+[3.407s] Installing temperature_pub script to /home/brussell03/DRON/ros2_ws/install/temperature/lib/temperature
+[3.409s] Installing temperature_sub script to /home/brussell03/DRON/ros2_ws/install/temperature/lib/temperature
+[3.410s] writing list of installed files to '/home/brussell03/DRON/ros2_ws/build/temperature/install.log'
+[3.715s] Invoked command in '/home/brussell03/DRON/ros2_ws/src/temperature' returned '0': PYTHONPATH=/home/brussell03/DRON/ros2_ws/build/temperature/prefix_override:/home/brussell03/DRON/ros2_ws/install/temperature/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/temperature build --build-base /home/brussell03/DRON/ros2_ws/build/temperature/build install --record /home/brussell03/DRON/ros2_ws/build/temperature/install.log --single-version-externally-managed

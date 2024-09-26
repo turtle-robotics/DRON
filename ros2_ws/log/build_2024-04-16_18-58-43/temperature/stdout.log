@@ -1,0 +1,39 @@
+running egg_info
+creating ../../build/temperature/temperature.egg-info
+writing ../../build/temperature/temperature.egg-info/PKG-INFO
+writing dependency_links to ../../build/temperature/temperature.egg-info/dependency_links.txt
+writing entry points to ../../build/temperature/temperature.egg-info/entry_points.txt
+writing requirements to ../../build/temperature/temperature.egg-info/requires.txt
+writing top-level names to ../../build/temperature/temperature.egg-info/top_level.txt
+writing manifest file '../../build/temperature/temperature.egg-info/SOURCES.txt'
+reading manifest file '../../build/temperature/temperature.egg-info/SOURCES.txt'
+writing manifest file '../../build/temperature/temperature.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/brussell03/DRON/ros2_ws/build/temperature/build
+creating /home/brussell03/DRON/ros2_ws/build/temperature/build/lib
+creating /home/brussell03/DRON/ros2_ws/build/temperature/build/lib/temperature
+copying temperature/temp_sub.py -> /home/brussell03/DRON/ros2_ws/build/temperature/build/lib/temperature
+copying temperature/__init__.py -> /home/brussell03/DRON/ros2_ws/build/temperature/build/lib/temperature
+copying temperature/temp_pub.py -> /home/brussell03/DRON/ros2_ws/build/temperature/build/lib/temperature
+running install
+running install_lib
+creating /home/brussell03/DRON/ros2_ws/install/temperature/lib/python3.10/site-packages/temperature
+copying /home/brussell03/DRON/ros2_ws/build/temperature/build/lib/temperature/temp_sub.py -> /home/brussell03/DRON/ros2_ws/install/temperature/lib/python3.10/site-packages/temperature
+copying /home/brussell03/DRON/ros2_ws/build/temperature/build/lib/temperature/__init__.py -> /home/brussell03/DRON/ros2_ws/install/temperature/lib/python3.10/site-packages/temperature
+copying /home/brussell03/DRON/ros2_ws/build/temperature/build/lib/temperature/temp_pub.py -> /home/brussell03/DRON/ros2_ws/install/temperature/lib/python3.10/site-packages/temperature
+byte-compiling /home/brussell03/DRON/ros2_ws/install/temperature/lib/python3.10/site-packages/temperature/temp_sub.py to temp_sub.cpython-310.pyc
+byte-compiling /home/brussell03/DRON/ros2_ws/install/temperature/lib/python3.10/site-packages/temperature/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/brussell03/DRON/ros2_ws/install/temperature/lib/python3.10/site-packages/temperature/temp_pub.py to temp_pub.cpython-310.pyc
+running install_data
+creating /home/brussell03/DRON/ros2_ws/install/temperature/share/ament_index
+creating /home/brussell03/DRON/ros2_ws/install/temperature/share/ament_index/resource_index
+creating /home/brussell03/DRON/ros2_ws/install/temperature/share/ament_index/resource_index/packages
+copying resource/temperature -> /home/brussell03/DRON/ros2_ws/install/temperature/share/ament_index/resource_index/packages
+copying package.xml -> /home/brussell03/DRON/ros2_ws/install/temperature/share/temperature
+running install_egg_info
+Copying ../../build/temperature/temperature.egg-info to /home/brussell03/DRON/ros2_ws/install/temperature/lib/python3.10/site-packages/temperature-0.0.0-py3.10.egg-info
+running install_scripts
+Installing temperature_pub script to /home/brussell03/DRON/ros2_ws/install/temperature/lib/temperature
+Installing temperature_sub script to /home/brussell03/DRON/ros2_ws/install/temperature/lib/temperature
+writing list of installed files to '/home/brussell03/DRON/ros2_ws/build/temperature/install.log'

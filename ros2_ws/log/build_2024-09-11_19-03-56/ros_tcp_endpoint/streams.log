@@ -1,0 +1,74 @@
+[3.055s] Invoking command in '/home/brussell03/DRON/ros2_ws/src/ROS-TCP-Endpoint-main-ros2': PYTHONPATH=/home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/prefix_override:/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/ros_tcp_endpoint build --build-base /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build install --record /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/install.log --install-scripts $base/lib/ros_tcp_endpoint --single-version-externally-managed
+[3.465s] /usr/lib/python3/dist-packages/setuptools/dist.py:723: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+[3.465s]   warnings.warn(
+[3.480s] running egg_info
+[3.481s] creating ../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info
+[3.481s] writing ../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/PKG-INFO
+[3.482s] writing dependency_links to ../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/dependency_links.txt
+[3.482s] writing entry points to ../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/entry_points.txt
+[3.482s] writing requirements to ../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/requires.txt
+[3.482s] writing top-level names to ../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/top_level.txt
+[3.483s] writing manifest file '../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/SOURCES.txt'
+[3.487s] reading manifest file '../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/SOURCES.txt'
+[3.487s] adding license file 'LICENSE'
+[3.488s] writing manifest file '../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/SOURCES.txt'
+[3.488s] running build
+[3.489s] running build_py
+[3.489s] creating /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build
+[3.489s] creating /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib
+[3.489s] creating /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint
+[3.490s] copying ros_tcp_endpoint/service.py -> /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint
+[3.490s] copying ros_tcp_endpoint/subscriber.py -> /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint
+[3.490s] copying ros_tcp_endpoint/__init__.py -> /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint
+[3.491s] copying ros_tcp_endpoint/default_server_endpoint.py -> /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint
+[3.491s] copying ros_tcp_endpoint/unity_service.py -> /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint
+[3.491s] copying ros_tcp_endpoint/publisher.py -> /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint
+[3.492s] copying ros_tcp_endpoint/exceptions.py -> /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint
+[3.492s] copying ros_tcp_endpoint/client.py -> /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint
+[3.492s] copying ros_tcp_endpoint/server.py -> /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint
+[3.493s] copying ros_tcp_endpoint/tcp_sender.py -> /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint
+[3.493s] copying ros_tcp_endpoint/communication.py -> /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint
+[3.494s] copying ros_tcp_endpoint/thread_pauser.py -> /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint
+[3.494s] running install
+[3.494s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[3.494s]   warnings.warn(
+[3.495s] running install_lib
+[3.497s] creating /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint
+[3.497s] copying /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/service.py -> /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint
+[3.497s] copying /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/subscriber.py -> /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint
+[3.498s] copying /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/__init__.py -> /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint
+[3.499s] copying /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/default_server_endpoint.py -> /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint
+[3.499s] copying /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/unity_service.py -> /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint
+[3.500s] copying /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/publisher.py -> /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint
+[3.500s] copying /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/exceptions.py -> /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint
+[3.500s] copying /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/client.py -> /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint
+[3.500s] copying /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/server.py -> /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint
+[3.500s] copying /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/tcp_sender.py -> /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint
+[3.501s] copying /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/communication.py -> /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint
+[3.501s] copying /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build/lib/ros_tcp_endpoint/thread_pauser.py -> /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint
+[3.502s] byte-compiling /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/service.py to service.cpython-310.pyc
+[3.503s] byte-compiling /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/subscriber.py to subscriber.cpython-310.pyc
+[3.504s] byte-compiling /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/__init__.py to __init__.cpython-310.pyc
+[3.504s] byte-compiling /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/default_server_endpoint.py to default_server_endpoint.cpython-310.pyc
+[3.505s] byte-compiling /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/unity_service.py to unity_service.cpython-310.pyc
+[3.506s] byte-compiling /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/publisher.py to publisher.cpython-310.pyc
+[3.507s] byte-compiling /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/exceptions.py to exceptions.cpython-310.pyc
+[3.508s] byte-compiling /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/client.py to client.cpython-310.pyc
+[3.510s] byte-compiling /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/server.py to server.cpython-310.pyc
+[3.514s] byte-compiling /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/tcp_sender.py to tcp_sender.cpython-310.pyc
+[3.516s] byte-compiling /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/communication.py to communication.cpython-310.pyc
+[3.517s] byte-compiling /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint/thread_pauser.py to thread_pauser.cpython-310.pyc
+[3.517s] running install_data
+[3.518s] creating /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ament_index
+[3.518s] creating /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ament_index/resource_index
+[3.519s] creating /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ament_index/resource_index/packages
+[3.519s] copying resource/ros_tcp_endpoint -> /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ament_index/resource_index/packages
+[3.519s] copying package.xml -> /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ros_tcp_endpoint
+[3.519s] creating /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ros_tcp_endpoint/launch
+[3.519s] copying launch/endpoint.py -> /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/share/ros_tcp_endpoint/launch
+[3.520s] running install_egg_info
+[3.524s] Copying ../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info to /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint-0.0.1-py3.10.egg-info
+[3.525s] running install_scripts
+[3.574s] Installing default_server_endpoint script to /home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/ros_tcp_endpoint
+[3.575s] writing list of installed files to '/home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/install.log'
+[3.709s] Invoked command in '/home/brussell03/DRON/ros2_ws/src/ROS-TCP-Endpoint-main-ros2' returned '0': PYTHONPATH=/home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/prefix_override:/home/brussell03/DRON/ros2_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/ros_tcp_endpoint build --build-base /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/build install --record /home/brussell03/DRON/ros2_ws/build/ros_tcp_endpoint/install.log --install-scripts $base/lib/ros_tcp_endpoint --single-version-externally-managed

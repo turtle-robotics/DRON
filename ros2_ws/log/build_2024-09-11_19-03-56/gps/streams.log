@@ -1,0 +1,24 @@
+[1.656s] Invoking command in '/home/brussell03/DRON/ros2_ws/src/gps': PYTHONPATH=/home/brussell03/DRON/ros2_ws/build/gps/prefix_override:/home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/gps build --build-base /home/brussell03/DRON/ros2_ws/build/gps/build install --record /home/brussell03/DRON/ros2_ws/build/gps/install.log --single-version-externally-managed
+[2.080s] running egg_info
+[2.081s] writing ../../build/gps/gps.egg-info/PKG-INFO
+[2.083s] writing dependency_links to ../../build/gps/gps.egg-info/dependency_links.txt
+[2.083s] writing entry points to ../../build/gps/gps.egg-info/entry_points.txt
+[2.083s] writing requirements to ../../build/gps/gps.egg-info/requires.txt
+[2.083s] writing top-level names to ../../build/gps/gps.egg-info/top_level.txt
+[2.086s] reading manifest file '../../build/gps/gps.egg-info/SOURCES.txt'
+[2.088s] writing manifest file '../../build/gps/gps.egg-info/SOURCES.txt'
+[2.088s] running build
+[2.088s] running build_py
+[2.089s] running install
+[2.090s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[2.090s]   warnings.warn(
+[2.090s] running install_lib
+[2.092s] running install_data
+[2.093s] running install_egg_info
+[2.096s] removing '/home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps-0.0.0-py3.10.egg-info' (and everything under it)
+[2.097s] Copying ../../build/gps/gps.egg-info to /home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages/gps-0.0.0-py3.10.egg-info
+[2.098s] running install_scripts
+[2.138s] Installing gps_pub script to /home/brussell03/DRON/ros2_ws/install/gps/lib/gps
+[2.139s] Installing gps_sub script to /home/brussell03/DRON/ros2_ws/install/gps/lib/gps
+[2.139s] writing list of installed files to '/home/brussell03/DRON/ros2_ws/build/gps/install.log'
+[2.176s] Invoked command in '/home/brussell03/DRON/ros2_ws/src/gps' returned '0': PYTHONPATH=/home/brussell03/DRON/ros2_ws/build/gps/prefix_override:/home/brussell03/DRON/ros2_ws/install/gps/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/gps build --build-base /home/brussell03/DRON/ros2_ws/build/gps/build install --record /home/brussell03/DRON/ros2_ws/build/gps/install.log --single-version-externally-managed
