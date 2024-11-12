@@ -1,5 +1,6 @@
 # Ignores ros2 builds
 /ros2_ws/[Bb]uild/
+/ros2_ws/[Ll]og/
 
 # This .gitignore file should be placed at the root of your Unity project directory
 #
