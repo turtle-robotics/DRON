@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/brussell03/DRON/DisparityFiltering/build",
-  "command": "/usr/bin/c++ -DDisparityFiltering_EXPORTS -isystem /usr/local/include/opencv4 -g -fPIC -o CMakeFiles/DisparityFiltering.dir/DisparityFiltering.cpp.o -c /home/brussell03/DRON/DisparityFiltering/DisparityFiltering.cpp",
-  "file": "/home/brussell03/DRON/DisparityFiltering/DisparityFiltering.cpp"
-}
-]

@@ -20,8 +20,8 @@ class ImagePublisher(Node):
 	        self.i = 0
 
 	def timer_callback(self):
-		imgLeft = cv.imread('../SV_In/ambush_5_left.jpg', cv.IMREAD_COLOR)
-		imgRight = cv.imread('../SV_In/ambush_5_right.jpg', cv.IMREAD_COLOR)
+		imgLeft = cv.imread('../SV_In/stLeft.jpg', cv.IMREAD_COLOR)
+		imgRight = cv.imread('../SV_In/stRight.jpg', cv.IMREAD_COLOR)
 		#imageLeft_message = bridge.cv2_to_imgmsg(imgLeft, encoding="passthrough")
 		#imageRight_message = bridge.cv2_to_imgmsg(imgRight, encoding="passthrough")
 		imgLeftGray = cv.cvtColor(imgLeft, cv.COLOR_BGR2GRAY)

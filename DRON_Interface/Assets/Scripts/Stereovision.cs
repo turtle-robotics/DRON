@@ -8,31 +8,27 @@ using System.Linq;
 
 public class Stereovision : MonoBehaviour
 {
-    [DllImport ("DisparityFiltering", EntryPoint = "processDisparity")] // nm -D libDisparityFiltering.so to find the decorated name
-    private static extern int processDisparity(int[] outData, int height, int width, int[] leftImage, int[] rightImage);
+    [DllImport ("DisparityFiltering", EntryPoint = "processDisparity")]
+    private static extern int processDisparity(float[] pointCloudData, int height, int width, int[] leftImage, int[] rightImage);
 
-    [SerializeField]
-    private int focalLength = 4000; // pixels
-    [SerializeField]
-    private int cameraSep = 10; // mm
-
-    public int everyOther = 25;
+    public int everyOther = 1;
     public GameObject meshRegion;
     public Material meshMaterial;
 
     private GameObject obj;
     private MeshRegionRenderer meshRegionRenderer;
-    int[] data = new int[446464];
     bool after = false;
 
     private Image leftImage;
     private Image rightImage;
+    private DroneInstance droneInstance;
 
     // Start is called before the first frame update
     void Start()
     {
         obj = GameObject.Instantiate(meshRegion, Vector3.zero, Quaternion.identity);
         meshRegionRenderer = obj.GetComponent<MeshRegionRenderer>();
+        droneInstance = transform.parent.GetComponent<DroneInstance>();
     }
 
     // Update is called once per frame
@@ -43,15 +39,37 @@ public class Stereovision : MonoBehaviour
         }
         if (Input.GetKeyUp("space") && leftImage.data != null && rightImage.data != null) {
             // Process disparity and reconstruct 3D mesh when spacebar is pressed
-            data = new int[leftImage.height * leftImage.width];
-            Debug.Log(processDisparity(data, leftImage.height, leftImage.width, leftImage.data, rightImage.data));
-            Reconstruct3D(data, leftImage.height, leftImage.width);
+            int height = leftImage.height;
+            int width = leftImage.width;
+            Debug.Log(height);
+
+            float[] pointCloudData = new float[height * width * 3];
+            Debug.Log(processDisparity(pointCloudData, height, width, leftImage.data, rightImage.data)); // Returns point cloud data
+
+            // Organize floats into Vector3 image
+            Vector3[,] pointCloud = new Vector3[height,width];
+            for (int i = 0; i < height; i++) {
+                for (int j = 0; j < width; j++) {
+                    //Vector3 point = transform.TransformPoint(new Vector3(pointCloudData[i * (width * 3) + j * 3], pointCloudData[i * (width * 3) + j * 3 + 1], pointCloudData[i * (width * 3) + j * 3 + 2]) / 1000);
+                    Vector3 point = new Vector3(pointCloudData[i * (width * 3) + j * 3], pointCloudData[i * (width * 3) + j * 3 + 1], pointCloudData[i * (width * 3) + j * 3 + 2]) / 1000;
+                    if (float.IsNaN(point.x) || float.IsNaN(point.y) || float.IsNaN(point.z) || float.IsInfinity(point.x) || float.IsInfinity(point.y) || float.IsInfinity(point.z)) {
+                        pointCloud[i,j] = Vector3.zero;
+                    } else {
+                        pointCloud[i,j] = point;
+                    }
+                }
+            }
+
+            Debug.Log(pointCloud[0,0]);
+            Debug.Log(pointCloud[200,400]);
+
+            Reconstruct3D(pointCloud, height, width);
             after = true;
         }
     }
 
-    void Reconstruct3D(int[] data, int height, int width) {
-        print("reconstructing");
+    void Reconstruct3D(Vector3[,] pointCloud, int height, int width) {
+        Debug.Log("reconstructing");
 
         // https://docs.opencv.org/4.x/dd/d53/tutorial_py_depthmap.html
         var gradient = new Gradient();
@@ -74,7 +92,7 @@ public class Stereovision : MonoBehaviour
 
         int index = 0;
 
-        float maxDepth = 0f;
+        /*float maxDepth = 0f;
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
                 if (everyOther != 0) {
@@ -94,7 +112,7 @@ public class Stereovision : MonoBehaviour
 
                 if (depth > maxDepth) maxDepth = depth;
             }
-        }
+        }*/
 
         index = 0;
         for (int i = 0; i < height; i++) {
@@ -107,17 +125,18 @@ public class Stereovision : MonoBehaviour
                         index = 0;
                     }
                 }
-                int disparity = data[i * width + j]; // measured in pixels
+                /*int disparity = data[i * width + j]; // measured in pixels
 
                 if (disparity == 0) {
                     continue;
                 }
 
-                float depth = (cameraSep * focalLength / disparity) * 0.001f; // mm to m
+                float depth = (cameraSep * focalLength / disparity) * 0.001f; // mm to m*/
                 Vector3[] cubeVerts;
                 int[] cubeTris;
 
-                Vector3 worldPos = new Vector3(j/100f, (height-i-1)/100f, depth);
+                //Vector3 worldPos = new Vector3(j/100f, (height-i-1)/100f, depth);
+                Vector3 worldPos = pointCloud[i,j];
 
                 MeshGenerator.GenerateCubeMesh(worldPos, 0.01f * (everyOther + 1f), vertices.Count, out cubeVerts, out cubeTris);
                 vertices.AddRange(cubeVerts);
@@ -133,9 +152,9 @@ public class Stereovision : MonoBehaviour
         // create new colors array where the colors will be created.
         Color[] meshColors = new Color[vertices.Count];
 
-        for (int i = 0; i < vertices.Count; i++) {
+        /*for (int i = 0; i < vertices.Count; i++) {
             meshColors[i] = gradient.Evaluate(1 - vertices[i].z / maxDepth);
-        }
+        }*/
         // assign the array of colors to the Mesh.
         mesh.colors = meshColors;
 
