@@ -10,6 +10,8 @@ public class Stereovision : MonoBehaviour
 {
     [DllImport ("DisparityFiltering", EntryPoint = "processDisparity")]
     private static extern int processDisparity(float[] pointCloudData, int height, int width, int[] leftImage, int[] rightImage);
+    [DllImport ("DisparityFiltering", EntryPoint = "getDirectionVectors")]
+    private static extern int getDirectionVectors(float[] dirVecs, int height, int width, int[] image);
 
     public int everyOther = 1;
     public GameObject meshRegion;
@@ -21,6 +23,7 @@ public class Stereovision : MonoBehaviour
 
     private Image leftImage;
     private Image rightImage;
+    private Image thermalImage;
     private DroneInstance droneInstance;
 
     // Start is called before the first frame update
@@ -41,7 +44,6 @@ public class Stereovision : MonoBehaviour
             // Process disparity and reconstruct 3D mesh when spacebar is pressed
             int height = leftImage.height;
             int width = leftImage.width;
-            Debug.Log(height);
 
             float[] pointCloudData = new float[height * width * 3];
             Debug.Log(processDisparity(pointCloudData, height, width, leftImage.data, rightImage.data)); // Returns point cloud data
@@ -161,12 +163,34 @@ public class Stereovision : MonoBehaviour
         meshRegionRenderer.UpdateMesh(mesh, meshMaterial, height, width, everyOther);
     }
 
+    private void ProjectThermal() {
+        int height = thermalImage.height;
+        int width = thermalImage.width;
+
+        float[] dirVecData = new float[height * width * 3];
+        Debug.Log(getDirectionVectors(dirVecData, height, width, thermalImage.data)); // Returns the thermal image's direction vectors ungrouped
+
+        // Organize floats into Vector3's
+        Vector3[,] dirVecs = new Vector3[height,width];
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                dirVecs[i,j] = transform.TransformDirection(new Vector3(dirVecData[i * (width * 3) + j * 3], dirVecData[i * (width * 3) + j * 3 + 1], dirVecData[i * (width * 3) + j * 3 + 2]));
+            }
+        }
+
+        
+    }
+
     public void SetLeftImage(int height, int width, string encoding, byte[] data) {
         leftImage = new Image(height, width, encoding, data);
     }
 
     public void SetRightImage(int height, int width, string encoding, byte[] data) {
         rightImage = new Image(height, width, encoding, data);
+    }
+
+    public void SetThermalImage(int height, int width, string encoding, byte[] data) {
+        thermalImage = new Image(height, width, encoding, data);
     }
 }
 

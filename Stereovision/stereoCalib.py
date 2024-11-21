@@ -17,7 +17,7 @@ criteria = (cv.TERM_CRITERIA_EPS + cv.TERM_CRITERIA_MAX_ITER, 30, 0.001)
 objp = np.zeros((chessboardSize[0] * chessboardSize[1], 3), np.float32) # creates 9*6 list of (0.,0.,0.)
 objp[:,:2] = np.mgrid[0:chessboardSize[0],0:chessboardSize[1]].T.reshape(-1,2) # formats list with (column no., row no., 0.) where max column no. = 8, and max row no. = 5
 
-size_of_chessboard_squares_mm = 109
+size_of_chessboard_squares_mm = 24
 objp = objp * size_of_chessboard_squares_mm
 
 # Arrays to store object points and image points from all the images.
