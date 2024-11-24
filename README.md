@@ -5,6 +5,7 @@ The DRON Project is a tool designed to aid first responders in their response to
 ## Table of Contents
 
 - [Project Overview](#project-overview)
+- [Poster](#project-poster)
 - [Team Members](#team-members)
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
@@ -53,7 +54,7 @@ The primary objectives of this project are as follows:
 
 ## Project Poster
 
-![Poster](resources/DRON-Poster-Fall-2024.png)
+![Poster-Fall-2024](resources/DRON-Poster-Fall-2024.png)
 
 ## Team Members
 
