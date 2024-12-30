@@ -1,6 +1,6 @@
 # DRON: Disaster Response Observation Network
 
-The DRON Project is a tool designed to aid first responders in their response to structural fires by collecting and providing key data on the hotspots within the structure. The goal of the project is to create a swarm of drones equipped with lidar and infared cameras, capable of autnomously navigating a complex enviornment and reporting on the active development of the fire.
+The DRON Project is a tool designed to aid first responders in their response to structural fires by collecting and providing key data on the hotspots within the structure. The goal of the project is to create a swarm of drones equipped with lidar and infared cameras, capable of autonomously navigating a complex environment and reporting on the active development of the fire.
 
 ## Table of Contents
 
