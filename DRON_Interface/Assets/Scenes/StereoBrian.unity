@@ -370,7 +370,7 @@ Transform:
   m_GameObject: {fileID: 1165951957}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.12, y: 2.18, z: -3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -507,9 +507,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85579fc8fad40370800aa5f717eede0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  everyOther: 0
+  everyOther: 1
   meshRegion: {fileID: 5233712248054123247, guid: ef1a1b2766a0518c590c97462bd7c506, type: 3}
   meshMaterial: {fileID: 2100000, guid: ba205f77723f23d5eb429f935cc23ae9, type: 2}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &1377754872
 Transform:
   m_ObjectHideFlags: 0
@@ -638,8 +641,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1377754872}
   m_Father: {fileID: 0}
