@@ -41,6 +41,6 @@ public class ROS2Manager : MonoBehaviour
 
             
         }
-        fpsText.text = (1f / Time.deltaTime).ToString("##.");
+        fpsText.text = "FPS: " + (1f / Time.deltaTime).ToString("##.");
     }
 }
