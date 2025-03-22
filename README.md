@@ -60,7 +60,7 @@ The primary objectives of this project are as follows:
 
 ### Project Leadership
 - **[Ian Wilhite](https://www.linkedin.com/in/ian-wilhite)**
-  - Major: Interdisciplinary Engineering: Robotics and Controls Track
+  - Major: Robotics and Controls Engineering
   - Role: Project Lead
   - Year: Junior
  
