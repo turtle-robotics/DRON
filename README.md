@@ -54,7 +54,7 @@ The primary objectives of this project are as follows:
 
 ## Project Poster
 
-![Poster-Fall-2024](resources/DRON-Poster-Fall-2024.png)
+![Poster-Spring-2025](resources/DRON-Poster-Spring-2025.png)
 
 ## Team Members
 
