@@ -11,17 +11,18 @@ using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
 using TMPro;
+using UnityEngine.UI;
 
 
 public class Stereovision : MonoBehaviour
 {
     [DllImport ("DisparityFiltering", EntryPoint = "processDisparity")]
     private static extern int processDisparity(float[] pointCloudData, int height, int width, int[] leftImage, int[] rightImage);
-    [DllImport ("DisparityFiltering", EntryPoint = "getDirectionVectors")]
-    private static extern int getDirectionVectors(float[] dirVecs, int height, int width, int[] image);
 
     public int everyOther = 1;
     public GameObject cloudRegion;
+    public Slider maxTempSlider;
+    public TextMeshProUGUI maxTempText;
 
     private GameObject obj;
     private VisualEffect cloudVFX;
@@ -40,10 +41,16 @@ public class Stereovision : MonoBehaviour
     public Color defaultColor = Color.white;
     public TextMeshProUGUI pointText;
 
+    private float stereoHFOV = 62.2f;
+    private float stereoVFOV = 48.8f;
+    private float thermalHFOV = 45f;
+    private float thermalVFOV = 45f;
+
     [VFXType(VFXTypeAttribute.Usage.GraphicsBuffer), StructLayout(LayoutKind.Sequential)]
     public struct Point {
         public Vector3 position;
         public Color color;
+        public int temperature;
     }
 
     struct HashAndIndex : IComparable<HashAndIndex> {
@@ -88,12 +95,12 @@ public class Stereovision : MonoBehaviour
             float startTime = Time.realtimeSinceStartup;
             Debug.Log(processDisparity(pointCloudData, height, width, leftImage.data, rightImage.data)); // Returns point cloud data
             Debug.Log("Time to generate point cloud: " + (Time.realtimeSinceStartup - startTime).ToString("f6"));
-
+            
             // Organize floats into Vector3
-            Point[] pointCloud = new Point[height * width / (everyOther + 1)];
+            Point[] newCloud = new Point[height * width / (everyOther + 1)];
             int index = 0;
             int count = 0;
-            for (int i = 0; i < pointCloud.Length; i++) {
+            for (int i = 0; i < newCloud.Length; i++) {
                 if (everyOther != 0) {
                     if (index != everyOther) {
                         index++;
@@ -104,13 +111,25 @@ public class Stereovision : MonoBehaviour
                 }
                 Vector3 point = new Vector3(pointCloudData[i * 3], pointCloudData[i * 3 + 1], pointCloudData[i * 3 + 2]) / 1000;
                 if (float.IsNaN(point.x) || float.IsNaN(point.y) || float.IsNaN(point.z) || float.IsInfinity(point.x) || float.IsInfinity(point.y) || float.IsInfinity(point.z)) {
-                    pointCloud[count++] = new Point() { position = Vector3.zero, color = defaultColor };
+                    newCloud[count++] = new Point() { position = Vector3.zero, color = defaultColor, temperature = -1 };
                 } else {
-                    pointCloud[count++] = new Point() { position = transform.TransformPoint(point), color = new Color(UnityEngine.Random.value , UnityEngine.Random.value, UnityEngine.Random.value, 1) };
+                    newCloud[count++] = new Point() { position = transform.TransformPoint(point), color = new Color(UnityEngine.Random.value , UnityEngine.Random.value, UnityEngine.Random.value, 1), temperature = -1 };
                 }
             }
 
-            Reconstruct3D(pointCloud);
+            SetThermalValues(newCloud);
+            Reconstruct3D(newCloud);
+
+            pointsBuffer = new GraphicsBuffer(GraphicsBuffer.Target.Structured, pointCloud.Length, Marshal.SizeOf(typeof(Point)));
+            pointsBuffer.SetData(pointCloud);
+
+            cloudVFX.SetGraphicsBuffer(Shader.PropertyToID("PointsBuffer"), pointsBuffer);
+            cloudVFX.SetUInt(Shader.PropertyToID("ParticleCount"), (uint)pointCloud.Length);
+            cloudVFX.SetFloat(Shader.PropertyToID("ParticleSize"), pointSize);
+            cloudVFX.SetFloat(Shader.PropertyToID("BoundsSize"), boundsSize);
+
+            cloudVFX.Reinit();
+            pointText.text = "Points: " + pointCloud.Length.ToString("###,###,###.");
         }
     }
 
@@ -121,16 +140,7 @@ public class Stereovision : MonoBehaviour
         pointCloud = JoinClouds(newCloud);
         Debug.Log("Time to join clouds: " + (Time.realtimeSinceStartup - startTime).ToString("f6"));
 
-        pointsBuffer = new GraphicsBuffer(GraphicsBuffer.Target.Structured, pointCloud.Length, Marshal.SizeOf(typeof(Point)));
-        pointsBuffer.SetData(pointCloud);
-
-        cloudVFX.SetGraphicsBuffer(Shader.PropertyToID("PointsBuffer"), pointsBuffer);
-        cloudVFX.SetUInt(Shader.PropertyToID("ParticleCount"), (uint)pointCloud.Length);
-        cloudVFX.SetFloat(Shader.PropertyToID("ParticleSize"), pointSize);
-        cloudVFX.SetFloat(Shader.PropertyToID("BoundsSize"), boundsSize);
-
-        cloudVFX.Reinit();
-        pointText.text = "Points: " + pointCloud.Length.ToString("###,###,###.");
+        
     }
 
     private void OnDestroy() {
@@ -355,18 +365,53 @@ public class Stereovision : MonoBehaviour
         sortJobHandle.Complete();
     }
 
-    private void ProjectThermal() {
-        int height = thermalImage.height;
-        int width = thermalImage.width;
+    private void SetThermalValues(Point[] newCloud) {
+        int thermalHeight = 62;//thermalImage.height;
+        int thermalWidth = 80;//thermalImage.width;
+        int stereoHeight = leftImage.height;
+        int stereoWidth = leftImage.width;
 
-        float[] dirVecData = new float[height * width * 3];
-        Debug.Log(getDirectionVectors(dirVecData, height, width, thermalImage.data)); // Returns the thermal image's direction vectors ungrouped
+        float horizontalImageFill = thermalHFOV / stereoHFOV * stereoWidth;
+        float verticalImageFill = thermalVFOV / stereoVFOV * stereoHeight;
 
-        // Organize floats into Vector3's
-        Vector3[] dirVecs = new Vector3[height * width];
-        for (int i = 0; i < height; i++) {
-            dirVecs[i] = transform.TransformDirection(new Vector3(dirVecData[i * 3], dirVecData[i * 3 + 1], dirVecData[i * 3 + 2]));
+        int thermalStereoYMin = (int)((stereoHeight - verticalImageFill) / 2);
+        int thermalStereoYMax = stereoHeight - thermalStereoYMin;
+
+        int thermalStereoXMin = (int)((stereoWidth - horizontalImageFill) / 2);
+        int thermalStereoXMax = stereoWidth - thermalStereoXMin;
+
+        int minTemp = 100;
+        int maxTemp = 0;
+
+        for (int y = 0; y < stereoHeight; y++) {
+            for (int x = 0; x < stereoWidth; x++) {
+                int pointIndex = y * stereoWidth + x;
+
+                if (/*thermalImage.data != null && */y >= thermalStereoYMin && y <= thermalStereoYMax && x >= thermalStereoXMin && x <= thermalStereoXMax) {
+                    // Stereo pixel exists on thermal image
+                    int relativeX = (x - thermalStereoXMin) / (thermalStereoXMax - thermalStereoXMin); // % Along thermal image X
+                    int relativeY = (y - thermalStereoYMin) / (thermalStereoYMax - thermalStereoYMin); // % Along thermal image Y
+
+                    int thermalX = (int)Mathf.RoundToInt(relativeX * thermalWidth);
+                    int thermalY = (int)Mathf.RoundToInt(relativeY * thermalHeight);
+
+                    int temp = (int)UnityEngine.Random.Range(0, 300) + 1;//thermalImage.data[thermalY * thermalWidth + thermalX];
+                    newCloud[pointIndex].temperature = Mathf.RoundToInt(newCloud[pointIndex].position.z * 1000);
+                    //newCloud[pointIndex].temperature = temp;
+
+                    //if (temp > maxTemp) maxTemp = temp;
+                    //if (temp < minTemp) minTemp = temp;
+                } else {
+                    newCloud[pointIndex].temperature = -1;
+
+                    if (-1 < minTemp) minTemp = -1;
+                }
+            }
         }
+        minTemp = 0;
+        maxTemp = 1000;
+
+        SetMaxTemp();
     }
 
     public void SetLeftImage(int height, int width, string encoding, byte[] data) {
@@ -379,6 +424,13 @@ public class Stereovision : MonoBehaviour
 
     public void SetThermalImage(int height, int width, string encoding, byte[] data) {
         thermalImage = new Image(height, width, encoding, data);
+    }
+
+    public void SetMaxTemp() {
+        maxTempText.text = "T: " + (int)maxTempSlider.value;
+        cloudVFX.SetInt(Shader.PropertyToID("MinTemperature"), 0);
+        cloudVFX.SetInt(Shader.PropertyToID("MaxTemperature"), (int)maxTempSlider.value);
+        cloudVFX.Reinit();
     }
 
     public static int Hash(int3 gridPos, int tableSize) {
