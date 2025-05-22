@@ -5,60 +5,102 @@ using UnityEngine.Rendering;
 using System;
 using System.Runtime.InteropServices;
 using System.Linq;
+using UnityEngine.VFX;
+using Unity.Burst;
+using Unity.Collections;
+using Unity.Jobs;
+using Unity.Mathematics;
+using TMPro;
+using UnityEngine.UI;
+
 
 public class Stereovision : MonoBehaviour
 {
     [DllImport ("DisparityFiltering", EntryPoint = "processDisparity")]
     private static extern int processDisparity(float[] pointCloudData, int height, int width, int[] leftImage, int[] rightImage);
-    [DllImport ("DisparityFiltering", EntryPoint = "getDirectionVectors")]
-    private static extern int getDirectionVectors(float[] dirVecs, int height, int width, int[] image);
 
     public int everyOther = 1;
-    public GameObject meshRegion;
-    public Material meshMaterial;
+    public GameObject cloudRegion;
+    public Slider maxTempSlider;
+    public TextMeshProUGUI maxTempText;
 
     private GameObject obj;
-    private MeshRegionRenderer meshRegionRenderer;
-    bool after = false;
+    private VisualEffect cloudVFX;
 
     private Image leftImage;
     private Image rightImage;
     private Image thermalImage;
     private DroneInstance droneInstance;
-    private Hash hash;
-    private Hash checkingHash;
-    private Vector3[] pointCloud;
-    private float[] pointCloudHeat;
-    public LayerMask layerMask;
+    private Point[] pointCloud;
+
+    private GraphicsBuffer pointsBuffer;
+    VisualEffect vfx;
+    public float pointSize = 0.1f;
+    public float boundsSize = 10f;
+    public float cellSize = 0.5f;
+    public Color defaultColor = Color.white;
+    public TextMeshProUGUI pointText;
+
+    private float stereoHFOV = 62.2f;
+    private float stereoVFOV = 48.8f;
+    private float thermalHFOV = 45f;
+    private float thermalVFOV = 45f;
+
+    [VFXType(VFXTypeAttribute.Usage.GraphicsBuffer), StructLayout(LayoutKind.Sequential)]
+    public struct Point {
+        public Vector3 position;
+        public Color color;
+        public int temperature;
+    }
+
+    struct HashAndIndex : IComparable<HashAndIndex> {
+        public int Hash;
+        public int Index;
+
+        public int CompareTo(HashAndIndex other) {
+            return Hash.CompareTo(other.Hash);
+        }
+    }
+
+    #region Native Objects
+    NativeArray<Point> pointsNative;
+    NativeArray<HashAndIndex> hashAndIndices;
+    NativeArray<int> cellCountNative;
+    NativeHashSet<int> activeHashes;
+    NativeArray<Point> pointsNativeChecking;
+    NativeArray<HashAndIndex> hashAndIndicesChecking;
+    NativeArray<int> cellCountNativeChecking;
+    NativeHashSet<int> activeHashesChecking;
+    NativeList<int> resultIndices;
+    NativeList<Point> joinedCloudNative;
+    #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-        obj = GameObject.Instantiate(meshRegion, Vector3.zero, Quaternion.identity);
-        meshRegionRenderer = obj.GetComponent<MeshRegionRenderer>();
+        obj = GameObject.Instantiate(cloudRegion, Vector3.zero, Quaternion.identity);
+        cloudVFX = obj.GetComponent<VisualEffect>();
         droneInstance = transform.parent.GetComponent<DroneInstance>();
-        layerMask = LayerMask.GetMask("PointCloud");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (after) {
-            after = false;
-        }
         if (Input.GetKeyUp("space") && leftImage.data != null && rightImage.data != null) {
             // Process disparity and reconstruct 3D mesh when spacebar is pressed
             int height = leftImage.height;
             int width = leftImage.width;
 
             float[] pointCloudData = new float[height * width * 3];
+            float startTime = Time.realtimeSinceStartup;
             Debug.Log(processDisparity(pointCloudData, height, width, leftImage.data, rightImage.data)); // Returns point cloud data
-
+            Debug.Log("Time to generate point cloud: " + (Time.realtimeSinceStartup - startTime).ToString("f6"));
+            
             // Organize floats into Vector3
-            Vector3[] pointCloud = new Vector3[height * width / (everyOther + 1)];
+            Point[] newCloud = new Point[height * width / (everyOther + 1)];
             int index = 0;
             int count = 0;
-            for (int i = 0; i < pointCloud.Length; i++) {
+            for (int i = 0; i < newCloud.Length; i++) {
                 if (everyOther != 0) {
                     if (index != everyOther) {
                         index++;
@@ -69,163 +111,307 @@ public class Stereovision : MonoBehaviour
                 }
                 Vector3 point = new Vector3(pointCloudData[i * 3], pointCloudData[i * 3 + 1], pointCloudData[i * 3 + 2]) / 1000;
                 if (float.IsNaN(point.x) || float.IsNaN(point.y) || float.IsNaN(point.z) || float.IsInfinity(point.x) || float.IsInfinity(point.y) || float.IsInfinity(point.z)) {
-                    pointCloud[count++] = Vector3.zero;
+                    newCloud[count++] = new Point() { position = Vector3.zero, color = defaultColor, temperature = -1 };
                 } else {
-                    pointCloud[count++] = transform.TransformPoint(point);
+                    newCloud[count++] = new Point() { position = transform.TransformPoint(point), color = new Color(UnityEngine.Random.value , UnityEngine.Random.value, UnityEngine.Random.value, 1), temperature = -1 };
                 }
             }
 
-            Reconstruct3D(pointCloud);
-            after = true;
+            SetThermalValues(newCloud);
+            Reconstruct3D(newCloud);
+
+            pointsBuffer = new GraphicsBuffer(GraphicsBuffer.Target.Structured, pointCloud.Length, Marshal.SizeOf(typeof(Point)));
+            pointsBuffer.SetData(pointCloud);
+
+            cloudVFX.SetGraphicsBuffer(Shader.PropertyToID("PointsBuffer"), pointsBuffer);
+            cloudVFX.SetUInt(Shader.PropertyToID("ParticleCount"), (uint)pointCloud.Length);
+            cloudVFX.SetFloat(Shader.PropertyToID("ParticleSize"), pointSize);
+            cloudVFX.SetFloat(Shader.PropertyToID("BoundsSize"), boundsSize);
+
+            cloudVFX.Reinit();
+            pointText.text = "Points: " + pointCloud.Length.ToString("###,###,###.");
         }
     }
 
-    void Reconstruct3D(Vector3[] pointCloud) {
+    void Reconstruct3D(Point[] newCloud) {
         Debug.Log("reconstructing");
 
-        pointCloud = JoinClouds(pointCloud);
+        float startTime = Time.realtimeSinceStartup;
+        pointCloud = JoinClouds(newCloud);
+        Debug.Log("Time to join clouds: " + (Time.realtimeSinceStartup - startTime).ToString("f6"));
 
-        // https://docs.opencv.org/4.x/dd/d53/tutorial_py_depthmap.html
-        var gradient = new Gradient();
-        List<Vector3> vertices = new List<Vector3>();
-        List<int> triangles = new List<int>();
-
-        // Blend color from red at 0% to blue at 100%
-        var colors = new GradientColorKey[3];
-        colors[0] = new GradientColorKey(Color.blue, 0.0f);
-        colors[1] = new GradientColorKey(Color.green, 0.5f);
-        colors[2] = new GradientColorKey(Color.red, 1.0f);
-
-        // Blend alpha from opaque at 0% to transparent at 100%
-        var alphas = new GradientAlphaKey[3];
-        alphas[0] = new GradientAlphaKey(1.0f, 0.0f);
-        alphas[1] = new GradientAlphaKey(1.0f, 0.0f);
-        alphas[2] = new GradientAlphaKey(1.0f, 0.0f);
-
-        gradient.SetKeys(colors, alphas);
-
-        float maxDepth = 0f;
-        for (int i = 0; i < pointCloud.Length; i++) {
-            //int disparity = data[i]; // measured in pixels
-
-            float depth = pointCloud[i].x;
-            /*if (disparity != 0) {
-                depth /= disparity;
-            }*/
-
-            if (depth > maxDepth) maxDepth = depth;
-        }
-
-        for (int i = 0; i < pointCloud.Length; i++) {
-            /*int disparity = data[i * width + j]; // measured in pixels
-
-            if (disparity == 0) {
-                continue;
-            }
-
-            float depth = (cameraSep * focalLength / disparity) * 0.001f; // mm to m*/
-            Vector3[] cubeVerts;
-            int[] cubeTris;
-
-            //Vector3 worldPos = new Vector3(j/100f, (height-i-1)/100f, depth);
-            Vector3 worldPos = pointCloud[i];
-
-            MeshGenerator.GenerateCubeMesh(worldPos, 0.01f * (everyOther + 1f), vertices.Count, out cubeVerts, out cubeTris);
-            vertices.AddRange(cubeVerts);
-            triangles.AddRange(cubeTris);
-        }
-
-        Mesh mesh = new Mesh();
-        mesh.indexFormat = IndexFormat.UInt32;
-        mesh.vertices = vertices.ToArray();
-        mesh.triangles = triangles.ToArray();
         
-        // create new colors array where the colors will be created.
-        Color[] meshColors = new Color[vertices.Count];
-
-        for (int i = 0; i < vertices.Count; i++) {
-            meshColors[i] = gradient.Evaluate(1 - vertices[i].x / maxDepth);
-        }
-        // assign the array of colors to the Mesh.
-        mesh.colors = meshColors;
-
-        Debug.Log(pointCloud.Length);
-
-        this.pointCloud = pointCloud;
-        meshRegionRenderer.UpdateMesh(mesh, meshMaterial);
     }
 
-    private Vector3[] JoinClouds(Vector3[] newCloud) {
-        if (hash == null) {
-            hash = new Hash(1, 1000000);
-            checkingHash = new Hash(1, 1000000);
-            hash.Create(newCloud);
-            
-            pointCloudHeat = new float[newCloud.Length];
+    private void OnDestroy() {
+        if (pointsBuffer != null) pointsBuffer.Release();
+        if (pointsNative.IsCreated) pointsNative.Dispose();
+        if (pointsNativeChecking.IsCreated) pointsNativeChecking.Dispose();
+		if (hashAndIndices.IsCreated) hashAndIndices.Dispose();
+		if (hashAndIndicesChecking.IsCreated) hashAndIndicesChecking.Dispose();
+		if (resultIndices.IsCreated) resultIndices.Dispose();
+		if (joinedCloudNative.IsCreated) joinedCloudNative.Dispose();
+		if (cellCountNative.IsCreated) cellCountNative.Dispose();
+		if (cellCountNativeChecking.IsCreated) cellCountNativeChecking.Dispose();
+		if (activeHashes.IsCreated) activeHashes.Dispose();
+		if (activeHashesChecking.IsCreated) activeHashesChecking.Dispose();
+    }
+
+    private Point[] JoinClouds(Point[] newCloud) {
+        if (pointCloud == null) {
+            //hash = new Hash(1, 1000000);
+            //checkingHash = new Hash(1, 1000000);
+            //hash.Create(newCloud);
+
+            CreateMainHash(newCloud);
 
             return newCloud;
         } else {
             // Compare new cloud and existing cloud points. Whichever has higher concentration in grid point will remain
-            hash.Create(pointCloud);
-            checkingHash.Create(newCloud);
+            //hash.Create(pointCloud);
+            CreateCheckingHash(newCloud);
             
-            List<Vector3> joinedCloud = new List<Vector3>();
-            List<float> joinedHeat = new List<float>();
+		    if (joinedCloudNative.IsCreated) joinedCloudNative.Dispose();
+            joinedCloudNative = new NativeList<Point>(Allocator.Persistent);
+            NativeHashSet<int> addedHashes = new NativeHashSet<int>(pointCloud.Length + newCloud.Length, Allocator.TempJob);
 
-            for (int h = 0; h < hash.cellCount.Length - 1; h++) { // This checks through every grid cell
-                if (hash.cellCount[h] > checkingHash.cellCount[h]) { // Find which has the higher density
-                    // Original is higher density
+            foreach (int hash in activeHashesChecking) {
+                if (activeHashes.Contains(hash)) { // Existing cloud already has this grid cell
+                    if (cellCountNative[hash] > cellCountNativeChecking[hash]) { // Find which has the higher density
+                        // Original is higher density
 
-                    int start = hash.cellStart[h];
-                    int end = hash.cellStart[h + 1];
+                        var queryHashJob = new QueryHashJob {
+                            hashAndIndices = hashAndIndices,
+                            queryHash = hash,
+                            resultIndices = new NativeList<int>(Allocator.TempJob)
+                        };
 
-                    for (int i = start; i < end; i++) {
-                        joinedCloud.Add(pointCloud[hash.cellEntries[i]]);
-                        joinedHeat.Add(pointCloudHeat[hash.cellEntries[i]]);
+                        JobHandle queryHashJobHandle = queryHashJob.Schedule();
+
+                        queryHashJobHandle.Complete();
+
+                        if (resultIndices.IsCreated) resultIndices.Dispose();
+                        resultIndices = queryHashJob.resultIndices;
+
+                        var findPointsJob = new FindPointsJob {
+                            resultIndices = resultIndices.AsArray(),
+                            cloud = pointsNative,
+                            joinedCloud = joinedCloudNative
+                        };
+                        // Adds points at resultIndices to joinedCloudNative
+
+                        JobHandle findPointsJobHandle = findPointsJob.Schedule();
+
+                        findPointsJobHandle.Complete();
+
+                        joinedCloudNative = findPointsJob.joinedCloud;
+                    } else {
+                        // New is higher density or equal
+
+                        var queryHashJob = new QueryHashJob {
+                            hashAndIndices = hashAndIndicesChecking,
+                            queryHash = hash,
+                            resultIndices = new NativeList<int>(Allocator.TempJob)
+                        };
+
+                        JobHandle queryHashJobHandle = queryHashJob.Schedule();
+
+                        queryHashJobHandle.Complete();
+
+                        if (resultIndices.IsCreated) resultIndices.Dispose();
+                        resultIndices = queryHashJob.resultIndices;
+
+                        var findPointsJob = new FindPointsJob {
+                            resultIndices = resultIndices.AsArray(),
+                            cloud = pointsNativeChecking,
+                            joinedCloud = joinedCloudNative
+                        };
+
+                        JobHandle findPointsJobHandle = findPointsJob.Schedule();
+
+                        findPointsJobHandle.Complete();
+
+                        joinedCloudNative = findPointsJob.joinedCloud;
                     }
-
                 } else {
-                    // New is higher density or equal
+                    // Not in already existing cell
 
-                    int start = checkingHash.cellStart[h];
-                    int end = checkingHash.cellStart[h + 1];
+                    var queryHashJob = new QueryHashJob {
+                        hashAndIndices = hashAndIndicesChecking,
+                        queryHash = hash,
+                        resultIndices = new NativeList<int>(Allocator.TempJob)
+                    };
 
-                    for (int i = start; i < end; i++) {
-                        joinedCloud.Add(newCloud[checkingHash.cellEntries[i]]);
-                        joinedHeat.Add(0);
-                    }
+                    JobHandle queryHashJobHandle = queryHashJob.Schedule();
+
+                    queryHashJobHandle.Complete();
+
+                    if (resultIndices.IsCreated) resultIndices.Dispose();
+                    resultIndices = queryHashJob.resultIndices;
+
+                    var findPointsJob = new FindPointsJob {
+                        resultIndices = resultIndices.AsArray(),
+                        cloud = pointsNativeChecking,
+                        joinedCloud = joinedCloudNative
+                    };
+
+                    JobHandle findPointsJobHandle = findPointsJob.Schedule();
+
+                    findPointsJobHandle.Complete();
+
+                    joinedCloudNative = findPointsJob.joinedCloud;
+                }
+
+                addedHashes.Add(hash);
+            }
+
+            foreach (int hash in activeHashes) {
+                if (!addedHashes.Contains(hash)) {
+                    var queryHashJob = new QueryHashJob {
+                        hashAndIndices = hashAndIndices,
+                        queryHash = hash,
+                        resultIndices = new NativeList<int>(Allocator.TempJob)
+                    };
+
+                    JobHandle queryHashJobHandle = queryHashJob.Schedule();
+
+                    queryHashJobHandle.Complete();
+
+                    if (resultIndices.IsCreated) resultIndices.Dispose();
+                    resultIndices = queryHashJob.resultIndices;
+
+                    var findPointsJob = new FindPointsJob {
+                        resultIndices = resultIndices.AsArray(),
+                        cloud = pointsNative,
+                        joinedCloud = joinedCloudNative
+                    };
+                    // Adds points at resultIndices to joinedCloudNative
+
+                    JobHandle findPointsJobHandle = findPointsJob.Schedule();
+
+                    findPointsJobHandle.Complete();
+
+                    joinedCloudNative = findPointsJob.joinedCloud;
                 }
             }
 
-            pointCloudHeat = joinedHeat.ToArray();
-            return joinedCloud.ToArray();
+            Point[] joinedCloud = joinedCloudNative.AsArray().ToArray();
+		    if (joinedCloudNative.IsCreated) joinedCloudNative.Dispose();
+		    if (addedHashes.IsCreated) addedHashes.Dispose();
+		    if (resultIndices.IsCreated) resultIndices.Dispose();
+            CreateMainHash(joinedCloud);
+
+            return joinedCloud;
         }
     }
 
-    private void ProjectThermal() {
-        int height = thermalImage.height;
-        int width = thermalImage.width;
+    void CreateMainHash(Point[] cloud) {
+        pointsNative = new NativeArray<Point>(cloud.Length, Allocator.Persistent);
+        hashAndIndices = new NativeArray<HashAndIndex>(cloud.Length, Allocator.Persistent);
+        cellCountNative = new NativeArray<int>(cloud.Length, Allocator.Persistent);
+        activeHashes = new NativeHashSet<int>(cloud.Length, Allocator.Persistent);
 
-        float[] dirVecData = new float[height * width * 3];
-        Debug.Log(getDirectionVectors(dirVecData, height, width, thermalImage.data)); // Returns the thermal image's direction vectors ungrouped
-
-        // Organize floats into Vector3's
-        Vector3[] dirVecs = new Vector3[height * width];
-        for (int i = 0; i < height; i++) {
-            dirVecs[i] = transform.TransformDirection(new Vector3(dirVecData[i * 3], dirVecData[i * 3 + 1], dirVecData[i * 3 + 2]));
+        for (int i = 0; i < cloud.Length; i++) {
+            pointsNative[i] = cloud[i];
         }
 
-        for (int i = 0; i < dirVecs.Length; i++) {
-            RaycastHit hit;
-        // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, dirVecs[i], out hit, 1000, layerMask)) { 
-            Debug.DrawRay(transform.position, dirVecs[i] * hit.distance, Color.yellow); 
-            Debug.Log("Did Hit"); 
-        } else { 
-            //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white); 
-            //Debug.Log("Did not Hit"); 
+        var hashJob = new HashPointsJob {
+            points = pointsNative,
+            cellSize = cellSize,
+            hashAndIndices = hashAndIndices,
+            tableSize = cloud.Length
+        };
+
+        JobHandle hashJobHandle = hashJob.Schedule(pointsNative.Length, 64);
+
+        var sortJob = new SortHashCodesJob {
+            hashAndIndices = hashAndIndices,
+            activeHashes = activeHashes,
+            cellCount = cellCountNative
+        };
+
+        JobHandle sortJobHandle = sortJob.Schedule(hashJobHandle);
+
+        sortJobHandle.Complete();
+    }
+
+    void CreateCheckingHash(Point[] cloud) {
+        pointsNativeChecking = new NativeArray<Point>(cloud.Length, Allocator.Persistent);
+        hashAndIndicesChecking = new NativeArray<HashAndIndex>(cloud.Length, Allocator.Persistent);
+        cellCountNativeChecking = new NativeArray<int>(pointCloud.Length, Allocator.Persistent);
+        activeHashesChecking = new NativeHashSet<int>(pointCloud.Length, Allocator.Persistent);
+
+        for (int i = 0; i < cloud.Length; i++) {
+            pointsNativeChecking[i] = cloud[i];
         }
+
+        var hashJob = new HashPointsJob {
+            points = pointsNativeChecking,
+            cellSize = cellSize,
+            hashAndIndices = hashAndIndicesChecking,
+            tableSize = pointCloud.Length
+        };
+
+        JobHandle hashJobHandle = hashJob.Schedule(pointsNativeChecking.Length, 64);
+
+        var sortJob = new SortHashCodesJob {
+            hashAndIndices = hashAndIndicesChecking,
+            activeHashes = activeHashesChecking,
+            cellCount = cellCountNativeChecking
+        };
+
+        JobHandle sortJobHandle = sortJob.Schedule(hashJobHandle);
+
+        sortJobHandle.Complete();
+    }
+
+    private void SetThermalValues(Point[] newCloud) {
+        int thermalHeight = 62;//thermalImage.height;
+        int thermalWidth = 80;//thermalImage.width;
+        int stereoHeight = leftImage.height;
+        int stereoWidth = leftImage.width;
+
+        float horizontalImageFill = thermalHFOV / stereoHFOV * stereoWidth;
+        float verticalImageFill = thermalVFOV / stereoVFOV * stereoHeight;
+
+        int thermalStereoYMin = (int)((stereoHeight - verticalImageFill) / 2);
+        int thermalStereoYMax = stereoHeight - thermalStereoYMin;
+
+        int thermalStereoXMin = (int)((stereoWidth - horizontalImageFill) / 2);
+        int thermalStereoXMax = stereoWidth - thermalStereoXMin;
+
+        int minTemp = 100;
+        int maxTemp = 0;
+
+        for (int y = 0; y < stereoHeight; y++) {
+            for (int x = 0; x < stereoWidth; x++) {
+                int pointIndex = y * stereoWidth + x;
+
+                if (/*thermalImage.data != null && */y >= thermalStereoYMin && y <= thermalStereoYMax && x >= thermalStereoXMin && x <= thermalStereoXMax) {
+                    // Stereo pixel exists on thermal image
+                    int relativeX = (x - thermalStereoXMin) / (thermalStereoXMax - thermalStereoXMin); // % Along thermal image X
+                    int relativeY = (y - thermalStereoYMin) / (thermalStereoYMax - thermalStereoYMin); // % Along thermal image Y
+
+                    int thermalX = (int)Mathf.RoundToInt(relativeX * thermalWidth);
+                    int thermalY = (int)Mathf.RoundToInt(relativeY * thermalHeight);
+
+                    int temp = (int)UnityEngine.Random.Range(0, 300) + 1;//thermalImage.data[thermalY * thermalWidth + thermalX];
+                    newCloud[pointIndex].temperature = Mathf.RoundToInt(newCloud[pointIndex].position.z * 1000);
+                    //newCloud[pointIndex].temperature = temp;
+
+                    //if (temp > maxTemp) maxTemp = temp;
+                    //if (temp < minTemp) minTemp = temp;
+                } else {
+                    newCloud[pointIndex].temperature = -1;
+
+                    if (-1 < minTemp) minTemp = -1;
+                }
+            }
         }
+        minTemp = 0;
+        maxTemp = 1000;
+
+        SetMaxTemp();
     }
 
     public void SetLeftImage(int height, int width, string encoding, byte[] data) {
@@ -239,6 +425,177 @@ public class Stereovision : MonoBehaviour
     public void SetThermalImage(int height, int width, string encoding, byte[] data) {
         thermalImage = new Image(height, width, encoding, data);
     }
+
+    public void SetMaxTemp() {
+        maxTempText.text = "T: " + (int)maxTempSlider.value;
+        cloudVFX.SetInt(Shader.PropertyToID("MinTemperature"), 0);
+        cloudVFX.SetInt(Shader.PropertyToID("MaxTemperature"), (int)maxTempSlider.value);
+        cloudVFX.Reinit();
+    }
+
+    public static int Hash(int3 gridPos, int tableSize) {
+        unchecked {
+            return math.abs((gridPos.x * 92837111) ^ (gridPos.y * 689287499) ^ (gridPos.z * 283923481)) % tableSize;
+		}
+    }
+
+    [BurstCompile]
+    struct HashPointsJob : IJobParallelFor {
+        [ReadOnly] public NativeArray<Point> points;
+        public NativeArray<HashAndIndex> hashAndIndices;
+        public float cellSize;
+        public int tableSize;
+
+        public void Execute(int index) {
+            Point point = points[index];
+            int hash = Hash(GridPosition(point.position, cellSize), tableSize);
+
+            hashAndIndices[index] = new HashAndIndex { Hash = hash, Index = index };
+        }
+    }
+
+	static int3 GridPosition(float3 position, float cellSize) {
+		return new int3(math.floor(position / cellSize));
+	}
+
+	[BurstCompile]
+    struct SortHashCodesJob : IJob {
+        public NativeArray<HashAndIndex> hashAndIndices;
+        public NativeArray<int> cellCount;
+        public NativeHashSet<int> activeHashes;
+
+        public void Execute() {
+            hashAndIndices.Sort();
+
+            for (int i = 0; i < hashAndIndices.Length; i++) {
+                cellCount[hashAndIndices[i].Hash]++;
+
+                if (!activeHashes.Contains(hashAndIndices[i].Hash)) // Efficient check
+                {
+                    activeHashes.Add(hashAndIndices[i].Hash);
+                }
+            }
+        }
+    }
+
+	[BurstCompile]
+    struct QueryJob : IJob {
+        [ReadOnly] public NativeArray<Point> points;
+        [ReadOnly] public NativeArray<HashAndIndex> hashAndIndices;
+        public float3 queryPosition;
+        public float queryRadius;
+        public float cellSize;
+        public NativeList<int> resultIndices;
+        public int tableSize;
+
+        public void Execute() {
+            float radiusSquared = queryRadius * queryRadius;
+            int3 minGridPos = GridPosition(queryPosition - queryRadius, cellSize);
+			int3 maxGridPos = GridPosition(queryPosition + queryRadius, cellSize);
+
+            for (int x = minGridPos.x; x <= maxGridPos.x; x++) {
+				for (int y = minGridPos.y; y <= maxGridPos.y; y++) {
+					for (int z = minGridPos.z; z <= maxGridPos.z; z++) {
+                        int3 gridPos = new(x, y, z);
+                        int hash = Hash(gridPos, tableSize);
+
+                        int startIndex = BinarySearchFirst(hashAndIndices, hash);
+
+                        if (startIndex < 0) continue; // No points in this grid cell
+
+                        // Loop through all the points in this grid cell that have the same hash
+                        for (int i = startIndex; i < hashAndIndices.Length && hashAndIndices[i].Hash == hash; i++) {
+                            int pointIndex = hashAndIndices[i].Index;
+                            Point point = points[pointIndex];
+                            float3 toPoint = new float3(point.position.x, point.position.y, point.position.z) - queryPosition;
+
+                            if (math.lengthsq(toPoint) <= radiusSquared) {
+                                resultIndices.Add(pointIndex);
+                            }
+                        }
+					}
+				}
+			}
+		}
+
+        int BinarySearchFirst(NativeArray<HashAndIndex> array, int hash) {
+            int left = 0;
+            int right = array.Length - 1;
+            int result = -1;
+
+            while (left <= right) {
+                int mid = (left + right) / 2;
+                int midHash = array[mid].Hash;
+
+                if (midHash == hash) {
+                    result = mid;
+                    right = mid - 1;
+                } else if (midHash < hash) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+
+            return result;
+        }
+    }
+
+    [BurstCompile]
+    struct QueryHashJob : IJob {
+        [ReadOnly] public NativeArray<HashAndIndex> hashAndIndices;
+        public int queryHash;
+        public NativeList<int> resultIndices;
+
+        public void Execute() {
+
+            int startIndex = BinarySearchFirst(hashAndIndices, queryHash);
+
+            if (startIndex < 0) return; // No points in this grid cell
+
+            // Loop through all the points in this grid cell that have the same hash
+            for (int i = startIndex; i < hashAndIndices.Length && hashAndIndices[i].Hash == queryHash; i++) {
+                int pointIndex = hashAndIndices[i].Index;
+                resultIndices.Add(pointIndex);
+            }
+		}
+
+        int BinarySearchFirst(NativeArray<HashAndIndex> array, int hash) {
+            int left = 0;
+            int right = array.Length - 1;
+            int result = -1;
+
+            while (left <= right) {
+                int mid = (left + right) / 2;
+                int midHash = array[mid].Hash;
+
+                if (midHash == hash) {
+                    result = mid;
+                    right = mid - 1;
+                } else if (midHash < hash) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+
+            return result;
+        }
+    }
+
+    [BurstCompile]
+    struct FindPointsJob : IJob {
+        [ReadOnly] public NativeArray<int> resultIndices;
+        [ReadOnly] public NativeArray<Point> cloud;
+        public NativeList<Point> joinedCloud;
+
+        public void Execute() {
+            foreach (int index in resultIndices) {
+                joinedCloud.Add(cloud[index]);
+            }
+		}
+    }
+
 }
 
 public struct Image {
@@ -254,145 +611,6 @@ public struct Image {
         data = new int[height * width];
         for (int i = 0; i < data.Length; i++) {
             data[i] = (int) byteData[i];
-        }
-    }
-}
-
-class Hash {
-    public float spacing;
-    public int tableSize;
-    public int[] cellStart;
-    public int[] cellCount;
-    public int[] cellEntries;
-    public int[] queryIds;
-    public int querySize;
-    public int maxNumObjects;
-    public int[] firstAdjId;
-    public int[] adjIds;
-
-    public Hash(float spacing, int maxNumObjects) {
-        this.spacing = spacing;
-        tableSize = 5 * maxNumObjects;
-        cellStart = new int[tableSize + 1];
-        cellCount = new int[tableSize + 1];
-        cellEntries = new int[maxNumObjects];
-        queryIds = new int[maxNumObjects];
-        querySize = 0;
-
-        this.maxNumObjects = maxNumObjects;
-        firstAdjId = new int[maxNumObjects + 1];
-        adjIds = new int[10 * maxNumObjects];
-    }
-
-    private int HashCoords(int xi, int yi, int zi) {
-        int h = (xi * 92837111) | (yi * 689287499) | (zi * 283923481);
-        return Mathf.Abs(h) % tableSize;
-    }
-
-    private int IntCoord(float coord) {
-        return Mathf.FloorToInt(coord / spacing);
-    }
-
-    private int HashPos(Vector3 pos) {
-        return HashCoords(IntCoord(pos.x), IntCoord(pos.y), IntCoord(pos.z));
-    }
-
-    public void Create(Vector3[] pos) {
-        int numObjects = Mathf.Min(pos.Length, cellEntries.Length);
-
-        // Determine cell sizes
-        /*for (int i = 0; i < cellStart.Length; i++) {
-            cellStart[i] = 0;
-        }*/
-        for (int i = 0; i < cellCount.Length; i++) {
-            cellCount[i] = 0;
-        }
-        for (int i = 0; i < cellEntries.Length; i++) {
-            cellEntries[i] = 0;
-        }
-
-        // Determine cell starts
-        int start = 0;
-        for (int i = 0; i < tableSize; i++) {
-            start += cellCount[i];
-            cellCount[i] = start;
-        }
-        cellCount[tableSize] = start;
-
-        // Count
-        for (int i = 0; i < numObjects; i++) {
-            int h = HashPos(pos[i]);
-            cellCount[h]++;
-        }
-        Array.Copy(cellCount, cellStart, cellStart.Length);
-
-        // Partial Sums
-        for (int i = 1; i < cellStart.Length; i++) {
-            cellStart[i] += cellStart[i-1];
-        }
-
-        // Fill in object ids
-        for (int i = 0; i < numObjects; i++) {
-            int h = HashPos(pos[i]);
-            cellStart[h]--;
-            cellEntries[cellStart[h]] = i;
-        }
-    }
-
-    // Find points within maxDist of pos
-    public void Query(Vector3 pos, float maxDist) {
-        int x0 = IntCoord(pos.x - maxDist);
-        int y0 = IntCoord(pos.y - maxDist);
-        int z0 = IntCoord(pos.z - maxDist);
-
-        int x1 = IntCoord(pos.x + maxDist);
-        int y1 = IntCoord(pos.y + maxDist);
-        int z1 = IntCoord(pos.z + maxDist);
-
-        querySize = 0;
-
-        for (int xi = x0; xi < x1; xi++) {
-            for (int yi = y0; yi < y1; yi++) {
-                for (int zi = z0; zi < z1; zi++) {
-                    int h = HashCoords(xi, yi, zi);
-                    int start = cellStart[h];
-                    int end = cellStart[h + 1];
-
-                    for (int i = start; i < end; i++) {
-                        queryIds[querySize] = cellEntries[i];
-                        querySize++;
-                    }
-                }
-            }
-        }
-    }
-
-    public void QueryAll(Vector3[] pos, float maxDist) {
-        int num = 0;
-        float maxDist2 = maxDist * maxDist;
-
-        for (int i = 0; i < maxNumObjects; i++) {
-            int id0 = i;
-            firstAdjId[id0] = num;
-            Query(pos[id0], maxDist);
-
-            for (int j = 0; j < querySize; j++) {
-                int id1 = queryIds[j];
-                if (id1 > id0)
-                    continue;
-
-                float dist2 = (pos[id0] - pos[id1]).sqrMagnitude;
-                if (dist2 > maxDist2)
-                    continue;
-                
-                if (num >= adjIds.Length) {
-                    int[] newIds = new int[2 * num];
-                    System.Array.Copy(adjIds, newIds, adjIds.Length);
-
-                    adjIds = newIds;
-                }
-                adjIds[num++] = id1;
-            }
         }
     }
 }

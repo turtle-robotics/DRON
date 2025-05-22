@@ -8,8 +8,8 @@ import glob
 chessboardSize = (9,6) # Other chessboard sizes used - (5,3) OR (9,6)
 
 # Paths to the captured frames (should be in synch) (stereoLeft and stereoRight)
-CALIBRATION_IMAGES_PATH_LEFT = 'images_vision/stereoLeft/*.jpg'
-CALIBRATION_IMAGES_PATH_RIGHT = 'images_vision/stereoRight/*.jpg'
+CALIBRATION_IMAGES_PATH_LEFT = 'images_vision/right/*.jpg'
+CALIBRATION_IMAGES_PATH_RIGHT = 'images_vision/left/*.jpg'
 
 # termination criteria
 criteria = (cv.TERM_CRITERIA_EPS + cv.TERM_CRITERIA_MAX_ITER, 30, 0.001)
@@ -17,7 +17,7 @@ criteria = (cv.TERM_CRITERIA_EPS + cv.TERM_CRITERIA_MAX_ITER, 30, 0.001)
 objp = np.zeros((chessboardSize[0] * chessboardSize[1], 3), np.float32) # creates 9*6 list of (0.,0.,0.)
 objp[:,:2] = np.mgrid[0:chessboardSize[0],0:chessboardSize[1]].T.reshape(-1,2) # formats list with (column no., row no., 0.) where max column no. = 8, and max row no. = 5
 
-size_of_chessboard_squares_mm = 22.11
+size_of_chessboard_squares_mm = 21.5
 objp = objp * size_of_chessboard_squares_mm
 
 # Arrays to store object points and image points from all the images.
@@ -33,8 +33,8 @@ for imgLeft, imgRight in zip(imagesLeft, imagesRight):
 	imgL = cv.imread(imgLeft)
 	imgR = cv.imread(imgRight)
 	
-	imgL = cv.resize(imgL, (int(imgL.shape[0] / 4), int(imgL.shape[1] / 4)), interpolation= cv.INTER_LINEAR)
-	imgR = cv.resize(imgR, (int(imgR.shape[0] / 4), int(imgR.shape[1] / 4)), interpolation= cv.INTER_LINEAR)
+	imgL = cv.resize(imgL, (int(imgL.shape[1] / 4), int(imgL.shape[0] / 4)), interpolation= cv.INTER_LINEAR)
+	imgR = cv.resize(imgR, (int(imgR.shape[1] / 4), int(imgR.shape[0] / 4)), interpolation= cv.INTER_LINEAR)
 	
 	grayL = cv.cvtColor(imgL, cv.COLOR_BGR2GRAY)
 	grayR = cv.cvtColor(imgR, cv.COLOR_BGR2GRAY)
@@ -70,11 +70,16 @@ heightL, widthL, channelsL = imgL.shape
 print(heightL)
 print(widthL)
 retL, cameraMatrixL, distL, rvecsL, tvecsL = cv.calibrateCamera(objpoints, imgpointsL, (int(widthL), int(heightL)), None, None)
-newCameraMatrixL, roi_L = cv.getOptimalNewCameraMatrix(cameraMatrixL, distL, (int(widthL), int(heightL)), 1, (widthL, heightL))
+newCameraMatrixL, roi_L = cv.getOptimalNewCameraMatrix(cameraMatrixL, distL, (int(widthL), int(heightL)), 1, (int(widthL), int(heightL)))
 
 heightR, widthR, channelsR = imgR.shape
 retR, cameraMatrixR, distR, rvecsR, tvecsR = cv.calibrateCamera(objpoints, imgpointsR, (int(widthR), int(heightR)), None, None)
-newCameraMatrixR, roi_R = cv.getOptimalNewCameraMatrix(cameraMatrixR, distR, (int(widthR), int(heightR)), 1, (widthR, heightR))
+newCameraMatrixR, roi_R = cv.getOptimalNewCameraMatrix(cameraMatrixR, distR, (int(widthR), int(heightR)), 1, (int(widthR), int(heightR)))
+
+ud_img = cv.undistort(imgL, cameraMatrixL, distL, None, newCameraMatrixL)
+cv.imshow('undistorted_image', ud_img)
+cv.waitKey()
+cv.destroyAllWindows()
 
 ######### Stereo Vision Calibration #############################################
 ## stereoCalibrate Output: retStereo is RSME, newCameraMatrixL and newCameraMatrixR are the intrinsic matrices for both
@@ -85,9 +90,9 @@ newCameraMatrixR, roi_R = cv.getOptimalNewCameraMatrix(cameraMatrixR, distR, (in
 header = ['Rotation','Translation', 'ProjectionLeft', 'ProjectionRight'] # for the csv file
 
 flags = 0
-flags = cv.CALIB_FIX_INTRINSIC
+#flags = cv.CALIB_FIX_INTRINSIC
 
-criteria_stereo= (cv.TERM_CRITERIA_EPS + cv.TERM_CRITERIA_MAX_ITER, 100, 0.0001)
+criteria_stereo= (cv.TERM_CRITERIA_EPS + cv.TERM_CRITERIA_MAX_ITER, 1000, 0.0001)
 
 retStereo, newCameraMatrixL, distL, newCameraMatrixR, distR, rot, trans, essentialMatrix, fundamentalMatrix = cv.stereoCalibrate(objpoints, imgpointsL, imgpointsR, cameraMatrixL, distL, cameraMatrixR, distR, grayL.shape[::-1], criteria_stereo, flags)
 
