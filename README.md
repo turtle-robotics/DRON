@@ -83,56 +83,46 @@ The primary objectives of this project are as follows:
 
 - **[Caleb Santiago](https://www.linkedin.com/in/calebmsantiago/)**
   - Major: Computer Engineering
-  - Role: Mechanical Team
   - Year: Senior
 
 - **[Drew Wheaton](https://www.linkedin.com/in/drew-wheaton-551a89362/)**
   - Major: Mechanical Engineering
-  - Role: Mechanical Subteam 
   - Year: Junior
     
 - **[Asbah Talal](https://www.linkedin.com/in/asbah-talal/)**
   - Major: General Engineering
-  - Role: Mechanical Subteam 
   - Year: Freshman
 
 - **[Jackson Shouba](https://www.linkedin.com/in/jackson-shouba/)**
   - Major: General Engineering
-  - Role: Mechanical Subteam 
   - Year: Freshman
 
 ### Software Subteam
 
 - **[Treasa Francis](https://www.linkedin.com/in/treasafrancis/)**
   - Major: Computer Engineering
-  - Role: Software Team
   - Year: Junior
  
 - **[Jason Lev](https://www.linkedin.com/in/Jason-Lev-312492240/)**
   - Major: Computer Science
-  - Role: Software Team
   - Year: Junior
 
 - **[Colin Xu](https://www.linkedin.com/in/colinsxu/)**
   - Major: Computer Science
-  - Role: Software Team
   - Year: Junior
 
 - **[Owen Thomas](https://www.linkedin.com/in/owen-thomas-44aa4230a/)**
   - Major: Computer Science
-  - Role: Software Team
   - Year: Junior
 
 ### Electrical Subteam
 
 - **[Chris Ambroziak](https://www.linkedin.com/in/)**
   - Major: Computer Engineering
-  - Role: Electrical Team
   - Year: Junior
 
 - **[Seungbin (Jay) Ahn](https://www.linkedin.com/in/seungbina/)**
   - Major: Electrical Engineering
-  - Role: Software Team
   - Year: Sophomore
 
 ### Alumni
