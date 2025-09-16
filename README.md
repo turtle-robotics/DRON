@@ -96,6 +96,11 @@ The primary objectives of this project are as follows:
   - Role: Mechanical Subteam 
   - Year: Freshman
 
+- **[Jackson Shouba](https://www.linkedin.com/in/jackson-shouba/)**
+  - Major: General Engineering
+  - Role: Mechanical Subteam 
+  - Year: Freshman
+
 ### Software Subteam
 
 - **[Treasa Francis](https://www.linkedin.com/in/treasafrancis/)**
