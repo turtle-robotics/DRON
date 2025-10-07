@@ -1,0 +1,8 @@
+setup.py
+custom_interfaces/__init__.py
+custom_interfaces.egg-info/PKG-INFO
+custom_interfaces.egg-info/SOURCES.txt
+custom_interfaces.egg-info/dependency_links.txt
+custom_interfaces.egg-info/top_level.txt
+custom_interfaces/msg/__init__.py
+custom_interfaces/msg/_latlong.py

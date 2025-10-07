@@ -187,6 +187,7 @@ The primary objectives of this project are as follows:
   - Major: Computer Engineering
   - Role: Software Team
 
+
 - **[Alonso Peralta](https://www.linkedin.com/in/alonso-peralta-espinoza-715419212/)**
   - Major: Computer Engineering
   - Role: Software Team
