@@ -5,6 +5,10 @@
 the two offboard.cpp files go into this directory ws_sensor_combined/src/px4_ros_com/src/examples/offboard/
 the cmake file goes into ws_sensor_combined/src/px4_ros_com/
 
+`offboard_control_square.cpp` is a ros node to demonstrate the basic principles of controlling a drone with offboard commands
+
+`offboard_control_square_2.cpp` is a ros node to demonstrate the basic principles of controlling multiple drones with offboard commands. this is work in progress and features are to be added at a later date
+
 ---
 
 ### helpful commands
