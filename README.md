@@ -5,6 +5,8 @@ The DRON Project is a tool designed to aid first responders in their response to
 ## Table of Contents
 
 - [Project Overview](#project-overview)
+
+- [Flight Videos](#flight-test-videos)
 - [Poster](#project-poster)
 - [Team Members](#team-members)
 - [Getting Started](#getting-started)
@@ -52,9 +54,16 @@ The primary objectives of this project are as follows:
 - Collaberate between drones for decision making and obstacle detection.
 - Communicate live data to the first responders in an easy to understand format.
 
+## Flight Test Videos
+
+https://github.com/user-attachments/assets/b51cd1a6-a516-4e84-9459-9f7f23fdade3
+
+https://github.com/user-attachments/assets/e583ee48-7b87-49e9-ae21-030e9a4f5374
+
 ## Project Poster
 
 ![Poster-Spring-2025](resources/DRON-Poster-Spring-2025.png)
+
 
 ## Team Members
 
