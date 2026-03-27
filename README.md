@@ -106,6 +106,14 @@ https://github.com/user-attachments/assets/e583ee48-7b87-49e9-ae21-030e9a4f5374
   - Major: General Engineering
   - Year: Freshman
 
+- **[Luke Breedlove](https://www.linkedin.com/in/luke-breedlove-8a5007325)**
+  - Major: Mechanical Engineering
+  - Year: Sophomore
+
+- **[Charlie Weatherspoon](https://www.linkedin.com/in/cweatherspoon397)**
+  - Major: Mechanical Engineering
+  - Year: Sophomore
+
 ### Software Subteam
 
 - **[Treasa Francis](https://www.linkedin.com/in/treasafrancis/)**
@@ -123,6 +131,24 @@ https://github.com/user-attachments/assets/e583ee48-7b87-49e9-ae21-030e9a4f5374
 - **[Owen Thomas](https://www.linkedin.com/in/owen-thomas-44aa4230a/)**
   - Major: Computer Science
   - Year: Junior
+
+- **[Om Bhatt](https://www.linkedin.com/in/ombhattofficial)**
+  - Major: Mechatronics Engineering
+  - Year: Sophomore
+
+- **[Riya Shah](https://www.linkedin.com/in/riya-shah-448318368)**
+  - Major: Electrical Engineering
+  - Year: Sophomore
+  
+- **[Matthew Shi](https://www.linkedin.com/in/matthewtershi)**
+  - Major: Computer Engineering
+  - Year: Sophomore
+
+- **[Visith So](https://www.linkedin.com/in/visith-so-b28ab9186)**
+  - Major: Computer Engineering
+  - Year: Junior
+
+    
 
 ### Electrical Subteam
 
