@@ -78,7 +78,7 @@ https://github.com/user-attachments/assets/e583ee48-7b87-49e9-ae21-030e9a4f5374
   - Role: Visualization Subteam Lead
   - Year: Senior
 
-  - **[Chris Ambroziak](https://www.linkedin.com/in/)**
+- **[Chris Ambroziak](https://www.linkedin.com/in/)**
   - Major: Computer Engineering
   - Role: Autonomy Subteam Lead
   - Year: Junior
