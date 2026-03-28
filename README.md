@@ -62,7 +62,7 @@ https://github.com/user-attachments/assets/e583ee48-7b87-49e9-ae21-030e9a4f5374
 
 ## Project Poster
 
-![Poster-Spring-2025](resources/DRON-Poster-Spring-2025.png)
+![Poster-Spring-2025](resources/DRON-Poster-Fall-2025.png)
 
 
 ## Team Members
@@ -75,8 +75,13 @@ https://github.com/user-attachments/assets/e583ee48-7b87-49e9-ae21-030e9a4f5374
 
 - **[Aidan Briggs](https://www.linkedin.com/in/aidan-briggs-108297250/)**
   - Major: Computer Science
-  - Role: Software Subteam Lead
+  - Role: Visualization Subteam Lead
   - Year: Senior
+
+  - **[Chris Ambroziak](https://www.linkedin.com/in/)**
+  - Major: Computer Engineering
+  - Role: Autonomy Subteam Lead
+  - Year: Junior
 
 - **[Jacob Fuerst](https://www.linkedin.com/in/jacob-fuerst)**
   - Major: Mechanical Engineering
