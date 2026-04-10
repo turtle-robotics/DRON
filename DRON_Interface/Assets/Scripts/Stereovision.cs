@@ -106,7 +106,7 @@ public class Stereovision : MonoBehaviour
                         index++;
                         continue;
                     } else {
-                        index = 0;
+                        index = 0
                     }
                 }
                 Vector3 point = new Vector3(pointCloudData[i * 3], pointCloudData[i * 3 + 1], pointCloudData[i * 3 + 2]) / 1000;

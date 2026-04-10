@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/brussell03/DRON/Stereovision/DisparityFiltering
+CMAKE_SOURCE_DIR = /mnt/c/Users/aidan/Documents//DRON/Stereovision/DisparityFiltering
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/brussell03/DRON/Stereovision/DisparityFiltering/build
+CMAKE_BINARY_DIR = /mnt/c/Users/aidan/Documents//DRON/Stereovision/DisparityFiltering/build
 
 #=============================================================================
 # Targets provided globally by CMake.

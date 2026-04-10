@@ -7,6 +7,8 @@
 #include <iostream>
 #include <string>
 
+//cl DisparityFiltering.cpp /I "C:\Users\aidan\Documents\DRON\Stereovision\DisparityFiltering\opencv-contrib\include" /link /LIBPATH:"C:\Users\aidan\Documents\DRON\Stereovision\DisparityFiltering\opencv-contrib\x64\vc17\lib" opencv_world4130.lib
+
 using namespace cv;
 using namespace cv::ximgproc;
 using namespace std;
@@ -48,7 +50,7 @@ int main(int argc, char** argv) {
         wsize = 15; //default window size for BM on full-sized views
 
 
-    Mat left  = cv::imread("../../../SV_In/stLeft.jpg" ,IMREAD_GRAYSCALE);
+    Mat left  = cv::imread("../../../SV_In/left.jpg" ,IMREAD_GRAYSCALE);
     if ( left.empty() )
     {
         //std::cout<<"Cannot read image file: "<<left_im;
@@ -56,7 +58,7 @@ int main(int argc, char** argv) {
     }
     cv::resize(left, left, cv::Size(left.cols * 0.25,left.rows * 0.25), 0, 0, INTER_LINEAR_EXACT);
     
-    Mat right = cv::imread("../../../SV_In/stRight.jpg",IMREAD_GRAYSCALE);
+    Mat right = cv::imread("../../../SV_In/right.jpg",IMREAD_GRAYSCALE);
     if ( right.empty() )
     {
         //std::cout<<"Cannot read image file: "<<right_im;
@@ -87,6 +89,11 @@ int main(int argc, char** argv) {
 
     // Perform stereo rectification
     cv::stereoRectify(cameraMatrix1, distCoeffs1, cameraMatrix2, distCoeffs2, imageSize, R, T, R1, R2, P1, P2, Q);
+    
+    //Save the rectification matrix
+    cv::FileStorage fs_q("Q_matrix.yml", cv::FileStorage::WRITE);
+    fs_q << "Q" << Q;
+    fs_q.release();
 
     // Use the rectification matrices to rectify the images
     cv::Mat map11, map12, map21, map22;
@@ -364,6 +371,21 @@ int main(int argc, char** argv) {
     cv::namedWindow("filtered disparity", WINDOW_AUTOSIZE);
     cv::imshow("filtered disparity", filtered_disp_vis);
     cv::waitKey(0);
+
+    // Save rectified images
+    cv::imwrite("rectifiedLeft.png", rectifiedLeft);
+    cv::imwrite("rectifiedRight.png", rectifiedRight);
+    // Save disparity map to file
+    cv::imwrite("filtered_disparity.png", filtered_disp_vis);
+
+    //Save the
+    cv::FileStorage displayOut("disp.yml", cv::FileStorage::WRITE);
+    displayOut << "disp" << filtered_disp;
+    displayOut.release();
+
+    // Optionally, save raw disparity for further processing
+    cv::imwrite("filtered_disparity_raw.exr", filtered_disp); // 32-bit float depth
+
 
     return 1;
 }

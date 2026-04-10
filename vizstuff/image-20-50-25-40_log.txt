@@ -1,0 +1,10 @@
+2025-11-12 20:50:26,483 - INFO - Camera info:
+2025-11-12 20:50:26,483 - INFO - {'NAME': 'O', 'CAMERA_TYPE': 1, 'MODULE_TYPE': 255, 'EVK_ID': 255, 'CAMERA_ID': '161401044da9', 'CAMERA_MFG': '2022.20.1.044da9', 'SN': 'SN161401044da9', 'FW_VERSION': '3.2.13', 'MAX_FPS': 25.5, 'Current FPS': 6.375}
+2025-11-12 20:50:26,687 - DEBUG - FID    78  time   59324  V_dd 3.317  T_SX 32.00
+  Min   16.3   Max  301.5  Avg  27.8  Std 19.5
+2025-11-12 20:50:26,687 - DEBUG - Image shape: (62, 80)
+2025-11-12 20:50:26,687 - DEBUG - Image min value: 16.34375, max value: 301.5
+2025-11-12 20:50:26,687 - INFO - Raw data saved to /home/dron/Desktop/imgs/thermal/image-20-50-25-40_data.npy
+2025-11-12 20:50:26,744 - INFO - Image saved to /home/dron/Desktop/imgs/thermal/image-20-50-25-40_image.png
+2025-11-12 20:50:26,772 - INFO - Logs saved to /home/dron/Desktop/imgs/thermal/image-20-50-25-40_log.txt
+2025-11-12 20:50:26,772 - INFO - Capture complete.

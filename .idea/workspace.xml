@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2fa3e952-4f07-40d4-84c1-ffe6501603a6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Viz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DRON_Interface/Assets/Scripts/Stereovision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DRON_Interface/Assets/Scripts/Stereovision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SV_In/stLeft.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SV_In/stRight.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/DisparityFiltering.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Stereovision/DisparityFiltering/DisparityFiltering.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" afterPath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CompilerIdC/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CompilerIdC/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CompilerIdCXX/a.out" beforeDir="false" afterPath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/3.22.1/CompilerIdCXX/a.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/DisparityFiltering.dir/DisparityFiltering.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/DisparityFiltering.dir/DisparityFiltering.cpp.o.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/DisparityFiltering/build/bin/libDisparityFiltering.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/left/left10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/left/left2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/left/left3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/left/left4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/left/left5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/left/left6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/left/left7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/left/left8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/left/left9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/right/right10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/right/right2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/right/right3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/right/right4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/right/right5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/right/right6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/right/right7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/right/right8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/images_vision/right/right9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/stereoCalib.py" beforeDir="false" afterPath="$PROJECT_DIR$/Stereovision/stereoCalib.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stereovision/stereocalib_params.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Stereovision/stereocalib_params.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calibration_params/stereocalib_params.xml" beforeDir="false" afterPath="$PROJECT_DIR$/calibration_params/stereocalib_params.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2ue76KZQHU0iscwzH85hBHbcI2n" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.hotspot_detect.executor": "Run",
+    "Python.pointcloud_generation.executor": "Run",
+    "Python.thermal_cam.executor": "Run",
+    "Python.utils.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Unity-Simulation",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/aidan/Documents/DRON",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\aidan\Documents\DRON" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aidan\Documents\DRON" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.220" />
+        <option value="bundled-python-sdk-0fc6c617c4bd-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.220" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2fa3e952-4f07-40d4-84c1-ffe6501603a6" name="Changes" comment="" />
+      <created>1742597009428</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742597009428</updated>
+      <workItem from="1742597010610" duration="1213000" />
+      <workItem from="1742943856567" duration="2000" />
+      <workItem from="1762981606511" duration="2698000" />
+      <workItem from="1774655945116" duration="76000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DRON$thermal_cam.coverage" NAME="thermal_cam Coverage Results" MODIFIED="1742597472568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ros2_ws/build/thermal_cam/build/lib/thermal_cam" />
+    <SUITE FILE_PATH="coverage/DRON$utils.coverage" NAME="utils Coverage Results" MODIFIED="1742597455546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/senxor" />
+    <SUITE FILE_PATH="coverage/DRON$pointcloud_generation.coverage" NAME="pointcloud_generation Coverage Results" MODIFIED="1762981966828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DRON$hotspot_detect.coverage" NAME="hotspot_detect Coverage Results" MODIFIED="1742597394694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
