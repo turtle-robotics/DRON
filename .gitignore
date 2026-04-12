@@ -89,3 +89,14 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /DRON_Interface/[Aa]ssets/[Ss]treamingAssets/aa.meta
 /DRON_Interface/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Environment and secrets
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+service-account*.json
+.DS_Store
