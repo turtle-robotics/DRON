@@ -1,0 +1,63 @@
+name: Feature request
+description: Propose a new capability or improvement.
+labels: ["feature"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or need
+      description: What problem does this solve? Who needs it?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: What should be added or changed?
+    validations:
+      required: true
+  - type: dropdown
+    id: subsystem
+    attributes:
+      label: Subsystem
+      options:
+        - Autonomy
+        - ROS 2
+        - PX4
+        - Stereovision / Computer Vision
+        - Visualization / Interface
+        - Sensors
+        - Electrical
+        - Mechanical
+        - Documentation
+        - CI / Infrastructure
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this worth doing now?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other options you looked at, and why this one is better.
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation considerations
+      description: Which files, packages, or nodes are affected? Known risks or limits?
+  - type: textarea
+    id: hardware
+    attributes:
+      label: Hardware implications
+      description: Does this need new parts, wiring changes, or mount changes? Write "None" if not.
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety implications
+      description: Could this affect flight behavior, battery handling, or people near the drone? Write "None" if not.

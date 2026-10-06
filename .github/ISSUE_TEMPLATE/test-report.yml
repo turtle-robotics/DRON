@@ -1,0 +1,79 @@
+name: Test report
+description: Record results from bench, integration, sensor, autonomy, or flight testing.
+labels: ["test"]
+body:
+  - type: dropdown
+    id: test-type
+    attributes:
+      label: Test type
+      options:
+        - Bench test
+        - Sensor test
+        - Integration test
+        - Autonomy / offboard test
+        - Flight test
+        - Simulation (SITL / Gazebo)
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What did this test check?
+    validations:
+      required: true
+  - type: textarea
+    id: configuration
+    attributes:
+      label: Configuration
+      description: Drone or bench setup, parameters, and software that ran.
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Hardware revision
+      description: Revision or build date, if known. Write "Unknown" if not.
+  - type: input
+    id: commit
+    attributes:
+      label: Git commit or software version
+      placeholder: e.g. commit hash, PX4 version, branch name
+    validations:
+      required: true
+  - type: textarea
+    id: procedure
+    attributes:
+      label: Test procedure
+      description: Numbered steps, so the test can be repeated.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: What should happen if the system works?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: Logs / data / video
+      description: Attach log files, rosbags, plots, or video links.
+  - type: textarea
+    id: anomalies
+    attributes:
+      label: Failures or anomalies
+      description: Anything unexpected, even if the test passed overall.
+  - type: textarea
+    id: follow-up
+    attributes:
+      label: Follow-up actions
+      description: Fixes, retests, or new issues created from this test.
