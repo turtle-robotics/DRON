@@ -1,0 +1,30 @@
+name: Repository Sanity
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sanity-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  sanity:
+    name: Repository / Sanity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      # Runs every hook from .pre-commit-config.yaml on all files in
+      # check mode: whitespace fixers fail the job if they would change
+      # a file. This catches merge conflict markers, malformed YAML and
+      # JSON, broken Python syntax, and stray large files on every PR.
+      - uses: pre-commit/action@v3.0.1
