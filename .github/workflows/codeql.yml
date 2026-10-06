@@ -1,0 +1,48 @@
+name: CodeQL
+
+on:
+  pull_request:
+    paths:
+      - "**.py"
+      - "**.cs"
+      - ".github/workflows/codeql.yml"
+  push:
+    branches: [main]
+  schedule:
+    # Weekly scan, Monday 06:00 UTC.
+    - cron: "0 6 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: codeql-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    name: CodeQL / Analyze (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    permissions:
+      # Required to upload analysis results to the Security tab.
+      security-events: write
+      packages: read
+    strategy:
+      fail-fast: false
+      matrix:
+        # C++ is not analyzed: the only standalone C++ code
+        # (Stereovision/DisparityFiltering) is one small target, and the
+        # offboard code is not buildable without a full px4_ros_com tree.
+        language: [python, csharp]
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: github/codeql-action/init@v4
+        with:
+          languages: ${{ matrix.language }}
+
+      # Python and C# (Unity scripts) are analyzed without a build step.
+
+      - uses: github/codeql-action/analyze@v4
+        with:
+          category: "/language:${{ matrix.language }}"
