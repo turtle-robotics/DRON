@@ -18,16 +18,16 @@ use this command in a separate  terminal to start the client-agent bridge, this 
 
 ---
 
-To start multiple simulations you need to run the following commands in seperate terminals 
+To start multiple simulations you need to run the following commands in seperate terminals
 
  - `PX4_GZ_STANDALONE=1 PX4_SYS_AUTOSTART=4001 PX4_GZ_MODEL_POSE="0,1" PX4_SIM_MODEL=gz_x500 ./build/px4_sitl_default/bin/px4 -i 1`
  - `PX4_SYS_AUTOSTART=4001 PX4_SIM_MODEL=gz_x500 ./build/px4_sitl_default/bin/px4 -i 0`
 
-the PX4_GZ_STANDALONE=1 flag tells PX4 that this is not a separate instance of the simulation, this allows multiple drones to be placed within the same simulation, it defaults to =0 if not specified. 
+the PX4_GZ_STANDALONE=1 flag tells PX4 that this is not a separate instance of the simulation, this allows multiple drones to be placed within the same simulation, it defaults to =0 if not specified.
 
-the PX4_GZ_MODEL_POSE="0,1" determines the x,y starting coordinates of the drone, this defaults to 0,0 when not specified. 
+the PX4_GZ_MODEL_POSE="0,1" determines the x,y starting coordinates of the drone, this defaults to 0,0 when not specified.
 
-the -i # indicates the ID of the drone, in real life the first drone that is connected has an ID of 0, the second has an ID of 1, and so on. 
+the -i # indicates the ID of the drone, in real life the first drone that is connected has an ID of 0, the second has an ID of 1, and so on.
 
 you MUST start the simulations with PX4_GZ_STANDALONE=1 before your "root" simulation (the one with PX4_GZ_STANDALONE=0).
 
@@ -50,4 +50,3 @@ when debugging with topics or if you dont need to see the GUI you can add the `H
 
 ### link to my notes
 https://docs.google.com/document/d/1eF7B05nmmSWAneBnN3lDzX5psfL4cWMjbJJPyKqC5C8/edit?usp=sharing
-

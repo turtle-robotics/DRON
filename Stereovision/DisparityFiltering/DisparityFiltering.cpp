@@ -55,7 +55,7 @@ int main(int argc, char** argv) {
         return -1;
     }
     cv::resize(left, left, cv::Size(left.cols * 0.25,left.rows * 0.25), 0, 0, INTER_LINEAR_EXACT);
-    
+
     Mat right = cv::imread("../../../SV_In/stRight.jpg",IMREAD_GRAYSCALE);
     if ( right.empty() )
     {
@@ -356,7 +356,7 @@ int main(int argc, char** argv) {
     std::cout<<"Filtering time: "<<filtering_time<<"s"<<endl;
     std::cout<<"Solving time: "<<solving_time<<"s"<<endl;
     std::cout<<endl;
-    
+
 
     Mat filtered_disp_vis;
     cv::ximgproc::getDisparityVis(filtered_disp,filtered_disp_vis,vis_mult);
@@ -565,7 +565,7 @@ extern "C" int processDisparity(MonoArray* pointCloudData, int height, int width
     std::cout<<"Filtering time: "<<filtering_time<<"s"<<endl;
     std::cout<<"Solving time: "<<solving_time<<"s"<<endl;
     std::cout<<endl;
-    
+
 
     Mat filtered_disp_vis;
     cv::ximgproc::getDisparityVis(filtered_disp,filtered_disp_vis,vis_mult);

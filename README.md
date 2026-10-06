@@ -69,7 +69,7 @@ https://github.com/user-attachments/assets/e583ee48-7b87-49e9-ae21-030e9a4f5374
 - **[Drew Wheaton](https://www.linkedin.com/in/drew-wheaton-551a89362/)**
   - Major: Mechanical Engineering
   - Year: Junior
-    
+
 - **[Asbah Talal](https://www.linkedin.com/in/asbah-talal/)**
   - Major: General Engineering
   - Year: Freshman
@@ -91,7 +91,7 @@ https://github.com/user-attachments/assets/e583ee48-7b87-49e9-ae21-030e9a4f5374
 - **[Treasa Francis](https://www.linkedin.com/in/treasafrancis/)**
   - Major: Computer Engineering
   - Year: Junior
- 
+
 - **[Jason Lev](https://www.linkedin.com/in/Jason-Lev-312492240/)**
   - Major: Computer Science
   - Year: Junior
@@ -111,7 +111,7 @@ https://github.com/user-attachments/assets/e583ee48-7b87-49e9-ae21-030e9a4f5374
 - **[Riya Shah](https://www.linkedin.com/in/riya-shah-448318368)**
   - Major: Electrical Engineering
   - Year: Sophomore
-  
+
 - **[Matthew Shi](https://www.linkedin.com/in/matthewtershi)**
   - Major: Computer Engineering
   - Year: Sophomore
@@ -120,7 +120,7 @@ https://github.com/user-attachments/assets/e583ee48-7b87-49e9-ae21-030e9a4f5374
   - Major: Computer Engineering
   - Year: Junior
 
-    
+
 
 ### Electrical Subteam
 
@@ -147,19 +147,19 @@ https://github.com/user-attachments/assets/e583ee48-7b87-49e9-ae21-030e9a4f5374
   - Role: Software Team
 
 - **[Quinn Belmar](https://www.linkedin.com/in/quinnbelmar/)**
-  - Major: Mechanical Engineering 
+  - Major: Mechanical Engineering
   - Role: Electrical Team
 
 - **[Jacob Adamson](https://www.linkedin.com/in/jacob-adamson/)**
   - Major: Electrical Engineering
   - Role: Electrical Team
-  
+
 - **[Lucas Ybarra](https://www.linkedin.com/in/lucas-ybarra-847ba72b6/)**
   - Major: Electrical Engineering
   - Role: Electrical Team
-  
+
 - **[Aneek Roy](https://www.linkedin.com/in/aneekroy/)**
-  - Major: Electrical Engineering 
+  - Major: Electrical Engineering
   - Role: Electrical Team
 
 - **[Malcolm Ferguson](https://www.linkedin.com/in/malcolmkferguson)**
@@ -173,11 +173,11 @@ https://github.com/user-attachments/assets/e583ee48-7b87-49e9-ae21-030e9a4f5374
 - **[Alan Alvarado](https://www.linkedin.com/in/alan-alvarado-1797102ab)**
   - Major: Mechanical Engineering
   - Role: Mechanical Team
- 
+
 - **[Felix Chim](https://www.linkedin.com/in/felix-chim-3066a6228)**
-  - Major: Aerospace Engineering 
+  - Major: Aerospace Engineering
   - Role: Mechanical Team
-    
+
 - **[Nahum Tadesse](https://www.linkedin.com/in/nahum-tadesse-51ba922b6/)**
   - Major: Mechanical Engineering
   - Role: Mechanical Team
@@ -210,7 +210,7 @@ To get started with DRON, follow these steps:
 
 2. **Install Dependencies**: Depending on the software and hardware components used, install the required dependencies and libraries as outlined in the project documentation.
 
-3. **Build the Drone**: Follow the instructions provided to construct the physical drone including all sensors. 
+3. **Build the Drone**: Follow the instructions provided to construct the physical drone including all sensors.
 
 4. **Calibration and Testing**: Perform the necessary calibration and begin testing the drone (ideally in a controlled environment). *Please verify all [local FAA rules](https://www.faa.gov/uas/resources/community_engagement/no_drone_zone) and obtain [any necessary licenses](https://www.faa.gov/uas/commercial_operators/become_a_drone_pilot) before beginning operations.*
 

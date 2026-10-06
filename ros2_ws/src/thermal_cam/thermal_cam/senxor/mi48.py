@@ -57,7 +57,7 @@ DEFAULT_CTRL_STAT = {
 
 # MI48Ax register map
 regmap = {
-    "EVK_TEST"      : 0x00,  # 
+    "EVK_TEST"      : 0x00,  #
     "FRAME_MODE"    : 0xB1,  # RW Control of capture and readout
     "FW_VERSION_1"  : 0xB2,  # R  Firmware Version (Major, Minor)
     "FW_VERSION_2"  : 0xB3,  # R  Firmware Version (Build)
@@ -87,7 +87,7 @@ regmap = {
     "SENXOR_ID_5"   : 0xE5,  # R  Serial number of the attached camera module
 }
 
-MI48_FRAME_MODE    = 0xB1  # RW Control the capture and readout of thermal data 
+MI48_FRAME_MODE    = 0xB1  # RW Control the capture and readout of thermal data
 MI48_FW_VERSION_1  = 0xB2  # R  Firmware Version (Major, Minor)
 MI48_FW_VERSION_2  = 0xB3  # R  Firmware Version (Build)
 MI48_FRAME_RATE    = 0xB4  # RW Frame rate delivery through the SPI interface
@@ -181,7 +181,7 @@ class MI48:
         # this should be read from the camera module
         self.fpa_shape = None
         # At this stage check that MI48 is not streaming already,
-        # which may happen if termination of last stream was not handled 
+        # which may happen if termination of last stream was not handled
         # cleanly. If we do not stop the MI48 here, the status handling
         # during boot-up and error-handling will be messed up.
         mode = self.get_mode()
@@ -269,10 +269,10 @@ class MI48:
             self.log(logging.WARNING, 'Ignoring Readout Too Slow flag')
             # ignore readout_too_slow for the moment.
             # if we try to dump a frame based on Readout_too_slow or
-            # Capture_error without seeing data_ready, then in the 
-            # case of a USB interface we will hang forever, as the 
+            # Capture_error without seeing data_ready, then in the
+            # case of a USB interface we will hang forever, as the
             # Ack will never come. For the SPI it doesn't matter, since
-            # it is a full duplex, and we get data as long as we, as a 
+            # it is a full duplex, and we get data as long as we, as a
             # master, push out zeros on the bus.
         if (status & DATA_READY):
             # Attempt to clear output buffer of the SPI slave interface
@@ -418,7 +418,7 @@ class MI48:
 
     def get_mode(self, verbose=False):
         mode = self.regread('FRAME_MODE')
-        # it seems that if there is a SIGINT, serial interface may 
+        # it seems that if there is a SIGINT, serial interface may
         # close immediately, and a timeout will return None here.
         if mode is None: return None
         if verbose and (mode & 0x03)!= 0x00:
@@ -507,7 +507,7 @@ class MI48:
         self.fw_version = res['FW_VERSION']
         res['MAX_FPS'] = self.get_max_fps()
         self.maxfps = res['MAX_FPS']
-        # note that current FPS requires self.maxfps, 
+        # note that current FPS requires self.maxfps,
         # becuase we can only read the divisor
         res['Current FPS'] = self.get_fps()
         return res
@@ -539,7 +539,7 @@ class MI48:
 
     def get_max_fps(self):
         """Get some frames in continuous mode and establish max FPS"""
-        # TODO: real implementation of burst capture 250 frames, and 
+        # TODO: real implementation of burst capture 250 frames, and
         #       determine average FPS.
         #       Or at least map maxfps to corresponding FW of the MI48
         #       and the camera type.
@@ -772,7 +772,7 @@ class MI48:
         Read the compensation parameters stored in the MI48 flash.
 
         Return a list of `npar` floats, where `npar` is the number of
-        parameters. 
+        parameters.
         The parameters are stored at `base_addr` in the user
         flash space, using little-endian order, i.e.  LSB to 0x00 etc.,
         in the form of 4--byte IEEE-754 numbers.
@@ -954,5 +954,3 @@ def format_framestats(data):
             format(data.min(), data.max(), data.mean(),
                    data.astype(np.float64).std())
     return s
-
-    

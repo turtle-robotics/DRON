@@ -38,7 +38,7 @@ the intended behavior is for the drone to takeoff, fly a square with a 1 meter s
  * @brief Offboard control square
  * @file offboard_control_square.cpp
  * @addtogroup examples
- * @author Chris Ambroziak 
+ * @author Chris Ambroziak
  */
 
 #include <px4_msgs/msg/vehicle_attitude.hpp>
@@ -80,9 +80,9 @@ public:
 		offboard_control_mode_publisher_ = this->create_publisher<OffboardControlMode>("/fmu/in/offboard_control_mode", 10);
 		trajectory_setpoint_publisher_ = this->create_publisher<TrajectorySetpoint>("/fmu/in/trajectory_setpoint", 10);
 		vehicle_command_publisher_ = this->create_publisher<VehicleCommand>("/fmu/in/vehicle_command", 10);
-		
-		
-		
+
+
+
 		// below we create multiple subscriptions to get data about the drone
 		vehicle_local_position_sub_ = this->create_subscription<VehicleLocalPosition>(
 			"/fmu/out/vehicle_local_position_v1", qos_best_effort,
@@ -96,7 +96,7 @@ public:
 				}
 		});
 
-		
+
 		//used to determine if we are armed
 		vehicle_status_sub_ = this->create_subscription<VehicleStatus>(
 			"/fmu/out/vehicle_status_v1", qos_best_effort,
@@ -104,12 +104,12 @@ public:
 				current_vehicle_status = *msg;
 		});
 
-		//used to determine if we have landed 
+		//used to determine if we have landed
 		vehicle_land_detected_sub_ = this->create_subscription<VehicleLandDetected>(
 			"/fmu/out/vehicle_land_detected", qos_best_effort,
 			[this](const VehicleLandDetected::UniquePtr msg) {
 				land_detected = *msg;
-				
+
 		});
 
 		//lets create a subscription to the vehicle global position
@@ -126,25 +126,25 @@ public:
 		// 	[this](const VehicleGlobalPosition::UniquePtr msg){
 		// 		current_global_position_1 = *msg;
 		// });
-		
-			
-		
+
+
+
 		//todo
 		//best practice is to stream setpoint commands for a few seconds before switching to offboard mode and arming, implement later as needed
 
-		
+
 		// Set to offboard control mode, arm, and prepare for takeoff
 		this->publish_vehicle_command(VehicleCommand::VEHICLE_CMD_DO_SET_MODE, 1, 6);
 		publish_offboard_control_mode();
-		
+
 		this->arm();
-		
+
 		// i ran this code and it says our starting gps position is 0,0,0 for the blank world simulation
 		// RCLCPP_INFO(this->get_logger(), "global position for normal is lat: %f, lon: %f, alt: %f", current_global_position.lat, current_global_position.lon, current_global_position.alt);
 		// RCLCPP_INFO(this->get_logger(), "global position for _1 is lat: %f, lon: %f, alt: %f", current_global_position_1.lat, current_global_position_1.lon, current_global_position_1.alt);
-		
-		
-		
+
+
+
 
 		auto timer_callback = [this]() -> void { // triggers every 200ms, this is our main "for/while" loop
 			publish_offboard_control_mode(); //needs to be called regularly to maintain offboard mode
@@ -164,47 +164,47 @@ public:
 				case states_alias::TAKEOFF:
 					takeoff();
 					if(do_we_shift_states()) {
-						current_state = states_alias::WAYPOINT_1;						
+						current_state = states_alias::WAYPOINT_1;
 					}
 					break;
 				case states_alias::WAYPOINT_1:
 					publish_trajectory_setpoint_local(); //go to next waypoint
 					if(do_we_shift_states()) {//checks if the drone is where it wants to be
-						current_state = states_alias::WAYPOINT_2;						
+						current_state = states_alias::WAYPOINT_2;
 					}
 					break;
 				case states_alias::WAYPOINT_2:
 					publish_trajectory_setpoint_local();
 					if(do_we_shift_states()) {
-						current_state = states_alias::WAYPOINT_3;						
+						current_state = states_alias::WAYPOINT_3;
 					}
 					break;
 				case states_alias::WAYPOINT_3:
 					publish_trajectory_setpoint_local();
 					if(do_we_shift_states()) {
-						current_state = states_alias::WAYPOINT_4;						
+						current_state = states_alias::WAYPOINT_4;
 					}
 					break;
 				case states_alias::WAYPOINT_4:
 					publish_trajectory_setpoint_local();
 						if(do_we_shift_states()) {
-							current_state = states_alias::WAYPOINT_1;						
+							current_state = states_alias::WAYPOINT_1;
 						}
 						break;
 				case states_alias::LAND:
 					if(current_vehicle_status.arming_state == current_vehicle_status.ARMING_STATE_DISARMED) {
 						RCLCPP_INFO(this->get_logger(), "attempting shutdown");
 						rclcpp::shutdown();
-					
+
 					} else if(land_detected.landed) {
-						this->disarm();	
-						break;					
+						this->disarm();
+						break;
 					} else{
 						this->publish_vehicle_command(VehicleCommand::VEHICLE_CMD_NAV_RETURN_TO_LAUNCH, 0.0, 0.0);
 						RCLCPP_INFO(this->get_logger(), "returning to launch");
 					}
 
-					
+
 					break;
 				default:
 					publish_trajectory_setpoint_local();
@@ -219,7 +219,7 @@ public:
 	}
 	void arm();
 	void disarm();
-        
+
 private:
 	rclcpp::TimerBase::SharedPtr timer_;
 
@@ -232,12 +232,12 @@ private:
 	rclcpp::Subscription<px4_msgs::msg::VehicleStatus>::SharedPtr vehicle_status_sub_;
 	rclcpp::Subscription<px4_msgs::msg::VehicleLandDetected>::SharedPtr vehicle_land_detected_sub_;
 	rclcpp::Subscription<px4_msgs::msg::VehicleGlobalPosition>::SharedPtr vehicle_global_position_sub_;
-	
+
 	std::atomic<uint64_t> timestamp_;   //idk why this line is here, it was in the example provided in the documentation
 	VehicleLocalPosition current_position_;
 	VehicleStatus current_vehicle_status;
-	VehicleLandDetected land_detected; 
-	VehicleGlobalPosition current_global_position, current_global_position_1;  
+	VehicleLandDetected land_detected;
+	VehicleGlobalPosition current_global_position, current_global_position_1;
 
 	/**gives an alias to certain numbers, these aliases are used to "index" our state machine and determine
 	where we are in the state machine */
@@ -259,15 +259,15 @@ private:
 	bool do_we_shift_states();
 	int kb_press();
 
-	
+
 	float length = 1.0f; //length of the square sides in meters
-	
-	
-	
+
+
+
 
 	const float waypoint_radius = 0.15f; //waypoint radius in meters. this is used to determine when we consider a waypoint to be reached
-	
-	
+
+
 
 	rclcpp::QoS qos_best_effort = rclcpp::QoS(rclcpp::KeepLast(10)).best_effort(); //some subscriptions must use best effort
 
@@ -281,7 +281,7 @@ private:
 		{0, -length, -5},    // WAYPOINT_4	4
 		{0, 0, 0}            // LAND	5
 	}};
-	//1, 1, 1 
+	//1, 1, 1
 
 	//type ros2 topic list to view all topics ros can see, you still have to subscribe to actually use them
 
@@ -318,11 +318,11 @@ bool OffboardControl::do_we_shift_states() {
     float delta_x, delta_y, delta_z, target_x, target_y, target_z;
 
 	int state_key = static_cast<int>(current_state);
-    
+
     //gets target coordinates from the state machine
     target_x = state_machine[state_key][0];
     target_y = state_machine[state_key][1];
-    target_z = state_machine[state_key][2];  
+    target_z = state_machine[state_key][2];
 
 	/** the missile knows where it is at all
 	times. it knows this because it knows
@@ -338,17 +338,17 @@ bool OffboardControl::do_we_shift_states() {
 	where it wasn't.  */
     delta_x = target_x - current_position_.x;
     delta_y = target_y - current_position_.y;
-    delta_z = target_z - current_position_.z;  
-    
-    
+    delta_z = target_z - current_position_.z;
+
+
     float distance = sqrt(delta_x * delta_x + delta_y * delta_y + delta_z * delta_z);
-    
+
     RCLCPP_INFO(this->get_logger(), "Distance to waypoint %d: %.3f m", state_key, distance);
-    RCLCPP_INFO(this->get_logger(), "Current position: [%.2f, %.2f, %.2f]", 
+    RCLCPP_INFO(this->get_logger(), "Current position: [%.2f, %.2f, %.2f]",
                 current_position_.x, current_position_.y, current_position_.z);
-    RCLCPP_INFO(this->get_logger(), "Target position: [%.2f, %.2f, %.2f]", 
+    RCLCPP_INFO(this->get_logger(), "Target position: [%.2f, %.2f, %.2f]",
                 target_x, target_y, target_z);
-    
+
     return (distance < waypoint_radius); // true if we need to shift states
 }
 /**
@@ -375,21 +375,21 @@ void OffboardControl::publish_offboard_control_mode()
  */
 void OffboardControl::publish_trajectory_setpoint_local()
 {
-    
+
 	TrajectorySetpoint msg{};
 
 	int state_key = static_cast<int>(current_state);
-	
+
 	//this will be 0, 1, 2, or 3 depending on what point of the square we need to travel to
-	 
+
 
     //the position object needs floats so you cast integers to floats
 	msg.position = {state_machine[state_key][0],
 					state_machine[state_key][1],
 					state_machine[state_key][2]};
-	
-   
-	
+
+
+
 	msg.timestamp = this->get_clock()->now().nanoseconds() / 1000;
 	trajectory_setpoint_publisher_->publish(msg);
 	RCLCPP_INFO(this->get_logger(), "trajectory setpoint %d sent: position = [%f, %f, %f]",state_key,
@@ -401,9 +401,9 @@ void OffboardControl::publish_trajectory_setpoint_local()
  */
 void OffboardControl::takeoff()
 {
-	
+
     TrajectorySetpoint msg{};
-	
+
     msg.position = {0.0, 0.0, -5.0}; // Takeoff to 5 meters altitude
     //msg.yaw = -3.14;
     msg.timestamp = this->get_clock()->now().nanoseconds() / 1000;
@@ -453,8 +453,8 @@ int OffboardControl::kb_press() {
     newt.c_lflag &= ~(ICANON | ECHO); //makes characters available immediately and echo prevents them from being printed to the terminal
     tcsetattr(STDIN_FILENO, TCSANOW, &newt); //apply modified attributes immediately to stdin
 
-	
-    oldf = fcntl(STDIN_FILENO, F_GETFL, 0);//query current file status flags on stdin file descriptor 
+
+    oldf = fcntl(STDIN_FILENO, F_GETFL, 0);//query current file status flags on stdin file descriptor
     fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK); //set new file flags to the old flags plus nonblocking, and then restore old ones later
 
     ch = getchar();
@@ -465,7 +465,7 @@ int OffboardControl::kb_press() {
     if (ch != EOF) {
 		//puts the character back into the stdin stream so it can be read again
 		//this will be used to determine which key was pressed so we can act accordingly
-        ungetc(ch, stdin); 
+        ungetc(ch, stdin);
         return 1;
     }
     return 0;

@@ -32,21 +32,21 @@ for imgLeft, imgRight in zip(imagesLeft, imagesRight):
 
 	imgL = cv.imread(imgLeft)
 	imgR = cv.imread(imgRight)
-	
+
 	imgL = cv.resize(imgL, (int(imgL.shape[1] / 4), int(imgL.shape[0] / 4)), interpolation= cv.INTER_LINEAR)
 	imgR = cv.resize(imgR, (int(imgR.shape[1] / 4), int(imgR.shape[0] / 4)), interpolation= cv.INTER_LINEAR)
-	
+
 	grayL = cv.cvtColor(imgL, cv.COLOR_BGR2GRAY)
 	grayR = cv.cvtColor(imgR, cv.COLOR_BGR2GRAY)
-		
+
 	# Get the corners of the chess board
 	retL, cornersL = cv.findChessboardCorners(grayL, chessboardSize, None)
 	retR, cornersR = cv.findChessboardCorners(grayR, chessboardSize, None)
 
-	# Add object points and image points if chess board corners are found        
+	# Add object points and image points if chess board corners are found
 	if retL and retR == True:
 
-		objpoints.append(objp) 
+		objpoints.append(objp)
 
 		cornersL = cv.cornerSubPix(grayL, cornersL, (11,11), (-1,-1), criteria)
 		imgpointsL.append(cornersL)
@@ -85,7 +85,7 @@ cv.destroyAllWindows()
 ## stereoCalibrate Output: retStereo is RSME, newCameraMatrixL and newCameraMatrixR are the intrinsic matrices for both
                 ## cameras, distL and distR are the distortion coeffecients for both cameras, rot is the rotation matrix,
                 ## trans is the translation matrix, and essentialMatrix and fundamentalMatrix are self descriptive
-                
+
 # R and T are taken from stereoCalibrate to use in triangulation
 header = ['Rotation','Translation', 'ProjectionLeft', 'ProjectionRight'] # for the csv file
 
