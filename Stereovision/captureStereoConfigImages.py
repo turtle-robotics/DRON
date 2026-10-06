@@ -70,8 +70,8 @@ class WorkThread(QThread):
                 time.sleep(0.1)
             except Exception as e:
                 print("except: "+str(e))
-	
-	i = 0
+
+        i = 0
         while i < 20:
             for item in {"A","B"}:
                 self.select_channel(item)
