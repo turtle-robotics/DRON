@@ -22,6 +22,8 @@ repos:
       - id: check-added-large-files
         name: check for large added files
         args: ["--maxkb=5120"]
+        # Ros2ForUnity ships prebuilt vendor libraries above the limit.
+        exclude: ^DRON_Interface/Assets/Ros2ForUnity/
       - id: trailing-whitespace
         name: trim trailing whitespace
         exclude: ^(DRON_Interface|senxor)/
