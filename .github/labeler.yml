@@ -1,0 +1,37 @@
+# Path mappings for actions/labeler v5.
+# Labels are applied automatically when a PR touches the mapped paths.
+# Labels without a mapping here (electrical, mechanical, and the general
+# taxonomy) are applied manually; see CONTRIBUTING.md for the label list.
+
+ros2:
+  - changed-files:
+      - any-glob-to-any-file: "ros2_ws/**"
+
+autonomy:
+  - changed-files:
+      - any-glob-to-any-file: "Automation/**"
+      - any-glob-to-any-file: "PX4-Autopilot/**"
+      - any-glob-to-any-file: "ws_sensor_combined/**"
+
+stereovision:
+  - changed-files:
+      - any-glob-to-any-file: "Stereovision/**"
+      - any-glob-to-any-file: "SV_In/**"
+      - any-glob-to-any-file: "calibration_params/**"
+
+sensors:
+  - changed-files:
+      - any-glob-to-any-file: "senxor/**"
+
+visualization:
+  - changed-files:
+      - any-glob-to-any-file: "DRON_Interface/**"
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file: "*.md"
+
+ci-cd:
+  - changed-files:
+      - any-glob-to-any-file: ".github/**"
+      - any-glob-to-any-file: ".pre-commit-config.yaml"
