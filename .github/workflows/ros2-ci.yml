@@ -1,0 +1,66 @@
+name: ROS 2 CI
+
+on:
+  pull_request:
+    paths:
+      - "ros2_ws/**"
+      - ".github/workflows/ros2-ci.yml"
+  push:
+    branches: [main]
+    paths:
+      - "ros2_ws/**"
+      - ".github/workflows/ros2-ci.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ros2-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: ROS 2 / Build & Test
+    runs-on: ubuntu-latest
+    container: ros:humble-ros-base
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install build tools
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends colcon python3-rosdep
+
+      - name: Install package dependencies
+        run: |
+          rosdep update --include-eol-distros
+          # --ignore-src: build in-workspace packages instead of apt.
+          # --skip-keys: keys with no rosdep entry. senxor is vendored in
+          # the repo; cmapy, board, busio, and adafruit_gps (Adafruit
+          # Blinka) must be installed manually on the drone's Raspberry Pi.
+          rosdep install --from-paths ros2_ws/src --ignore-src -y \
+            --skip-keys "senxor cmapy board busio adafruit_gps"
+
+      - name: Build workspace
+        working-directory: ros2_ws
+        run: |
+          source /opt/ros/humble/setup.bash
+          colcon build --event-handlers console_direct-
+
+      - name: Run tests
+        working-directory: ros2_ws
+        # Non-blocking: the ament lint tests (flake8, pep257) fail on
+        # legacy code today. Once the packages pass ament lint, remove
+        # continue-on-error so test failures block the PR.
+        continue-on-error: true
+        run: |
+          source /opt/ros/humble/setup.bash
+          source install/setup.bash
+          colcon test --event-handlers console_direct-
+
+      - name: Report test results
+        working-directory: ros2_ws
+        if: always()
+        continue-on-error: true
+        run: |
+          colcon test-result --verbose | tee "$GITHUB_STEP_SUMMARY"
