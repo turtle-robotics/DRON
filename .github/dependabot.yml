@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      # Matches the repository's Conventional Commit PR title rules.
+      prefix: "chore(deps)"
+    groups:
+      actions:
+        applies-to: version-updates
+        patterns:
+          - "*"
