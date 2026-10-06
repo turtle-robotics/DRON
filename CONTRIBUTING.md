@@ -21,7 +21,7 @@ Thanks for helping. This guide covers setup, branch and commit rules, and what w
    ```bash
    cd ros2_ws
    rosdep install --from-paths src --ignore-src -y \
-     --skip-keys "senxor cmapy board busio adafruit_gps"
+     --skip-keys "senxor cmapy board busio adafruit_gps cv2 spidev"
    colcon build
    source install/setup.bash
    ```
@@ -31,7 +31,7 @@ Thanks for helping. This guide covers setup, branch and commit rules, and what w
    pre-commit install
    ```
 
-Some sensors need packages rosdep cannot install (`cmapy`, Adafruit Blinka: `board`, `busio`, `adafruit_gps`). Install those with pip on the Raspberry Pi.
+Some sensors need packages rosdep cannot install: `cmapy`, Adafruit Blinka (`board`, `busio`, `adafruit_gps`), plus `cv2` (OpenCV) and `spidev`, which have no rosdep keys. Install them with pip (`pip install opencv-python spidev` covers the last two).
 
 ## Branches
 
