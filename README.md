@@ -7,7 +7,6 @@ The DRON Project is a tool designed to aid first responders in their response to
 - [Project Overview](#project-overview)
 - [Flight Videos](#flight-test-videos)
 - [Poster](#project-poster)
-- [Team Members](#team-members)
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [License](#license)
