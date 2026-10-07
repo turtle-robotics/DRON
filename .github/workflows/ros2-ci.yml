@@ -37,12 +37,12 @@ jobs:
           # --ignore-src: build in-workspace packages instead of apt.
           # --skip-keys: keys with no rosdep entry (verified against the
           # rosdistro rosdep database). senxor is vendored in the repo;
-          # cv2 and spidev are Python modules with no rosdep key
-          # (install python3-opencv manually if needed); cmapy, board,
-          # busio, and adafruit_gps (Adafruit Blinka) are installed with
-          # pip on the drone's Raspberry Pi.
+          # matplotlib, cv2, and spidev are Python modules with no
+          # rosdep key (pip installs: matplotlib, opencv, spidev);
+          # cmapy, board, busio, and adafruit_gps (Adafruit Blinka) are
+          # installed with pip on the drone's Raspberry Pi.
           rosdep install --from-paths ros2_ws/src --ignore-src -y \
-            --skip-keys "senxor cmapy board busio adafruit_gps cv2 spidev"
+            --skip-keys "senxor matplotlib cv2 spidev cmapy board busio adafruit_gps"
 
       - name: Build workspace
         working-directory: ros2_ws
