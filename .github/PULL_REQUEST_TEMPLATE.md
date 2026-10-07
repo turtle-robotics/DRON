@@ -30,18 +30,6 @@ Software:
 - [ ] Documentation updated
 - [ ] Configuration changes documented
 
-Hardware:
-- [ ] Tested on hardware (state which test)
-- [ ] No hardware impact
-
-## Hardware impact
-
-<!-- Does this change wiring, mounts, sensor placement, or calibration files? Write "None" if not. -->
-
-## Evidence
-
-<!-- Screenshots, logs, rosbags, photos, or video that show the change working. -->
-
 ## Safety impact
 
 <!-- Could this affect flight behavior, batteries, or people near the drone? Write "None" if not. -->
