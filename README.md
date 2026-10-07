@@ -5,7 +5,7 @@ The DRON Project is a tool designed to aid first responders in their response to
 ## Table of Contents
 
 - [Project Overview](#project-overview)
-- [Flight Videos](#flight-test-videos)
+- [Flight Test Videos](#flight-test-videos)
 - [Poster](#project-poster)
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
@@ -28,7 +28,7 @@ https://github.com/user-attachments/assets/e583ee48-7b87-49e9-ae21-030e9a4f5374
 
 ## Project Poster
 
-![Poster-Spring-2025](resources/DRON-Poster-Fall-2025.png)
+![Poster-Fall-2025](resources/DRON-Poster-Fall-2025.png)
 
 ## Getting Started
 
@@ -39,7 +39,7 @@ To get started with DRON, follow these steps:
    git clone https://github.com/turtle-robotics/DRON.git
    ```
 
-2. **Install Dependencies**: Depending on the software and hardware components used, install the required dependencies and libraries as outlined in the project documentation.
+2. **Install Dependencies**: Install the required dependencies and libraries for the software and hardware components you use — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 3. **Build the Drone**: Follow the instructions provided to construct the physical drone including all sensors.
 
