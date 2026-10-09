@@ -1,0 +1,73 @@
+name: Hardware report
+description: Report a problem with the physical system — airframe, wiring, mounts, or assembly.
+labels: ["fix"]
+body:
+  - type: input
+    id: component
+    attributes:
+      label: Component or assembly
+      placeholder: e.g. camera mount, power distribution board, GPS mast
+    validations:
+      required: true
+  - type: dropdown
+    id: subsystem
+    attributes:
+      label: Subsystem
+      options:
+        - Electrical
+        - Mechanical
+        - Sensors
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is wrong with the component?
+    validations:
+      required: true
+  - type: textarea
+    id: failure
+    attributes:
+      label: Observed failure
+      description: What happened? Include measurements or error readings.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: How should the component behave?
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Hardware revision
+      description: Revision, print number, or build date, if known. Write "Unknown" if not.
+  - type: input
+    id: cad
+    attributes:
+      label: CAD or drawing reference
+      description: Link to the CAD file, drawing, or schematic, if one exists.
+  - type: textarea
+    id: conditions
+    attributes:
+      label: Test conditions
+      description: Where and how was the component used when it failed?
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Photos or evidence
+      description: Attach photos, videos, or measurement data.
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Repair, redesign, or replacement ideas, if any.
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety implications
+      description: Could this failure hurt people or damage the drone? Should it ground the fleet? Write "None" if not.

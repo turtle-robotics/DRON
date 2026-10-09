@@ -1,6 +1,23 @@
 # Ignores ros2 builds
 /ros2_ws/[Bb]uild/
 /ros2_ws/[Ll]og/
+/ros2_ws/[Ii]nstall/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Vim / editor swap files
+*.swp
+
+# Unity Mono crash dumps
+mono_crash.mem.*
+
+# CMake build output
+Stereovision/DisparityFiltering/build/
+
+# macOS
+.DS_Store
 
 # This .gitignore file should be placed at the root of your Unity project directory
 #
@@ -8,7 +25,7 @@
 #
 /DRON_Interface/[Ll]ibrary/
 /DRON_Interface/[Tt]emp/
-//DRON_Interface[Oo]bj/
+/DRON_Interface/[Oo]bj/
 /DRON_Interface/[Bb]uild/
 /DRON_Interface/[Bb]uilds/
 /DRON_Interface/[Ll]ogs/

@@ -1,0 +1,94 @@
+name: Bug report
+description: Report a problem with the drone software or repository.
+labels: ["fix"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem description
+      description: What is wrong? One or two sentences are enough.
+    validations:
+      required: true
+  - type: dropdown
+    id: subsystem
+    attributes:
+      label: Affected subsystem
+      options:
+        - Autonomy
+        - ROS 2
+        - PX4
+        - Stereovision / Computer Vision
+        - Visualization / Interface
+        - Sensors
+        - Electrical
+        - Mechanical
+        - Documentation
+        - CI / Infrastructure
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you want to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What happened instead? Include error messages.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps. Write them so another student can follow them.
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Machine or hardware used, and where the problem appears (laptop, Raspberry Pi, bench, drone).
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: e.g. Ubuntu 22.04, Windows 11, Raspberry Pi OS
+    validations:
+      required: true
+  - type: input
+    id: ros
+    attributes:
+      label: ROS version
+      description: Leave empty if not applicable.
+      placeholder: e.g. ROS 2 Humble
+  - type: input
+    id: px4
+    attributes:
+      label: PX4 version
+      description: Leave empty if not applicable.
+      placeholder: e.g. PX4 v1.14
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Terminal output or log files. Paste text inside a code block.
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Images or video that show the problem.
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Anything else that helps explain the problem.

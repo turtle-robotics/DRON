@@ -1,0 +1,32 @@
+# Pre-commit hooks for the DRON project.
+#
+# Install:  pip install pre-commit && pre-commit install
+# Run once: pre-commit run --all-files
+#
+# DRON_Interface/ is Unity-generated and senxor/ is vendored, so both are
+# excluded from the whitespace fixers to avoid noise on generated files.
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-merge-conflict
+        name: check for merge conflict markers
+      - id: check-yaml
+        name: check YAML syntax
+      - id: check-json
+        name: check JSON syntax
+      - id: check-ast
+        name: check Python syntax
+      - id: check-case-conflict
+        name: check for case-conflicting filenames
+      - id: check-added-large-files
+        name: check for large added files
+        args: ["--maxkb=5120"]
+        # Ros2ForUnity ships prebuilt vendor libraries above the limit.
+        exclude: ^DRON_Interface/Assets/Ros2ForUnity/
+      - id: trailing-whitespace
+        name: trim trailing whitespace
+        exclude: ^(DRON_Interface|senxor)/
+      - id: end-of-file-fixer
+        name: ensure files end with a newline
+        exclude: ^(DRON_Interface|senxor)/

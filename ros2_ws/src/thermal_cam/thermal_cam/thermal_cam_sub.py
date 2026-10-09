@@ -88,7 +88,7 @@ class ThermalSubscriber(Node):
         cv.imshow("thresh", mask)
         cv.waitKey(1)
         ############################################
-        
+
 
 def main(args=None):
     rclpy.init(args=args)

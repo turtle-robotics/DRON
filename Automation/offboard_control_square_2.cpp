@@ -38,7 +38,7 @@ the intended behavior is for the drone to takeoff, fly a square with a 1 meter s
  * @brief Offboard control square 2
  * @file offboard_control_square_2.cpp
  * @addtogroup examples
- * @author Chris Ambroziak 
+ * @author Chris Ambroziak
  */
 
 //px4 topics
@@ -108,10 +108,10 @@ public:
         local_origins.resize(num_drones);
         current_attitudes.resize(drone_count);
 
-    
 
-        
-		
+
+
+
         //create publisher and subscribers for the first drone, the first drone has no additional px4_# namespace in the topic name
         offboard_control_mode_publishers.push_back(this->create_publisher<OffboardControlMode>("/fmu/in/offboard_control_mode", 10));
         trajectory_setpoint_publishers.push_back(this->create_publisher<TrajectorySetpoint>("/fmu/in/trajectory_setpoint", 10));
@@ -131,7 +131,7 @@ public:
                 home_positions[0] = *msg;
             }
         ));
-        
+
 
         vehicle_local_position_subs.push_back( this->create_subscription<VehicleLocalPosition>(
             "/fmu/out/vehicle_local_position_v1", qos_best_effort,
@@ -182,15 +182,15 @@ public:
                     current_attitudes[drone_index] = *msg;
                 }
             ));
-            
-            
+
+
             home_position_subs.push_back( this->create_subscription<HomePosition>(
                 "/px4_" + std::to_string(i) + "/fmu/out/home_position_v1", qos_best_effort,
                 [this, drone_index](const HomePosition::UniquePtr msg){
                     home_positions[drone_index] = *msg;
                 }
             ));
-            
+
 
             vehicle_local_position_subs.push_back( this->create_subscription<VehicleLocalPosition>(
                 "/px4_" + std::to_string(i) + "/fmu/out/vehicle_local_position_v1", qos_best_effort,
@@ -211,7 +211,7 @@ public:
             }
             ));
 
-            
+
             vehicle_land_detected_subs.push_back( this->create_subscription<VehicleLandDetected>(
                 "/px4_" + std::to_string(i) + "/fmu/out/vehicle_land_detected", qos_best_effort,
                 [this, drone_index](const VehicleLandDetected::UniquePtr msg) {
@@ -228,28 +228,28 @@ public:
 
         }
 
- 
+
 
         //gets the origin of every drone. because we havent moved yet, this is our starting position
-		
 
 
-        
-        
+
+
+
 		//todo: implement a keyboard listeneer, if h or H is pressed, make all drones hover and pause the FSM.
-		
+
 		//todo: best practice is to stream setpoint commands for a few seconds before switching to offboard mode and arming, implement later as needed
         RCLCPP_INFO(this->get_logger(), "POI set to: [%.1f, %.1f, %.1f]", poi_x, poi_y, poi_z);
-		
+
 		// Set to offboard control mode, arm, and prepare for takeoff
 		offboard_all_drones();
 		publish_offboard_control_mode_all();
-		
+
         //todo: publish arming_check_request and subscribe to arming_check_response to verify armed status before flying
 		this->arm_all();
-		
-		
-		
+
+
+
 
 		auto timer_callback = [this]() -> void { // triggers every 200ms, think of this as our main "while" loop
             int offset = num_waypoints / num_drones;
@@ -260,13 +260,13 @@ public:
                 if (num_drones > 1) {
                     // Drone 0's origin is always (0,0,0) in its own frame
                     local_origins[0] = {0.0f, 0.0f, 0.0f};
-                    
+
                     // Calculate other drones' origins relative to drone 0
                     for (int i = 1; i < num_drones; i++) {
                         local_origins[i] = calculate_origin_difference(current_positions[0], current_positions[i]);
-                        
-                        RCLCPP_INFO(this->get_logger(), 
-                                "Drone %d origin relative to drone 0: [%.3f, %.3f, %.3f] meters", 
+
+                        RCLCPP_INFO(this->get_logger(),
+                                "Drone %d origin relative to drone 0: [%.3f, %.3f, %.3f] meters",
                                 i, local_origins[i].x, local_origins[i].y, local_origins[i].z);
                     }
                     origins_initialized = true;
@@ -276,32 +276,32 @@ public:
                 }
             }
 
-       
-            
+
+
 			//if keyboard was pressed we get the input and check if it was q
 			if(kb_press()){
 				char c  = getchar();
 				if( c == 'q' || c == 'Q'){
                     //if q was pressed we land all drones
 					RCLCPP_INFO(this->get_logger(), "q was pressed, beginning land + shutoff sequence");
-					
+
                     RTL_all(); //initiates RTl sequence
                     RTL_in_progress = true;
-				    
+
 			    }
             }
 
-           
+
             /**TODO: this is scuffed because im speedrunning this for saturday, this will probably need to be implemented as a switch statement with a mini state
             machine divided into abstract mission progress states like TAKEOFF, MISSION, RTL, etc*/
 
 
             if(RTL_in_progress){
-                
+
                 //check if every vehicle status is disarmed, if they are do RCLCPP shutdown
                 //if not disarmed check if landed, if landed disarm
                 //if not landed continue to publish RTL_all()
-                //std::all_of() returns true if every the predicate returns for all elements 
+                //std::all_of() returns true if every the predicate returns for all elements
                 all_disarmed = std::all_of(current_vehicle_statuses.begin(), current_vehicle_statuses.end(),
                     [](const VehicleStatus& status) {
                         return status.arming_state == status.ARMING_STATE_DISARMED;
@@ -320,9 +320,9 @@ public:
                     RTL_all(); //continue RTL
                 }
 
-                
+
             } else{
-                
+
                 if(takeoff_complete) { //starts as false;
                     RCLCPP_INFO(this->get_logger(), "TAKEOFF COMPLETED");
                     publish_trajectory_setpoint_local();
@@ -339,12 +339,12 @@ public:
                         for(int i =1; i < num_drones; i++){
                             //todo: this formula will fail if num_drones > num_waypoints, we will need to validate this during user input
                             current_states[i] = (states_alias)((int)current_states[0] + offset * i);
-                        }					
+                        }
                     }
                 }
             }
-				
-				
+
+
 
 		};
 		timer_ = this->create_wall_timer(200ms, timer_callback); //think of this as the trigger for our main "for/while"
@@ -352,17 +352,17 @@ public:
 	}
 	void arm_all();
 	void disarm_all();
-        
+
 private:
 
 	rclcpp::TimerBase::SharedPtr timer_;
 
 
-    //publisher arrays to populate 
+    //publisher arrays to populate
     std::vector<rclcpp::Publisher<OffboardControlMode>::SharedPtr> offboard_control_mode_publishers;
     std::vector<rclcpp::Publisher<TrajectorySetpoint>::SharedPtr> trajectory_setpoint_publishers;
     std::vector<rclcpp::Publisher<VehicleCommand>::SharedPtr> vehicle_command_publishers;
-    
+
 
     //subscriber arrays to populate
     std::vector<rclcpp::Subscription<px4_msgs::msg::VehicleAttitude>::SharedPtr> vehicle_attitude_subs;
@@ -371,11 +371,11 @@ private:
     std::vector<rclcpp::Subscription<px4_msgs::msg::VehicleLandDetected>::SharedPtr> vehicle_land_detected_subs;
     std::vector<rclcpp::Subscription<px4_msgs::msg::VehicleGlobalPosition>::SharedPtr> vehicle_global_position_subs;
     std::vector<rclcpp::Subscription<px4_msgs::msg::HomePosition>::SharedPtr> home_position_subs;
-    
+
     std::vector<px4_msgs::msg::VehicleAttitude> current_attitudes;
     std::vector<VehicleLocalPosition> current_positions;
     std::vector<VehicleStatus> current_vehicle_statuses;
-    std::vector<VehicleLandDetected> land_detecteds; 
+    std::vector<VehicleLandDetected> land_detecteds;
     std::vector<VehicleGlobalPosition> current_global_positions;
     std::vector<HomePosition> home_positions;
 
@@ -392,7 +392,7 @@ private:
     //todo: make num_waypoints change based on num of inputted coordinates (low priority, this is for the future once we take coordinates from input)
     int num_waypoints = 4;
     bool takeoff_complete = false;
-	
+
     std::vector<states_alias> current_states;
     std::vector<bool> states_reached;
 
@@ -422,19 +422,19 @@ private:
         float x = 0.0;
         float y = 0.0;
         float z = 0.0;
-        
+
     };
 
 
     vector<Origins> local_origins; //vector to track NED origins of every drone
     bool origins_initialized = false;
     Origins calculate_origin_difference(const VehicleLocalPosition& ref1, const VehicleLocalPosition& ref2);
-	
-	
+
+
 
 	rclcpp::QoS qos_best_effort = rclcpp::QoS(rclcpp::KeepLast(10)).best_effort(); //some subscriptions must use best effort
 
-    
+
     std::array<std::array<float,3>,6> state_machine = {{
 		{0, 0, -5},          // TAKEOFF		0
 		{length, 0, -5},     // WAYPOINT_1	1
@@ -446,7 +446,7 @@ private:
 	//type ros2 topic list to view all topics ros can see, you still have to subscribe to actually use them
 
     float poi_x = 1.5f * length;  // Center of the square in X
-    float poi_y = 0.5f * length;  // Center of the square in Y  
+    float poi_y = 0.5f * length;  // Center of the square in Y
     float poi_z = -5.0f;          // Same altitude as flight
 
     /**
@@ -458,16 +458,16 @@ private:
         // Get current position in shared frame
         float current_x = current_positions[drone_id].x + local_origins[drone_id].x;
         float current_y = current_positions[drone_id].y + local_origins[drone_id].y;
-        
+
         // Calculate vector FROM DRONE TO POI
         float dx = poi_x - current_x;
         float dy = poi_y - current_y;
-        
+
         // Calculate yaw angle - this is the direction the drone should face
         // In NED frame: 0 = North, π/2 = East, π = South, -π/2 = West
         float yaw = atan2(dy, dx);  // This gives the correct angle from North
-        
-        RCLCPP_DEBUG(this->get_logger(), "Drone %d at [%.1f, %.1f] to POI [%.1f, %.1f], yaw: %.3f rad (%.1f°)", 
+
+        RCLCPP_DEBUG(this->get_logger(), "Drone %d at [%.1f, %.1f] to POI [%.1f, %.1f], yaw: %.3f rad (%.1f°)",
                     drone_id, current_x, current_y, poi_x, poi_y, yaw, yaw * 180.0 / M_PI);
         return yaw;
     }
@@ -519,46 +519,46 @@ void OffboardControl::RTL_all() {
 OffboardControl::Origins OffboardControl::calculate_origin_difference(const VehicleLocalPosition& ref1, const VehicleLocalPosition& ref2)
 {
     Origins diff;
-    
+
     try {
         // Use GeographicLib to calculate geodesic between the two reference points
-        GeographicLib::Geodesic geodesic(GeographicLib::Constants::WGS84_a(), 
+        GeographicLib::Geodesic geodesic(GeographicLib::Constants::WGS84_a(),
                                        GeographicLib::Constants::WGS84_f());
-        
+
         double s12;  // distance in meters
         double azi1, azi2;  // azimuths (bearings) at points 1 and 2
-        
+
         // Calculate the forward geodesic from ref1 to ref2
-        geodesic.Inverse(ref1.ref_lat, ref1.ref_lon, 
+        geodesic.Inverse(ref1.ref_lat, ref1.ref_lon,
                         ref2.ref_lat, ref2.ref_lon,
                         s12, azi1, azi2);
-        
+
         // Convert from geographic (azi1 = bearing from north) to NED frame:
-        // - North (x) = s12 * cos(azi1)  
+        // - North (x) = s12 * cos(azi1)
         // - East (y) = s12 * sin(azi1)
         // Note: azi1 is in degrees, measured clockwise from north
         double azi1_rad = azi1 * M_PI / 180.0;
-        
+
         diff.x = static_cast<float>(s12 * std::cos(azi1_rad));  // North
         diff.y = static_cast<float>(s12 * std::sin(azi1_rad));  // East
-        
+
         // Calculate altitude difference (NED frame: down is positive)
         // ref_alt is typically in meters AMSL (Above Mean Sea Level)
         diff.z = static_cast<float>(ref2.ref_alt - ref1.ref_alt);
-        
-        RCLCPP_DEBUG(this->get_logger(), 
-                    "Origin difference calculated: dx=%.3f, dy=%.3f, dz=%.3f meters", 
+
+        RCLCPP_DEBUG(this->get_logger(),
+                    "Origin difference calculated: dx=%.3f, dy=%.3f, dz=%.3f meters",
                     diff.x, diff.y, diff.z);
-                    
+
     } catch (const std::exception& e) {
-        RCLCPP_ERROR(this->get_logger(), 
+        RCLCPP_ERROR(this->get_logger(),
                     "Error calculating origin difference: %s", e.what());
         // Return zero difference on error
         diff.x = 0.0f;
         diff.y = 0.0f;
         diff.z = 0.0f;
     }
-    
+
     return diff; //returns the difference in NED frame as a Origins struct
 }
 
@@ -571,13 +571,13 @@ bool OffboardControl::waypoint_reached(int drone_id, bool takeoff_complete) {
     float delta_x, delta_y, delta_z, target_x, target_y, target_z;
 
 	int state_key = static_cast<int>(current_states[drone_id]);
-    
+
     //for drone 1 it is flying to {2,-1,0}
     //gets target coordinates from the state machine
     //the state machine is default in the shared frame
     target_x = state_machine[state_key][0];
     target_y = state_machine[state_key][1];
-    target_z = state_machine[state_key][2];  
+    target_z = state_machine[state_key][2];
 
 	/** the missile knows where it is at all
 	times. it knows this because it knows
@@ -606,18 +606,18 @@ bool OffboardControl::waypoint_reached(int drone_id, bool takeoff_complete) {
 
     delta_x = target_x - shared_x;
     delta_y = target_y - shared_y;
-    delta_z = target_z - shared_z;  
-    
-    
+    delta_z = target_z - shared_z;
+
+
     float distance = sqrt(delta_x * delta_x + delta_y * delta_y + delta_z * delta_z);
 
     RCLCPP_INFO(this->get_logger(), "Drone %d data:", drone_id);
     RCLCPP_INFO(this->get_logger(), "Distance to waypoint %d: %.3f m", state_key, distance);
-    RCLCPP_INFO(this->get_logger(), "Current position: [%.2f, %.2f, %.2f]", 
+    RCLCPP_INFO(this->get_logger(), "Current position: [%.2f, %.2f, %.2f]",
                 shared_x, shared_y,shared_z);
-    RCLCPP_INFO(this->get_logger(), "Target position: [%.2f, %.2f, %.2f]", 
+    RCLCPP_INFO(this->get_logger(), "Target position: [%.2f, %.2f, %.2f]",
                 target_x, target_y, target_z);
-    
+
     return (distance < waypoint_radius); // true if we need to shift states
 }
 
@@ -627,7 +627,7 @@ bool OffboardControl::waypoint_reached(int drone_id, bool takeoff_complete) {
  */
 bool OffboardControl::do_we_shift_states() {
     //when takeoff is not complete we dont check shared frame_only local one
-    
+
     for(int i =0; i < num_drones; i++) {
         states_reached[i] = waypoint_reached(i, takeoff_complete);
     }
@@ -639,7 +639,7 @@ bool OffboardControl::do_we_shift_states() {
     }
     //if we get here, all drones have reached their waypoints and we can shift states
     return true;
-    
+
 }
 
 void OffboardControl::publish_offboard_control_mode_all() {
@@ -679,15 +679,15 @@ void OffboardControl::publish_trajectory_setpoint_local()
         //this will be 0, 1, 2, or 3 depending on what point of the square we need to travel to
         int state_key = static_cast<int>(current_states[i]); //gets state key of each drone
 
-        
+
         //position relative to the shared frame
         msg.position = {state_machine[state_key][0] - local_origins[i].x,
                         state_machine[state_key][1] - local_origins[i].y,
-                        state_machine[state_key][2] - local_origins[i].z}; 
-    
+                        state_machine[state_key][2] - local_origins[i].z};
+
         if (current_states[i] != states_alias::TAKEOFF) {
             msg.yaw = calculate_yaw_to_poi(i);
-            RCLCPP_INFO(this->get_logger(), "Drone %d facing POI at waypoint %d, yaw = %.3f rad", 
+            RCLCPP_INFO(this->get_logger(), "Drone %d facing POI at waypoint %d, yaw = %.3f rad",
                        i, state_key, msg.yaw);
         }
 
@@ -709,7 +709,7 @@ void OffboardControl::takeoff_all()
     //essentially by not transforming we are preventing crashes
 	for(int i = 0; i < num_drones; i++) {
         TrajectorySetpoint msg{};
-        
+
         msg.position = {0.0, 0.0, -5.0}; // Takeoff to 5 meters altitude
         //msg.yaw = -3.14;
         msg.timestamp = this->get_clock()->now().nanoseconds() / 1000;
@@ -763,8 +763,8 @@ int OffboardControl::kb_press() {
     newt.c_lflag &= ~(ICANON | ECHO); //makes characters available immediately and echo prevents them from being printed to the terminal
     tcsetattr(STDIN_FILENO, TCSANOW, &newt); //apply modified attributes immediately to stdin
 
-	
-    oldf = fcntl(STDIN_FILENO, F_GETFL, 0);//query current file status flags on stdin file descriptor 
+
+    oldf = fcntl(STDIN_FILENO, F_GETFL, 0);//query current file status flags on stdin file descriptor
     fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK); //set new file flags to the old flags plus nonblocking, and then restore old ones later
 
     ch = getchar();
@@ -775,7 +775,7 @@ int OffboardControl::kb_press() {
     if (ch != EOF) {
 		//puts the character back into the stdin stream so it can be read again
 		//this will be used to determine which key was pressed so we can act accordingly
-        ungetc(ch, stdin); 
+        ungetc(ch, stdin);
         return 1;
     }
     return 0;

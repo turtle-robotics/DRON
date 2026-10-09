@@ -1,0 +1,24 @@
+name: PR Labels
+
+# pull_request_target is required so labels are applied to pull requests
+# opened from forks. This workflow never checks out PR code and grants no
+# write access to repository contents, so it cannot leak secrets or run
+# attacker-controlled code.
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: pr-labels-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  label:
+    name: PR Labels / Apply Subsystem Labels
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/labeler@v5

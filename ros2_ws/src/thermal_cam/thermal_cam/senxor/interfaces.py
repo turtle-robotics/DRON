@@ -187,7 +187,7 @@ class USB_Interface:
         cmd, data = usb_acknowledge(self.port)
         if cmd == 'GFRA':
             # data is a sequence (1-d array) of 16-bit unsigned ints
-            # here we drop the USB header 
+            # here we drop the USB header
             return data[-size_in_words:]
         else:
             self.log.warning('read returned {} acknowledge.'.format(cmd))
@@ -338,7 +338,7 @@ def get_serial(open_ports=None, comport=None, verbose=True):
     for p in list(serial.tools.list_ports.comports()):
         if p.vid == MI_VID and p.pid in MI_PIDs:
             # check it is the comport we want and skip if not
-            # if we did not specify description/name then get the 
+            # if we did not specify description/name then get the
             # first that we find to match Meridian's devices
             logger.info(f'Senxor detected: {p.description}')
             if comport is not None and comport not in p.description:
@@ -361,4 +361,3 @@ def get_serial(open_ports=None, comport=None, verbose=True):
     # the following return statement will generate UnboundLocalError
     # if no serial was successfully opened
     return ser
-

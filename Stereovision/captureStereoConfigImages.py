@@ -11,7 +11,7 @@ width = 1920
 height = 1080
 
 adapter_info = {
-    "A" : {   
+    "A" : {
         "i2c_cmd":"i2cset -y 10 0x70 0x00 0x04",
         "gpio_sta":[0,0,1],
     }, "B" : {
@@ -55,23 +55,23 @@ class WorkThread(QThread):
             try:
                 self.select_channel(item)
                 self.init_i2c(item)
-                time.sleep(0.5) 
+                time.sleep(0.5)
                 if flag == False:
                     flag = True
                 else :
                     picam2.close()
-                    # time.sleep(0.5) 
+                    # time.sleep(0.5)
                 print("init1 "+ item)
                 picam2 = Picamera2()
-                picam2.configure(picam2.create_still_configuration(main={"size": (320, 240),"format": "BGR888"},buffer_count=2)) 
+                picam2.configure(picam2.create_still_configuration(main={"size": (320, 240),"format": "BGR888"},buffer_count=2))
                 picam2.start()
                 time.sleep(2)
                 picam2.capture_array(wait=False)
                 time.sleep(0.1)
             except Exception as e:
                 print("except: "+str(e))
-	
-	i = 0
+
+        i = 0
         while i < 20:
             for item in {"A","B"}:
                 self.select_channel(item)
@@ -104,7 +104,7 @@ if __name__ == "__main__":
     image_label.setFixedSize(1920, 1080)
     image_label2.setFixedSize(1920, 1080)
     window.setWindowTitle("Qt Picamera2 Arducam Multi Camera Demo")
-    layout_h.addWidget(image_label)    
+    layout_h.addWidget(image_label)
     layout_h.addWidget(image_label2)
     layout_v.addLayout(layout_h,20)
     window.setLayout(layout_v)

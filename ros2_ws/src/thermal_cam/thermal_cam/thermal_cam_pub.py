@@ -41,7 +41,7 @@ class PublisherNode(Node):
     def __init__(self):
         super().__init__("thermal_cam_pub")
         ######################################################
-        # ==============================     
+        # ==============================
         # create an USB interface object
         # ==============================
         try:

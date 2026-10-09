@@ -1,6 +1,0 @@
-source;share/gps/hook/pythonpath.ps1
-source;share/gps/hook/pythonpath.dsv
-source;share/gps/hook/pythonpath.sh
-source;share/gps/hook/ament_prefix_path.ps1
-source;share/gps/hook/ament_prefix_path.dsv
-source;share/gps/hook/ament_prefix_path.sh

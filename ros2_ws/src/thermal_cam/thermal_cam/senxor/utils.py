@@ -73,12 +73,12 @@ def data_to_frame(data, array_shape, hflip=False):
     Use this func to change orientation to forward looking camera with `hflip`.
     """
     # Note that the data coming for the EVK is stored as a 1D array.
-    # the data.reshape() reconstructs the 2D FPA array shape; 
+    # the data.reshape() reconstructs the 2D FPA array shape;
     # Note the data ordering is 'F' (fortran-like).
     nc, nr = array_shape
     if hflip:
-        # The flipping below realises horisontal flip, assuming that 
-        # the USB port faces the ceiling or the sky, to correct for 
+        # The flipping below realises horisontal flip, assuming that
+        # the USB port faces the ceiling or the sky, to correct for
         # left/right flip in the camera, if necessary.
         frame = np.flip(data.reshape(array_shape, order='F').T, 1)
     else:
@@ -117,7 +117,7 @@ def remap(data, new_range=(0, 255), curr_range=None, to_uint8=True):
     #
     # The relpos below represents the relative position of _data in the
     # current range.
-    # We could potentially manipulate relpos by some function to 
+    # We could potentially manipulate relpos by some function to
     # realise non-linear remapping
     relpos = (data - lo1) / float(hi1 - lo1)
     out = lo2 + relpos * (hi2 - lo2)
@@ -149,11 +149,11 @@ def cv_render(data, title='', resize=(800, 620), colormap='jet',
               interpolation=cv.INTER_CUBIC, display=True):
     """
     Render and display a 2D numpy array data of type uint8, using OpenCV.
-    
+
     Color the image using any of the supported OpenCV colormaps.
     Resize the image, ensuring the aspect ratio is maintained.
     Use cubic interpolation when upsizing.
-    
+
     If `display` is true, render the image in an OpenCV-controled window.
     Else, return the OpenCV image object.
     """
@@ -362,7 +362,7 @@ class TestData:
     nh = 80
     def __init__(self):
         """Create a dictionary to store all data.
-        
+
         The dictionary key is decided upon adding items.
         When adding data, we can pass either a tupple (Vdd, Tsx, Frames), or
         a 2D array of shape N_frames, n_header+n_col*n_rows.
@@ -371,7 +371,7 @@ class TestData:
         (Vdd, Tsx, frame) is the stored dictionary value.
         """
         self.data = {}
-        
+
     def update(self, key, data):
         """Add data as a tupple (Vdd, Tsx, Frames) or a 2D array from np.loadtxt"""
         try:
@@ -381,7 +381,7 @@ class TestData:
             Vdd = data[:, 2]   # * 1.e-4
             Tsx = data[:, 3]   # 100 + KELVIN0
         self.data[key] = Vdd, Tsx, frames
-        
+
     def get(self, key):
         """Retrieve data for a given key"""
         return self.data[key]
@@ -494,7 +494,7 @@ def get_ipx_1D(icol_irow, n=9, ncols=80):
     """
     ipc, ipr = icol_irow
     ipx = ncols * ipr + ipc-1
-    
+
     # special cases first
     if n == 1:
         ipx = [ipx]
@@ -524,7 +524,7 @@ def stptime2float(x, fmt="%Y-%m-%dT%H:%M:%S.%f%z"):
     """
     Convert the time string into a numpy float.
 
-    This function may be used as a converter, when reading e.g. output 
+    This function may be used as a converter, when reading e.g. output
     from the SenXorViewer file to a numpy array, via np.loadtxt.
     However, this is not recommended.
     Instead, read the frame data separately:

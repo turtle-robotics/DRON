@@ -31,13 +31,13 @@ class ImagePublisher(Node):
 		imageLeft_msg.height = len(imgLeftGray)
 		imageLeft_msg.width = len(imgLeftGray[0])
 		imageLeft_msg.data = imgLeftGray.flatten().tolist()
-		
+
 		imgRightGray = cv.cvtColor(imgRight, cv.COLOR_BGR2GRAY)
 		imageRight_msg = Image()
 		imageRight_msg.height = len(imgRightGray)
 		imageRight_msg.width = len(imgRightGray[0])
 		imageRight_msg.data = imgRightGray.flatten().tolist()
-		
+
 		try:
 			self.publisher_left.publish(imageLeft_msg)
 			self.get_logger().info('Publishing Left Image Data')
